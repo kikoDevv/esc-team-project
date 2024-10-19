@@ -1,15 +1,41 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  background: gray;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-body {
-  background-color: #e3170a;
-  margin: 5px;
+.container {
+  width: 100%;
 }
-body p {
-  margin: 10px;
+
+header {
+  width: 100%;
+  background-color: #011827;
+}
+header h1 {
+  color: white;
+  margin-bottom: 0;
+}
+header a {
+  display: none;
+}
+
+.coder-section {
+  width: 100%;
+}
+.coder-section .coder-section__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.button-wrapper .main__btn--online {
+  display: none;
+}
+.button-wrapper .main__btn--onsite {
+  background-color: #8acfe5;
+  border: none;
 }
 
 /*# sourceMappingURL=main.css.map */
