@@ -30,12 +30,17 @@ header a {
   height: auto;
 }
 
-.button-wrapper .main__btn--online {
+.button-wrapper .button-wrapper__online {
   display: none;
 }
-.button-wrapper .main__btn--onsite {
+.button-wrapper .button-wrapper__onsite {
   background-color: #8acfe5;
   border: none;
+}
+
+.quote-container .quote-container__quote--featured {
+  /* Hiding the second quote for mobile */
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

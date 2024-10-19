@@ -37,11 +37,29 @@ header {
 }
 
 .button-wrapper {
-  .main__btn--online {
+  .button-wrapper__online {
     display: none;
   }
-  .main__btn--onsite {
+  .button-wrapper__onsite {
     background-color: $lightBlue;
     border: none;
+  }
+}
+
+.quote-container {
+  .quote-container__quote--featured {
+    /* Hiding the second quote for mobile */
+    display: none;
+  }
+}
+
+main {
+  .card-container {
+    .card-container__card1 {
+    }
+    .card-container__card2 {
+    }
+    .card-container__card3 {
+    }
   }
 }
