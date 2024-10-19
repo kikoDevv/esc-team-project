@@ -1,5 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: gray;
+}
+
 body {
-  background-color: blue;
+  background-color: #e3170a;
+  margin: 5px;
+}
+body p {
+  margin: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

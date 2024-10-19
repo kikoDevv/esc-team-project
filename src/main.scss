@@ -1,3 +1,23 @@
+$red: #e3170a;
+$darkBlue: #011827;
+$blue: #36769d;
+$lightBlue: #8acfe5;
+$grey: #b6bdb5;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  background: gray;
+}
+
+.card {
+  @include flex-column;
+}
+
 body {
-  background-color: blue;
+  background-color: $red;
+  margin: 5px;
+  p {
+    margin: 10px;
+  }
 }
