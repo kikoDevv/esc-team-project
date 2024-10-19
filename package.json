@@ -4,6 +4,7 @@
   "description": "sass for hacker room website",
   "main": "index.js",
   "scripts": {
+    "sass:compile": "sass src/main.scss main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christian",
