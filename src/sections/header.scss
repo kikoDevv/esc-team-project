@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+header {
+  width: 100%;
+  background-color: $darkBlue;
+
+  h1 {
+    color: white;
+    margin-bottom: 0;
+  }
+
+  a {
+    display: none;
+  }
+}

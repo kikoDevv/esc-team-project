@@ -4,6 +4,12 @@ $blue: #36769d;
 $lightBlue: #8acfe5;
 $grey: #b6bdb5;
 
+@use "mixins";
+@use "variables";
+@use "header";
+@use "section";
+@use "footer";
+
 @mixin phone-button-size {
   height: 2.5rem;
   margin-bottom: 1rem;
@@ -24,20 +30,6 @@ body {
 
 .container {
   width: 100%;
-}
-
-header {
-  width: 100%;
-  background-color: $darkBlue;
-
-  h1 {
-    color: white;
-    margin-bottom: 0;
-  }
-
-  a {
-    display: none;
-  }
 }
 
 .coder-section {
@@ -81,7 +73,7 @@ header {
   &__text {
   }
 }
-
+/* testing */
 main {
   h2 {
     text-align: center;
@@ -107,5 +99,5 @@ main {
 }
 
 .story-container {
-  margin-top: 60rem;
+  margin-top: 30rem;
 }
