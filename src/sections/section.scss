@@ -1,8 +1,35 @@
+@use "variables" as *;
+
 /* Coder picture code for phone */
 .coder-section {
   &__img {
     width: 100%;
     height: auto;
     display: block;
+  }
+}
+
+/* Story container */
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkBlue;
+  height: 30rem;
+
+  &__button {
+    height: 2rem;
+    width: 60%;
+    margin-top: 2rem;
+    background-color: $darkBlue;
+    border: solid 1px $lightBlue;
+    color: $lightBlue;
+  }
+
+  &__text {
+    margin: 0 2rem;
+    color: white;
   }
 }

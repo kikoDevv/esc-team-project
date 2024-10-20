@@ -1,11 +1,5 @@
-$red: #e3170a;
-$darkBlue: #011827;
-$blue: #36769d;
-$lightBlue: #8acfe5;
-$grey: #b6bdb5;
-
 @use "mixins" as *;
-@use "variables";
+@use "variables" as *;
 @use "header";
 @use "section";
 @use "footer";
@@ -61,29 +55,33 @@ body {
 }
 /* testing */
 main {
+  height: 35rem;
   h2 {
     text-align: center;
   }
   .card-container {
     display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     width: 100%;
-    height: 20rem;
+    height: 30rem;
     overflow-x: auto;
+
     &__card {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       flex: 0 0 80%;
       border-radius: 1rem;
-      padding-left: 2rem;
+      padding: 0 2rem 0 2rem;
     }
 
     &__img {
       height: auto;
       width: 100%;
-      border-radius: 1rem 1rem 0 0;
+    }
+    &__button {
+      background-color: $red;
+      border: none;
+      height: 2rem;
     }
   }
-}
-
-.story-container {
-  margin-top: 30rem;
 }
