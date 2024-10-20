@@ -64,6 +64,8 @@ header a {
 .footer {
   color: white;
   background-color: #011827;
+  height: 26rem;
+  padding-top: 1rem;
 }
 .footer__info {
   padding-left: 1rem;
