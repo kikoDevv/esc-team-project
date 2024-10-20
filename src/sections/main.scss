@@ -4,17 +4,11 @@ $blue: #36769d;
 $lightBlue: #8acfe5;
 $grey: #b6bdb5;
 
-@use "mixins";
+@use "mixins" as *;
 @use "variables";
 @use "header";
 @use "section";
 @use "footer";
-
-@mixin phone-button-size {
-  height: 2.5rem;
-  margin-bottom: 1rem;
-  width: 60%;
-}
 
 html {
   font-size: 16px;
@@ -30,14 +24,6 @@ body {
 
 .container {
   width: 100%;
-}
-
-.coder-section {
-  width: 100%;
-  .coder-section__image {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 .button-wrapper {
@@ -84,7 +70,7 @@ main {
     height: 20rem;
     overflow-x: auto;
     &__card {
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       flex: 0 0 80%;
       border-radius: 1rem;
       padding-left: 2rem;
