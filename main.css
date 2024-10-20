@@ -61,6 +61,29 @@ header a {
   color: white;
 }
 
+.footer {
+  color: white;
+  background-color: #011827;
+}
+.footer__info {
+  padding-left: 1rem;
+}
+.footer__nav-title, .footer__social-title {
+  padding-left: 1rem;
+}
+.footer__nav-list, .footer__nav-social {
+  padding: 0;
+  margin: 0;
+}
+.footer li {
+  list-style: none;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
 html {
   font-size: 16px;
 }
@@ -83,6 +106,8 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+  /*   &__anchor {
+  } */
 }
 .button-wrapper__online {
   display: none;
@@ -94,6 +119,7 @@ body {
   margin-bottom: 1rem;
   width: 60%;
 }
+
 .quote-container {
   /*   &__img {
   }

@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+.footer {
+  color: white;
+  background-color: $darkBlue;
+  &__info {
+    padding-left: 1rem;
+  }
+  &__nav-title,
+  &__social-title {
+    padding-left: 1rem;
+  }
+  &__nav-list,
+  &__nav-social {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    padding-left: 1rem;
+  }
+}
