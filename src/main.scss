@@ -4,6 +4,16 @@ $blue: #36769d;
 $lightBlue: #8acfe5;
 $grey: #b6bdb5;
 
+@mixin phone-button-size {
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+html {
+  font-size: 16px;
+}
+
 html,
 body {
   padding: 0;
@@ -19,10 +29,12 @@ body {
 header {
   width: 100%;
   background-color: $darkBlue;
+
   h1 {
     color: white;
     margin-bottom: 0;
   }
+
   a {
     display: none;
   }
@@ -37,29 +49,63 @@ header {
 }
 
 .button-wrapper {
-  .button-wrapper__online {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  &__online {
     display: none;
   }
-  .button-wrapper__onsite {
+
+  &__onsite {
     background-color: $lightBlue;
     border: none;
+    @include phone-button-size;
+  }
+
+  &__anchor {
   }
 }
 
 .quote-container {
-  .quote-container__quote--featured {
+  &__quote--featured {
     /* Hiding the second quote for mobile */
     display: none;
+  }
+
+  &__img {
+  }
+
+  &__text {
   }
 }
 
 main {
+  h2 {
+    text-align: center;
+  }
   .card-container {
-    .card-container__card1 {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    overflow-x: auto;
+    &__card {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      flex: 0 0 80%;
+      border-radius: 1rem;
+      padding-left: 2rem;
     }
-    .card-container__card2 {
-    }
-    .card-container__card3 {
+
+    &__img {
+      height: auto;
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
     }
   }
+}
+
+.story-container {
+  margin-top: 60rem;
 }
