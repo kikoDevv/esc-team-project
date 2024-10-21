@@ -1,12 +1,20 @@
 @use "variables" as *;
 
 header {
+  display: flex;
   width: 100%;
   background-color: $darkBlue;
 
+  img {
+    margin: 5% 2% 5% 5%;
+  }
+
   h1 {
+    font-size: 22px;
     color: white;
-    margin-bottom: 0;
+    display: inline;
+    margin: auto 0 auto 0;
+    width: 5%;
   }
 
   a {

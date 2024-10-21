@@ -5,6 +5,7 @@
 @use "footer";
 
 html {
+  font-family: roboto, sans-serif;
   font-size: 16px;
 }
 
@@ -14,6 +15,10 @@ body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+button {
+  font-family: roboto, sans-serif;
 }
 
 .container {
@@ -36,26 +41,28 @@ body {
     border: none;
     @include phone-button-size;
   }
-
-  /*   &__anchor {
-  } */
 }
 
 .quote-container {
+  width: 90%;
+  margin-left: 1rem;
+  font-style: italic;
   &__quote--featured {
     /* Hiding the second quote for mobile */
     display: none;
   }
 
-  /*   &__img {
+  &__img {
+    float: left;
+    margin-right: 1rem;
   }
 
-  &__text {
+  /*   &__text {
+      display: inline; 
   } */
 }
 /* testing */
 main {
-  height: 35rem;
   h2 {
     text-align: center;
   }
@@ -63,24 +70,40 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 30rem;
     overflow-x: auto;
 
     &__card {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       flex: 0 0 70%;
       border-radius: 1rem;
-      margin: 0 1rem 0 1rem;
+      margin: 0 1rem 5% 1rem;
     }
 
     &__img {
-      height: auto;
       width: 100%;
     }
+
+    h3 {
+      margin-left: 5%;
+      margin-bottom: 0;
+    }
+
+    &__star-container {
+      margin-left: 5%;
+    }
+
+    p {
+      margin: 5%;
+    }
+
     &__button {
       background-color: $red;
       border: none;
+      width: 40%;
       height: 2rem;
+      margin: 0 auto 5% 50%;
+      border-radius: 3px;
+      color: white;
     }
   }
 }
