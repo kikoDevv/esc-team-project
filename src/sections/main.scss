@@ -39,14 +39,21 @@ button {
   &__onsite {
     background-color: $lightBlue;
     border: none;
+    font-weight: 700;
+    font-size: 18px;
     @include phone-button-size;
+  }
+
+  a {
+    margin-bottom: 5%;
+    color: $blue;
   }
 }
 
 .quote-container {
   width: 90%;
   margin-left: 1rem;
-  font-style: italic;
+
   &__quote--featured {
     /* Hiding the second quote for mobile */
     display: none;
@@ -57,14 +64,19 @@ button {
     margin-right: 1rem;
   }
 
-  /*   &__text {
-      display: inline; 
-  } */
+  &__text {
+    margin-bottom: 1%;
+    font-style: italic;
+  }
+  small {
+    font-style: normal;
+  }
 }
 /* testing */
 main {
   h2 {
     text-align: center;
+    font-weight: 400;
   }
   .card-container {
     display: flex;
@@ -84,6 +96,7 @@ main {
     }
 
     h3 {
+      font-weight: 400;
       margin-left: 5%;
       margin-bottom: 0;
     }

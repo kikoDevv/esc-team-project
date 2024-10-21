@@ -18,11 +18,13 @@
   align-items: center;
   justify-content: center;
   background-color: $darkBlue;
+  font-size: 22px;
   height: 30rem;
 
   &__button {
     height: 2rem;
     width: 60%;
+    font-size: 18px;
     margin-top: 2rem;
     background-color: $darkBlue;
     border: solid 1px $lightBlue;
@@ -30,8 +32,8 @@
   }
 
   &__text {
-    margin: 0 2rem;
     color: white;
+    text-align: center;
   }
 }
 
@@ -44,13 +46,21 @@
     width: 100%;
   }
   &__content {
-    text-align: center;
-    height: 20rem;
-    width: 90%;
+    height: 30rem;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    h2 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 22px;
+    }
   }
   &__button {
     @include phone-button-size;
     background-color: $red;
+    font-size: 18px;
     border: none;
     color: white;
   }

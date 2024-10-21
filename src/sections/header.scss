@@ -1,14 +1,13 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 header {
   display: flex;
   width: 100%;
   background-color: $darkBlue;
-
   img {
     margin: 5% 2% 5% 5%;
   }
-
   h1 {
     font-size: 22px;
     color: white;
@@ -16,7 +15,6 @@ header {
     margin: auto 0 auto 0;
     width: 5%;
   }
-
   a {
     display: none;
   }

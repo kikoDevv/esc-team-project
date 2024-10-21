@@ -31,19 +31,21 @@ header a {
   align-items: center;
   justify-content: center;
   background-color: #011827;
+  font-size: 22px;
   height: 30rem;
 }
 .story-container__button {
   height: 2rem;
   width: 60%;
+  font-size: 18px;
   margin-top: 2rem;
   background-color: #011827;
   border: solid 1px #8acfe5;
   color: #8acfe5;
 }
 .story-container__text {
-  margin: 0 2rem;
   color: white;
+  text-align: center;
 }
 
 /* Play info container */
@@ -55,15 +57,22 @@ header a {
   width: 100%;
 }
 .play-info-container__content {
-  text-align: center;
-  height: 20rem;
-  width: 90%;
+  height: 30rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.play-info-container__content h2 {
+  font-size: 28px;
+}
+.play-info-container__content p {
+  font-size: 22px;
 }
 .play-info-container__button {
   height: 2.5rem;
   margin-bottom: 1rem;
   width: 60%;
   background-color: #e3170a;
+  font-size: 18px;
   border: none;
   color: white;
 }
@@ -127,18 +136,20 @@ button {
 .button-wrapper__onsite {
   background-color: #8acfe5;
   border: none;
+  font-weight: 700;
+  font-size: 18px;
   height: 2.5rem;
   margin-bottom: 1rem;
   width: 60%;
+}
+.button-wrapper a {
+  margin-bottom: 5%;
+  color: #36769d;
 }
 
 .quote-container {
   width: 90%;
   margin-left: 1rem;
-  font-style: italic;
-  /*   &__text {
-      display: inline; 
-  } */
 }
 .quote-container__quote--featured {
   /* Hiding the second quote for mobile */
@@ -148,10 +159,18 @@ button {
   float: left;
   margin-right: 1rem;
 }
+.quote-container__text {
+  margin-bottom: 1%;
+  font-style: italic;
+}
+.quote-container small {
+  font-style: normal;
+}
 
 /* testing */
 main h2 {
   text-align: center;
+  font-weight: 400;
 }
 main .card-container {
   display: flex;
@@ -169,6 +188,7 @@ main .card-container__img {
   width: 100%;
 }
 main .card-container h3 {
+  font-weight: 400;
   margin-left: 5%;
   margin-bottom: 0;
 }
