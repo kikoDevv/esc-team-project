@@ -1,20 +1,47 @@
 header {
-  display: flex;
-  width: 100%;
+  /* Universal */
   background-color: #011827;
-}
-header img {
-  margin: 5% 2% 5% 5%;
+  /* Phone */
+  /* PC */
 }
 header h1 {
-  font-size: 22px;
   color: white;
-  display: inline;
-  margin: auto 0 auto 0;
-  width: 5%;
 }
-header a {
-  display: none;
+@media screen and (max-width: 1000px) {
+  header {
+    width: 100%;
+    display: flex;
+  }
+  header img {
+    margin: 5% 2% 5% 5%;
+  }
+  header h1 {
+    display: inline;
+    margin: auto 0 auto 0;
+    width: 5%;
+  }
+  header a {
+    display: none;
+  }
+  header h1 {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header img {
+    margin: 1% 0 0 1%;
+  }
+  header h1 {
+    font-size: 35px;
+  }
+  header a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  header a:hover {
+    color: #8acfe5;
+  }
 }
 
 /* Coder picture code for phone */

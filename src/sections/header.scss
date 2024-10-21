@@ -2,20 +2,45 @@
 @use "mixins" as *;
 
 header {
-  display: flex;
-  width: 100%;
+  /* Universal */
   background-color: $darkBlue;
-  img {
-    margin: 5% 2% 5% 5%;
-  }
   h1 {
-    font-size: 22px;
     color: white;
-    display: inline;
-    margin: auto 0 auto 0;
-    width: 5%;
   }
-  a {
-    display: none;
+  /* Phone */
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    display: flex;
+    img {
+      margin: 5% 2% 5% 5%;
+    }
+    h1 {
+      display: inline;
+      margin: auto 0 auto 0;
+      width: 5%;
+    }
+    a {
+      display: none;
+    }
+    h1 {
+      font-size: 22px;
+    }
+  }
+  /* PC */
+  @media screen and (min-width: 1000px) {
+    img {
+      margin: 1% 0 0 1%;
+    }
+    h1 {
+      font-size: 35px;
+    }
+    a {
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $lightBlue;
+    }
   }
 }
