@@ -2,11 +2,25 @@
 @use "mixins" as *;
 
 /* Coder picture code for phone */
-.coder-section {
-  &__img {
-    width: 100%;
-    height: auto;
-    display: block;
+@media screen and (max-width: 1200px) {
+  .coder-section {
+    &__img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+/* Coder picture for PC */
+@media screen and (min-width: 1200px) {
+  .coder-section {
+    &__img {
+      max-width: 1200px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 

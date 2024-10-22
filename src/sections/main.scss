@@ -4,6 +4,7 @@
 @use "section";
 @use "footer";
 
+/* Phone and PC */
 html {
   font-family: roboto, sans-serif;
   font-size: 16px;
@@ -22,7 +23,9 @@ button {
 }
 
 .container {
-  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-wrapper {
@@ -50,73 +53,172 @@ button {
   }
 }
 
+/* Quote Section */
 .quote-container {
-  width: 90%;
-  margin-left: 1rem;
+  display: flex;
+  flex-direction: column; // Default to stacking quotes vertically on smaller screens
+  gap: 2rem; // Space between quotes
+  padding: 2rem;
+  width: 100%;
+  background-color: white;
 
-  &__quote--featured {
-    /* Hiding the second quote for mobile */
-    display: none;
-  }
-
-  &__img {
-    float: left;
-    margin-right: 1rem;
-  }
-
-  &__text {
-    margin-bottom: 1%;
-    font-style: italic;
-  }
-  small {
-    font-style: normal;
-  }
-}
-/* testing */
-main {
-  h2 {
-    text-align: center;
-    font-weight: 400;
-  }
-  .card-container {
+  &__quote {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-x: auto;
+    align-items: center; // Align image and text horizontally centered
+    max-width: 400px; // Adjust width for a more compact layout
+    margin: 0 auto; // Center the quotes horizontally on smaller screens
+    text-align: left;
+    gap: 1rem; // Space between the image and the text
 
-    &__card {
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      flex: 0 0 70%;
-      border-radius: 1rem;
-      margin: 0 1rem 5% 1rem;
+    &--featured {
+      display: none; // Hide the second quote by default on mobile
     }
 
     &__img {
-      width: 100%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      flex-shrink: 0; // Prevent the image from shrinking
     }
 
-    h3 {
-      font-weight: 400;
-      margin-left: 5%;
-      margin-bottom: 0;
+    .quote-text-container {
+      display: flex;
+      flex-direction: column; // Stack text and author
     }
 
-    &__star-container {
-      margin-left: 5%;
+    &__text {
+      font-size: 1rem;
+      font-style: italic;
+      margin: 0;
     }
 
-    p {
-      margin: 5%;
+    &__author {
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+/* PC-specific styles */
+@media screen and (min-width: 1200px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+  }
+
+  .quote-container {
+    flex-direction: row; // Display quotes side by side on larger screens
+    gap: 2rem; // Space between the two quotes
+    justify-content: center;
+
+    &__quote {
+      max-width: 500px; // Adjust width for each quote box
+      margin: 0; // Remove auto margin for side-by-side display
     }
 
-    &__button {
-      background-color: $red;
+    &__quote--featured {
+      display: flex; // Show the second quote on larger screens
+    }
+  }
+
+  .button-wrapper {
+    display: block;
+
+    &__online {
       border: none;
-      width: 40%;
-      height: 2rem;
-      margin: 0 auto 5% 50%;
-      border-radius: 3px;
+      background-color: $red;
+      display: inline;
+      height: 2.5rem;
+      width: 300px;
+      font-size: 18px;
       color: white;
+    }
+
+    &__onsite {
+      width: 300px;
+    }
+
+    &__anchor {
+      display: none;
+    }
+  }
+}
+
+/* Phone settings */
+@media screen and (max-width: 1200px) {
+  .quote-container {
+    width: 90%;
+    margin-left: 1rem;
+
+    &__quote--featured {
+      display: none; // Hide the second quote for mobile
+    }
+
+    &__img {
+      margin-right: 1rem; // Space between the image and text
+    }
+
+    &__text {
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    small {
+      font-style: normal;
+    }
+  }
+
+  /* Global settings */
+  main {
+    h2 {
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      overflow-x: auto;
+
+      &__card {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        flex: 0 0 300px;
+        border-radius: 1rem;
+        margin: 0 1rem 5% 1rem;
+      }
+
+      &__img {
+        width: 100%;
+      }
+
+      h3 {
+        font-weight: 400;
+        margin-left: 5%;
+        margin-bottom: 0;
+      }
+
+      &__star-container {
+        margin-left: 5%;
+      }
+
+      p {
+        margin: 5%;
+      }
+
+      &__button {
+        background-color: $red;
+        border: none;
+        width: 40%;
+        height: 2rem;
+        margin: 0 auto 5% 50%;
+        border-radius: 3px;
+        color: white;
+      }
     }
   }
 }
