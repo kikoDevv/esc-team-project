@@ -56,34 +56,34 @@ button {
 /* Quote Section */
 .quote-container {
   display: flex;
-  flex-direction: column; // Default to stacking quotes vertically on smaller screens
-  gap: 2rem; // Space between quotes
+  flex-direction: column;
+  gap: 2rem;
   padding: 2rem;
   width: 100%;
   background-color: white;
 
   &__quote {
     display: flex;
-    align-items: center; // Align image and text horizontally centered
-    max-width: 400px; // Adjust width for a more compact layout
-    margin: 0 auto; // Center the quotes horizontally on smaller screens
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
     text-align: left;
-    gap: 1rem; // Space between the image and the text
+    gap: 1rem;
 
     &--featured {
-      display: none; // Hide the second quote by default on mobile
+      display: none;
     }
 
     &__img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      flex-shrink: 0; // Prevent the image from shrinking
+      flex-shrink: 0;
     }
 
     .quote-text-container {
       display: flex;
-      flex-direction: column; // Stack text and author
+      flex-direction: column;
     }
 
     &__text {
@@ -110,18 +110,23 @@ button {
     max-width: 1200px;
   }
 
+  .card-container {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
   .quote-container {
-    flex-direction: row; // Display quotes side by side on larger screens
-    gap: 2rem; // Space between the two quotes
+    flex-direction: row;
+    gap: 2rem;
     justify-content: center;
 
     &__quote {
-      max-width: 500px; // Adjust width for each quote box
-      margin: 0; // Remove auto margin for side-by-side display
+      max-width: 500px;
+      margin: 0;
     }
 
     &__quote--featured {
-      display: flex; // Show the second quote on larger screens
+      display: flex;
     }
   }
 
@@ -172,7 +177,6 @@ button {
     }
   }
 
-  /* Global settings */
   main {
     h2 {
       text-align: center;

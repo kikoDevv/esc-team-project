@@ -251,6 +251,10 @@ button {
     align-items: center;
     max-width: 1200px;
   }
+  .card-container {
+    display: flex;
+    margin-bottom: 2rem;
+  }
   .quote-container {
     flex-direction: row;
     gap: 2rem;
@@ -301,7 +305,6 @@ button {
   .quote-container small {
     font-style: normal;
   }
-  /* Global settings */
   main h2 {
     text-align: center;
     font-weight: 400;
