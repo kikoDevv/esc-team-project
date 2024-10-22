@@ -251,9 +251,38 @@ button {
     align-items: center;
     max-width: 1200px;
   }
+  main h2 {
+    margin-bottom: 5rem;
+  }
   .card-container {
     display: flex;
     margin-bottom: 2rem;
+  }
+  .card-container__card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex: 0 0 300px;
+    border-radius: 1rem;
+    margin: 0 1rem 5% 1rem;
+  }
+  .card-container__button {
+    background-color: #e3170a;
+    border: none;
+    width: 40%;
+    height: 2rem;
+    margin: 0 auto 5% 50%;
+    border-radius: 3px;
+    color: white;
+  }
+  .card-container h3 {
+    font-weight: 400;
+    margin-left: 5%;
+    margin-bottom: 0;
+  }
+  .card-container__star-container {
+    margin-left: 5%;
+  }
+  .card-container p {
+    margin: 5%;
   }
   .quote-container {
     flex-direction: row;
@@ -284,6 +313,11 @@ button {
   }
   .button-wrapper__anchor {
     display: none;
+  }
+  .play-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 }
 /* Phone settings */
