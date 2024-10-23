@@ -24,8 +24,7 @@
   }
 }
 
-/* Story container */
-
+/* Story container phone */
 .story-container {
   display: flex;
   flex-direction: column;
@@ -50,8 +49,20 @@
     text-align: center;
   }
 }
+/* Story container pc  */
+@media screen and (min-width: 1200px) {
+  .story-container {
+    &__text {
+      width: 40%;
+    }
+    &__button {
+      height: 4rem;
+      width: 25%;
+    }
+  }
+}
 
-/* Play info container */
+/* Play info container phone */
 
 .play-info-container {
   display: flex;
@@ -77,5 +88,29 @@
     font-size: 18px;
     border: none;
     color: white;
+  }
+}
+/* Play info container PC */
+.play-info-container {
+  margin-bottom: 12rem;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &__content-title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 65%;
+  }
+  p {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+  &__button {
+    height: 4rem;
+    margin-left: 17.5%;
   }
 }
