@@ -124,7 +124,7 @@ button {
     display: flex;
     margin-bottom: 2rem;
     &__card {
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      box-shadow: $grey 0px 5px 15px;
       flex: 0 0 300px;
       border-radius: 1rem;
       margin: 0 1rem 5% 1rem;
@@ -177,7 +177,7 @@ button {
       display: inline;
       height: 4rem;
       width: 300px;
-      font-size: 18px;
+      font-size: 22px;
       color: white;
     }
 
@@ -185,6 +185,7 @@ button {
       width: 300px;
       height: 4rem;
       margin-left: 1rem;
+      font-size: 22px;
     }
 
     &__anchor {
@@ -215,8 +216,12 @@ button {
   }
 
   .quote-container {
-    width: 90%;
-    margin-left: 1rem;
+    width: 100%;
+
+    &__quote {
+      margin-left: 1%;
+      margin-right: 15%;
+    }
 
     &__quote--featured {
       display: none;
@@ -249,7 +254,7 @@ button {
       overflow-x: auto;
 
       &__card {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: $grey 0px 5px 15px;
         flex: 0 0 300px;
         border-radius: 1rem;
         margin: 0 1rem 5% 1rem;
