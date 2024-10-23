@@ -163,6 +163,7 @@ header h1 {
   margin-left: 17.5%;
 }
 
+/* Phone styling for footer */
 .footer {
   color: white;
   background-color: #011827;
@@ -188,6 +189,27 @@ header h1 {
   padding-left: 1rem;
 }
 
+@media screen and (min-width: 1200px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer__info {
+    margin-left: 10%;
+    margin-right: 15%;
+    width: 30%;
+  }
+  .footer__social {
+    margin-bottom: 3%;
+  }
+  .footer__nav {
+    margin-right: 5%;
+  }
+  .footer__nav-list-legal {
+    margin-bottom: 1rem;
+  }
+}
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;

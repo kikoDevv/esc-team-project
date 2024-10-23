@@ -1,5 +1,6 @@
 @use "variables" as *;
 
+/* Phone styling for footer */
 .footer {
   color: white;
   background-color: $darkBlue;
@@ -18,7 +19,6 @@
     padding: 0;
     margin: 0;
   }
-
   li {
     list-style: none;
   }
@@ -26,5 +26,27 @@
     color: white;
     text-decoration: none;
     padding-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    &__info {
+      margin-left: 10%;
+      margin-right: 15%;
+      width: 30%;
+    }
+    &__social {
+      margin-bottom: 3%;
+    }
+    &__nav {
+      margin-right: 5%;
+    }
+    &__nav-list-legal {
+      margin-bottom: 1rem;
+    }
   }
 }
