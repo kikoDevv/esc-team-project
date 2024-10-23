@@ -244,6 +244,12 @@ button {
 
 /* PC-specific styles */
 @media screen and (min-width: 1200px) {
+  .coder-section__img {
+    display: none;
+  }
+  .coder-section__pc-img {
+    max-width: 1200px;
+  }
   main {
     display: flex;
     flex-direction: column;
@@ -303,16 +309,24 @@ button {
     border: none;
     background-color: #e3170a;
     display: inline;
-    height: 2.5rem;
+    height: 4rem;
     width: 300px;
     font-size: 18px;
     color: white;
   }
   .button-wrapper__onsite {
     width: 300px;
+    height: 4rem;
+    margin-left: 1rem;
   }
   .button-wrapper__anchor {
     display: none;
+  }
+  .button-wrapper__first {
+    transform: translateY(-50px);
+  }
+  .button-wrapper__second {
+    margin-bottom: 2rem;
   }
   .play-info-container {
     display: grid;
@@ -326,6 +340,9 @@ button {
 }
 /* Phone settings */
 @media screen and (max-width: 1200px) {
+  .coder-section__pc-img {
+    display: none;
+  }
   .quote-container {
     width: 90%;
     margin-left: 1rem;
