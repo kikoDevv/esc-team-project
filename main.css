@@ -114,6 +114,7 @@ header h1 {
 .play-info-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
 }
 .play-info-container__img {
   width: 100%;

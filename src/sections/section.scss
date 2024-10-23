@@ -63,10 +63,12 @@
 }
 
 /* Play info container phone */
-
+@media screen and (max-width: 1200px) {
+}
 .play-info-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
   &__img {
     width: 100%;
   }
