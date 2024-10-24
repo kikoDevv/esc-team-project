@@ -2,30 +2,33 @@
 @use "mixins" as *;
 
 header {
-  /* Universal */
   background-color: $darkBlue;
+
   h1 {
     color: white;
   }
+
   /* Phone */
   @media screen and (max-width: 1280px) {
     width: 100%;
     display: flex;
+
     img {
       margin: 5% 2% 5% 5%;
     }
+
     h1 {
       display: inline;
-      margin: auto 0 auto 0;
+      margin: auto 0;
       width: 5%;
+      font-size: 22px;
     }
+
     a {
       display: none;
     }
-    h1 {
-      font-size: 22px;
-    }
   }
+
   /* PC */
   @media screen and (min-width: 1280px) {
     margin-left: auto;
@@ -35,23 +38,26 @@ header {
     img {
       margin: 1% 0 0 1%;
     }
+
     h1 {
       margin-left: 2%;
       display: inline;
       font-size: 35px;
     }
+
     nav {
       display: flex;
       justify-content: space-around;
       margin-top: 2rem;
     }
+
     a {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
+      margin: 1rem 0;
       font-size: 20px;
       color: white;
       text-decoration: none;
     }
+
     a:hover {
       color: $lightBlue;
     }
