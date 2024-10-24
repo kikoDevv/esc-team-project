@@ -1,17 +1,4 @@
-@mixin button-size {
-  height: 3rem;
-  margin-bottom: 1rem;
-  width: 60%;
-}
-
-@mixin respond($breakpoint) {
-  @if $breakpoint == max-width {
-    @media screen and (max-width: 1200px) {
-      @content;
-    }
-  } @else if $breakpoint == min-width {
-    @media screen and (min-width: 1200px) {
-      @content;
-    }
-  }
+@mixin button-size-pc {
+  width: 19.25rem;
+  height: 4.125rem;
 }

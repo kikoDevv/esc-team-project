@@ -27,7 +27,7 @@ button {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -38,7 +38,7 @@ button {
 }
 
 /* Button Wrapper Phone */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .button-wrapper {
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ button {
 }
 
 /* Button Wrapper PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .button-wrapper {
     display: flex;
     justify-content: center;
@@ -73,8 +73,7 @@ button {
       border: none;
       background-color: $red;
       display: inline;
-      height: 4rem;
-      width: 19rem;
+      @include button-size-pc;
       font-size: 22px;
       font-weight: 700;
       color: white;
@@ -82,8 +81,7 @@ button {
     &__onsite {
       border: none;
       background-color: $lightBlue;
-      width: 19rem;
-      height: 4rem;
+      @include button-size-pc;
       margin-left: 1rem;
       font-size: 22px;
       font-weight: 700;
@@ -109,7 +107,7 @@ button {
 }
 
 /* Quote Section Phone */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .quote-container {
     margin-top: 5rem;
     &__quote {
@@ -126,7 +124,7 @@ button {
 }
 
 /* Quote Section PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .quote-container {
     display: flex;
     justify-content: center;
@@ -148,7 +146,7 @@ button {
 }
 
 /* Card-container phone */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .main-challenges-title {
     margin-bottom: 4rem;
     margin-top: 4rem;
@@ -197,13 +195,15 @@ button {
 }
 
 /* Card Container PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .main-challenges-title {
     margin-bottom: 4rem;
   }
   .card-container {
     display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
+
     &__card {
       box-shadow: $grey 0px 5px 15px;
       flex: 0 0 300px;

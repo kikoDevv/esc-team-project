@@ -2,7 +2,7 @@
 @use "variables" as *;
 
 /* Coder picture code for phone */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .coder-section {
     &__img {
       width: 100%;
@@ -15,13 +15,13 @@
   }
 }
 /* Coder picture for PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .coder-section {
     &__img {
       display: none;
     }
     &__pc-img {
-      max-width: 1200px;
+      max-width: 1280px;
       height: auto;
       display: block;
       margin-left: auto;
@@ -57,20 +57,19 @@
   }
 }
 /* Story container pc  */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .story-container {
     &__text {
       width: 40%;
     }
     &__button {
-      height: 4rem;
-      width: 25%;
+      @include button-size-pc;
     }
   }
 }
 
 /* Play info container phone */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .play-info-container {
     &__button {
       border: none;
@@ -100,7 +99,7 @@
 }
 
 /* Play info container PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .play-info-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -125,9 +124,8 @@
       margin-right: auto;
     }
     &__button {
-      height: 3rem;
       margin-left: 15%;
-      width: 16rem;
+      @include button-size-pc;
       background-color: $red;
       border: none;
       color: white;
