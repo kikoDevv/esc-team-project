@@ -28,98 +28,163 @@ button {
   margin-right: auto;
 }
 
-.button-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-
-  &__online {
-    display: none;
-  }
-
-  &__onsite {
-    background-color: $lightBlue;
-    border: none;
-    font-weight: 700;
-    font-size: 18px;
-    @include phone-button-size;
-  }
-
-  a {
-    margin-bottom: 5%;
-    color: $blue;
+/* Button Wrapper Phone */
+@media screen and (max-width: 1200px) {
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__online {
+      display: none;
+    }
+    &__onsite {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border: none;
+      background-color: $lightBlue;
+      width: 65%;
+      height: 3rem;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    &__anchor {
+      color: $darkBlue;
+      margin-bottom: 2rem;
+    }
   }
 }
 
-/* Quote Section */
-.quote-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  width: 100%;
-  background-color: white;
-
-  &__quote {
+/* Button Wrapper PC */
+@media screen and (min-width: 1200px) {
+  .button-wrapper {
     display: flex;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
-    gap: 1rem;
+    justify-content: center;
 
-    &--featured {
+    &__online {
+      border: none;
+      background-color: $red;
+      display: inline;
+      height: 4rem;
+      width: 19rem;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+    }
+    &__onsite {
+      border: none;
+      background-color: $lightBlue;
+      width: 19rem;
+      height: 4rem;
+      margin-left: 1rem;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    &__first {
+      transform: translateY(-30px);
+    }
+    &__second {
+      margin-bottom: 4rem;
+    }
+    a {
       display: none;
+    }
+  }
+}
+
+/* Quote Section Universal */
+.quote-container {
+  p {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+}
+
+/* Quote Section Phone */
+@media screen and (max-width: 1200px) {
+  .quote-container {
+    margin-top: 5rem;
+    &__quote {
+      img {
+        float: left;
+        margin-right: 5%;
+        margin-left: 3%;
+      }
+    }
+    &__quote--featured {
+      display: none;
+    }
+  }
+}
+
+/* Quote Section PC */
+@media screen and (min-width: 1200px) {
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    &__quote {
+      width: 35%;
+      img {
+        width: 96px;
+
+        margin-right: 5%;
+        float: left;
+      }
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+/* Card-container phone */
+@media screen and (max-width: 1200px) {
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+
+    &__card {
+      box-shadow: $grey 0px 5px 15px;
+      flex: 0 0 300px;
+      border-radius: 1rem;
+      margin: 0 1rem 5% 1rem;
     }
 
     &__img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      flex-shrink: 0;
+      width: 100%;
     }
 
-    .quote-text-container {
-      display: flex;
-      flex-direction: column;
+    h3 {
+      font-weight: 400;
+      margin-left: 5%;
+      margin-bottom: 0;
     }
 
-    &__text {
-      font-size: 1rem;
-      font-style: italic;
-      margin: 0;
+    &__star-container {
+      margin-left: 5%;
     }
 
-    &__author {
-      font-size: 0.875rem;
-      color: #666;
-      margin-top: 0.5rem;
+    p {
+      margin: 5%;
+    }
+
+    &__button {
+      background-color: $red;
+      border: none;
+      width: 40%;
+      height: 2rem;
+      margin: 0 auto 5% 50%;
+      border-radius: 3px;
+      color: white;
     }
   }
 }
 
-/* PC-specific styles */
+/* Card Container PC */
 @media screen and (min-width: 1200px) {
-  .coder-section__img {
-    display: none;
-  }
-  .coder-section__pc-img {
-    max-width: 1200px;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-
-    h2 {
-      margin-bottom: 5rem;
-    }
-  }
-
   .card-container {
     display: flex;
     margin-bottom: 2rem;
@@ -150,143 +215,6 @@ button {
 
     p {
       margin: 5%;
-    }
-  }
-
-  .quote-container {
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-
-    &__quote {
-      max-width: 500px;
-      margin: 0;
-    }
-
-    &__quote--featured {
-      display: flex;
-    }
-  }
-
-  .button-wrapper {
-    display: block;
-
-    &__online {
-      border: none;
-      background-color: $red;
-      display: inline;
-      height: 4rem;
-      width: 300px;
-      font-size: 22px;
-      color: white;
-    }
-
-    &__onsite {
-      width: 300px;
-      height: 4rem;
-      margin-left: 1rem;
-      font-size: 22px;
-    }
-
-    &__anchor {
-      display: none;
-    }
-    &__first {
-      transform: translateY(-50px);
-    }
-    &__second {
-      margin-bottom: 2rem;
-    }
-  }
-  .play-info-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    &__img-wrapper2 {
-      grid-column: 2;
-      grid-row: 2;
-    }
-  }
-}
-
-/* Phone settings */
-@media screen and (max-width: 1200px) {
-  .coder-section__pc-img {
-    display: none;
-  }
-
-  .quote-container {
-    width: 100%;
-
-    &__quote {
-      margin-left: 1%;
-      margin-right: 15%;
-    }
-
-    &__quote--featured {
-      display: none;
-    }
-
-    &__img {
-      margin-right: 1rem;
-    }
-
-    &__text {
-      margin-bottom: 0.5rem;
-      font-style: italic;
-    }
-
-    small {
-      font-style: normal;
-    }
-  }
-
-  main {
-    h2 {
-      text-align: center;
-      font-weight: 400;
-    }
-
-    .card-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      overflow-x: auto;
-
-      &__card {
-        box-shadow: $grey 0px 5px 15px;
-        flex: 0 0 300px;
-        border-radius: 1rem;
-        margin: 0 1rem 5% 1rem;
-      }
-
-      &__img {
-        width: 100%;
-      }
-
-      h3 {
-        font-weight: 400;
-        margin-left: 5%;
-        margin-bottom: 0;
-      }
-
-      &__star-container {
-        margin-left: 5%;
-      }
-
-      p {
-        margin: 5%;
-      }
-
-      &__button {
-        background-color: $red;
-        border: none;
-        width: 40%;
-        height: 2rem;
-        margin: 0 auto 5% 50%;
-        border-radius: 3px;
-        color: white;
-      }
     }
   }
 }
