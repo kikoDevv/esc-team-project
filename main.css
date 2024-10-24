@@ -250,6 +250,10 @@ button {
   margin-right: auto;
 }
 
+.main-challenges-title {
+  text-align: center;
+}
+
 /* Button Wrapper Phone */
 @media screen and (max-width: 1200px) {
   .button-wrapper {
@@ -364,9 +368,6 @@ button {
     border-radius: 1rem;
     margin: 0 1rem 5% 1rem;
   }
-  .card-container__img {
-    width: 100%;
-  }
   .card-container h3 {
     font-weight: 400;
     margin-left: 5%;
@@ -386,6 +387,10 @@ button {
     margin: 0 auto 5% 50%;
     border-radius: 3px;
     color: white;
+  }
+  .card-container span {
+    font-size: 11px;
+    margin-left: 5%;
   }
 }
 /* Card Container PC */
@@ -412,13 +417,19 @@ button {
   .card-container h3 {
     font-weight: 400;
     margin-left: 5%;
-    margin-bottom: 0;
   }
   .card-container__star-container {
     margin-left: 5%;
   }
   .card-container p {
     margin: 5%;
+  }
+  .card-container img {
+    margin-bottom: 0.5rem;
+  }
+  .card-container span {
+    font-size: 13px;
+    margin-left: 3.5rem;
   }
 }
 
