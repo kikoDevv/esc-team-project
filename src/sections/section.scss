@@ -41,8 +41,7 @@
   height: 30rem;
 
   &__button {
-    height: 2rem;
-    width: 60%;
+    @include button-size;
     font-size: 18px;
     margin-top: 2rem;
     background-color: $darkBlue;
@@ -63,7 +62,7 @@
       width: 40%;
     }
     &__button {
-      @include button-size-pc;
+      @include button-size;
     }
   }
 }
@@ -125,7 +124,7 @@
     }
     &__button {
       margin-left: 15%;
-      @include button-size-pc;
+      @include button-size;
       background-color: $red;
       border: none;
       color: white;

@@ -89,8 +89,8 @@ header h1 {
   height: 30rem;
 }
 .story-container__button {
-  height: 2rem;
-  width: 60%;
+  width: 19.25rem;
+  height: 4.125rem;
   font-size: 18px;
   margin-top: 2rem;
   background-color: #011827;
@@ -181,6 +181,7 @@ header h1 {
   background-color: #011827;
   height: 26rem;
   padding-top: 1rem;
+  margin-bottom: 1rem;
   /* PC Styles */
 }
 .footer__info, .footer__nav-title, .footer__social-title {
@@ -248,6 +249,8 @@ button {
 
 .main-challenges-title {
   text-align: center;
+  font-weight: 400;
+  font-size: 26px;
 }
 
 /* Button Wrapper Phone */
@@ -265,14 +268,17 @@ button {
     margin-bottom: 2rem;
     border: none;
     background-color: #8acfe5;
-    width: 65%;
-    height: 3rem;
+    width: 19.25rem;
+    height: 4.125rem;
     font-size: 22px;
     font-weight: 700;
   }
   .button-wrapper__anchor {
-    color: #011827;
+    color: #36769d;
     margin-bottom: 2rem;
+  }
+  .button-wrapper__anchor:visited {
+    color: #36769d;
   }
 }
 /* Button Wrapper PC */
@@ -319,7 +325,7 @@ button {
 /* Quote Section Phone */
 @media screen and (max-width: 1280px) {
   .quote-container {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
   .quote-container__quote img {
     float: left;
@@ -328,6 +334,12 @@ button {
   }
   .quote-container__quote--featured {
     display: none;
+  }
+  .quote-container p {
+    font-size: 18px;
+  }
+  .quote-container small {
+    font-size: 16px;
   }
 }
 /* Quote Section PC */
@@ -374,6 +386,7 @@ button {
     margin-bottom: 0;
   }
   .card-container__star-container {
+    margin-top: 0.3rem;
     margin-left: 5%;
   }
   .card-container p {
@@ -382,15 +395,17 @@ button {
   .card-container__button {
     background-color: #e3170a;
     border: none;
-    width: 40%;
-    height: 2rem;
-    margin: 0 auto 5% 50%;
+    width: 11rem;
+    height: 2.5rem;
+    margin: 0 auto 5% 45%;
     border-radius: 3px;
     color: white;
   }
   .card-container span {
-    font-size: 11px;
-    margin-left: 5%;
+    display: none;
+  }
+  .card-container small {
+    margin-left: 0.5rem;
   }
 }
 /* Card Container PC */
@@ -403,6 +418,9 @@ button {
     justify-content: center;
     margin-bottom: 2rem;
   }
+  .card-container small {
+    display: none;
+  }
   .card-container__card {
     box-shadow: #b6bdb5 0px 5px 15px;
     flex: 0 0 300px;
@@ -412,17 +430,19 @@ button {
   .card-container__button {
     background-color: #e3170a;
     border: none;
-    width: 40%;
-    height: 2rem;
-    margin: 0 auto 5% 50%;
+    width: 11rem;
+    height: 2.5rem;
+    margin: 0 auto 5% 45%;
     border-radius: 3px;
     color: white;
   }
   .card-container h3 {
+    margin-bottom: 0;
     font-weight: 400;
     margin-left: 5%;
   }
   .card-container__star-container {
+    margin-top: 0.3rem;
     margin-left: 5%;
   }
   .card-container p {
