@@ -42,10 +42,12 @@ header h1 {
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+    padding: 0 10rem;
   }
   header a {
-    margin: 1rem 0;
-    font-size: 20px;
+    margin: 1rem 0 2rem 0;
+    font-size: 22px;
+    font-weight: 700;
     color: white;
     text-decoration: none;
   }
@@ -360,6 +362,7 @@ button {
   }
   .quote-container p {
     margin-top: 0;
+    font-size: 18px;
   }
 }
 /* Card-container phone */
@@ -401,9 +404,6 @@ button {
     border-radius: 3px;
     color: white;
   }
-  .card-container span {
-    display: none;
-  }
   .card-container small {
     margin-left: 0.5rem;
   }
@@ -411,6 +411,7 @@ button {
 /* Card Container PC */
 @media screen and (min-width: 1280px) {
   .main-challenges-title {
+    font-size: 30px;
     margin-bottom: 4rem;
   }
   .card-container {
@@ -419,7 +420,7 @@ button {
     margin-bottom: 2rem;
   }
   .card-container small {
-    display: none;
+    margin-left: 9rem;
   }
   .card-container__card {
     box-shadow: #b6bdb5 0px 5px 15px;
@@ -437,23 +438,24 @@ button {
     color: white;
   }
   .card-container h3 {
+    margin-top: 0.5rem;
     margin-bottom: 0;
     font-weight: 400;
+    font-size: 20px;
     margin-left: 5%;
   }
   .card-container__star-container {
+    display: flex;
+    align-items: center;
     margin-top: 0.3rem;
-    margin-left: 5%;
+    margin-left: 1rem;
   }
   .card-container p {
     margin: 5%;
   }
   .card-container img {
     margin-bottom: 0.5rem;
-  }
-  .card-container span {
-    font-size: 13px;
-    margin-left: 3.5rem;
+    margin-left: 0.3rem;
   }
 }
 

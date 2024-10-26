@@ -152,6 +152,7 @@ button {
     }
     p {
       margin-top: 0;
+      font-size: 18px;
     }
   }
 }
@@ -199,9 +200,7 @@ button {
       border-radius: 3px;
       color: white;
     }
-    span {
-      display: none;
-    }
+
     small {
       margin-left: 0.5rem;
     }
@@ -211,6 +210,7 @@ button {
 /* Card Container PC */
 @media screen and (min-width: 1280px) {
   .main-challenges-title {
+    font-size: 30px;
     margin-bottom: 4rem;
   }
   .card-container {
@@ -219,7 +219,7 @@ button {
     margin-bottom: 2rem;
 
     small {
-      display: none;
+      margin-left: 9rem;
     }
 
     &__card {
@@ -228,6 +228,7 @@ button {
       border-radius: 1rem;
       margin: 0 1rem 5% 1rem;
     }
+
     &__button {
       background-color: $red;
       border: none;
@@ -237,26 +238,29 @@ button {
       border-radius: 3px;
       color: white;
     }
+
     h3 {
+      margin-top: 0.5rem;
       margin-bottom: 0;
       font-weight: 400;
+      font-size: 20px;
       margin-left: 5%;
     }
 
     &__star-container {
+      display: flex;
+      align-items: center;
       margin-top: 0.3rem;
-      margin-left: 5%;
+      margin-left: 1rem;
     }
 
     p {
       margin: 5%;
     }
+
     img {
       margin-bottom: 0.5rem;
-    }
-    span {
-      font-size: 13px;
-      margin-left: 3.5rem;
+      margin-left: 0.3rem;
     }
   }
 }
