@@ -344,6 +344,11 @@ button {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 1280px) and (max-width: 392px) {
+  .quote-container small {
+    margin-left: 25%;
+  }
+}
 /* Quote Section PC */
 @media screen and (min-width: 1280px) {
   .quote-container {
