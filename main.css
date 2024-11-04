@@ -1,34 +1,41 @@
-header {
-  background-color: #011827;
-  /* Phone */
-  /* PC */
-}
-header h1 {
-  color: white;
-}
+/* Phone */
 @media screen and (max-width: 1280px) {
   header {
-    width: 100%;
-    display: flex;
+    background-color: #011827;
   }
   header img {
     margin: 5% 2% 5% 5%;
   }
   header h1 {
-    display: inline;
-    margin: auto 0;
-    width: 5%;
+    display: inline-block;
+    position: absolute;
+    color: white;
+    width: 4rem;
     font-size: 22px;
+    margin: 4.9% 1% 5% 2%;
   }
-  header a {
+  header nav {
     display: none;
   }
+  header button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    margin-top: 5%;
+    right: 1rem;
+  }
 }
+/* PC */
 @media screen and (min-width: 1280px) {
   header {
+    color: white;
+    background-color: #011827;
     margin-left: auto;
     margin-right: auto;
     max-width: 1280px;
+  }
+  header button {
+    display: none;
   }
   header img {
     margin: 1% 0 0 1%;
@@ -55,7 +62,6 @@ header h1 {
     color: #8acfe5;
   }
 }
-
 /* Coder picture code for phone */
 @media screen and (max-width: 1280px) {
   .coder-section__img {
