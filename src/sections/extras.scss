@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+.phone-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90vw;
+  height: 90vh;
+  z-index: 100;
+  background-color: $darkBlue;
+}
+
+.close-nav-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: transparent;
+  border: none;
+}

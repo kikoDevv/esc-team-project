@@ -3,6 +3,7 @@
 @use "header";
 @use "section";
 @use "footer";
+@use "extras" as *;
 
 /* Phone and PC */
 html {
@@ -16,10 +17,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-}
-
-html {
-  background-color: $darkBlue;
 }
 
 button {
@@ -70,6 +67,10 @@ button {
 
 /* Button Wrapper PC */
 @media screen and (min-width: 1280px) {
+  html {
+    background-color: $darkBlue;
+  }
+
   .button-wrapper {
     display: flex;
     justify-content: center;

@@ -16,28 +16,11 @@
   }
   header nav {
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    position: absolute;
-    top: 2.5%;
-    left: 2.5%;
-    background-color: #011827;
-    width: 95vw;
-    height: 95vh;
   }
   header nav a {
     color: white;
     text-decoration: none;
     font-size: 24px;
-  }
-  header nav .exitNavButton {
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    top: 2%;
-    right: 2%;
   }
   header .hamburger-button {
     background-color: transparent;
@@ -248,6 +231,32 @@
   }
 }
 
+.phone-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90vw;
+  height: 90vh;
+  z-index: 100;
+  background-color: #011827;
+}
+
+.close-nav-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: transparent;
+  border: none;
+}
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
@@ -260,10 +269,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-}
-
-html {
-  background-color: #011827;
 }
 
 button {
@@ -313,6 +318,9 @@ button {
 }
 /* Button Wrapper PC */
 @media screen and (min-width: 1280px) {
+  html {
+    background-color: #011827;
+  }
   .button-wrapper {
     display: flex;
     justify-content: center;
