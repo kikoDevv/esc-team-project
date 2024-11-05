@@ -25,20 +25,23 @@
       align-items: center;
       gap: 3rem;
       position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background-color: green;
-      width: 90%;
-      height: 90vh;
+      top: 2.5%;
+      left: 2.5%;
+      background-color: $darkBlue;
+      width: 95vw;
+      height: 95vh;
 
       a {
         color: white;
         text-decoration: none;
         font-size: 24px;
       }
+      .exitNavButton {
+        background-color: transparent;
+      }
     }
 
-    button {
+    .hamburger-button {
       background-color: transparent;
       border: none;
       position: absolute;
