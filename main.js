@@ -10,7 +10,15 @@ hamburgerButton.addEventListener("click", () => {
   exitNavButtonImg.setAttribute("src", "./pictures/nav-button-close.png");
   exitNavButton.classList.add("exitNavButton");
   headerNav.style.display = "flex";
+
+  exitNavButtonImg.addEventListener("click", () => {
+    headerNav.style.display = "none";
+  });
 });
+
+/* exitNavButtonImg.addEventListener("click", () => {
+  console.log("Exit Button was pressed!");
+}); */
 
 /* const allElements = document.querySelectorAll("*");
 

@@ -34,6 +34,10 @@
   }
   header nav .exitNavButton {
     background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 2%;
+    right: 2%;
   }
   header .hamburger-button {
     background-color: transparent;
