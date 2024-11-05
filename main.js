@@ -1,8 +1,8 @@
 const hamburgerButton = document.querySelector(".hamburger-button");
 const headerNav = document.querySelector(".header-nav");
+const container = document.querySelector(".container");
 
 hamburgerButton.addEventListener("click", () => {
-  document.querySelector(".container").style.opacity = "0.5";
   hamburgerButton.style.display = "none";
   const nav = document.createElement("nav");
   const closeNavBtn = document.createElement("button");
@@ -13,6 +13,8 @@ hamburgerButton.addEventListener("click", () => {
   document.body.prepend(nav);
   nav.appendChild(closeNavBtn);
   closeNavBtn.appendChild(img);
+
+  container.classList.add("opacity-transition");
 
   const aTexts = ["Play online", "Play on-site", "The story", "Contact us"];
   const aTextsHref = ["#", "#", "#", "#"];
@@ -25,7 +27,7 @@ hamburgerButton.addEventListener("click", () => {
 
   closeNavBtn.addEventListener("click", () => {
     nav.remove();
-    document.querySelector(".container").style.opacity = "1";
+    document.querySelector(".container").classList.remove("opacity-transition");
     hamburgerButton.style.display = "inline";
   });
 });
