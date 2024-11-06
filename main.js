@@ -10,6 +10,9 @@ hamburgerButton.addEventListener("click", () => {
   img.setAttribute("src", "./pictures/nav-button-close.png");
   nav.classList.add("phone-nav");
   closeNavBtn.classList.add("close-nav-btn");
+  setTimeout(() => {
+    closeNavBtn.classList.add("hidden-to-visible-transition");
+  }, 10);
   document.body.prepend(nav);
   nav.appendChild(closeNavBtn);
   closeNavBtn.appendChild(img);
@@ -17,7 +20,7 @@ hamburgerButton.addEventListener("click", () => {
   container.classList.add("opacity-transition");
 
   const aTexts = ["Play online", "Play on-site", "The story", "Contact us"];
-  const aTextsHref = ["#", "#", "#", "#"];
+  /*   const aTextsHref = ["#", "#", "#", "#"]; */
 
   for (let i = 0; i < 4; i++) {
     const a = document.createElement("a");

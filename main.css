@@ -249,10 +249,16 @@
 
 .close-nav-btn {
   position: absolute;
+  opacity: 0;
   top: 5%;
   right: 5%;
   background-color: transparent;
   border: none;
+  transition: opacity 2s 0.2s;
+}
+
+.hidden-to-visible-transition {
+  opacity: 1;
 }
 
 .opacity-transition {
