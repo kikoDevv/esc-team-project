@@ -241,12 +241,10 @@
   font-weight: 700;
   color: white;
   position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 90vw;
-  height: 90vh;
   z-index: 100;
   background-color: #011827;
+  animation: opacityGrow 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .close-nav-btn {
@@ -261,6 +259,22 @@
   opacity: 0.5;
 }
 
+@keyframes opacityGrow {
+  0% {
+    opacity: 0;
+    top: 10%;
+    left: 10%;
+    width: 80vw;
+    height: 80vh;
+  }
+  100% {
+    opacity: 1;
+    top: 5%;
+    left: 5%;
+    width: 90vw;
+    height: 90vh;
+  }
+}
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
