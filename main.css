@@ -239,7 +239,7 @@
   font-size: 24px;
   font-weight: 700;
   color: white;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   background-color: #011827;
   animation: opacityGrow 0.5s;

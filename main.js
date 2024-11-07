@@ -19,7 +19,7 @@ hamburgerButton.addEventListener("click", () => {
 
   container.classList.add("opacity-transition");
 
-  const aTexts = ["Play online", "Play on-site", "The story", "Contact us"];
+  const aTexts = ["Play online", "Play on-site", "The story", "Contact"];
   /*   const aTextsHref = ["#", "#", "#", "#"]; */
 
   for (let i = 0; i < 4; i++) {
