@@ -448,12 +448,15 @@ button {
     justify-content: space-between;
     width: 100%;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
   }
   .card-container__card {
     box-shadow: #b6bdb5 0px 5px 15px;
     flex: 0 0 300px;
     border-radius: 1rem;
     margin: 0 1rem 5% 1rem;
+    scroll-snap-align: center;
   }
   .card-container h3 {
     font-weight: 400;
