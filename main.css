@@ -109,6 +109,7 @@
   background-color: #011827;
   border: solid 1px #8acfe5;
   color: #8acfe5;
+  border-radius: 4px;
 }
 .story-container__text {
   color: white;
@@ -135,6 +136,7 @@
     width: 65%;
     height: 3rem;
     margin-right: 25%;
+    border-radius: 3px;
   }
   .play-info-container__content {
     display: flex;
@@ -186,6 +188,7 @@
     border: none;
     color: white;
     font-size: 20px;
+    border-radius: 4px;
   }
 }
 /* Footer Styling */
@@ -331,6 +334,7 @@ button {
     height: 4.125rem;
     font-size: 22px;
     font-weight: 700;
+    border-radius: 4px;
   }
   .button-wrapper__anchor {
     color: #36769d;
@@ -348,6 +352,7 @@ button {
   .button-wrapper {
     display: flex;
     justify-content: center;
+
   }
   .button-wrapper__online {
     border: none;
@@ -358,6 +363,7 @@ button {
     font-size: 22px;
     font-weight: 700;
     color: white;
+    border-radius: 4px;
   }
   .button-wrapper__onsite {
     border: none;
@@ -367,6 +373,7 @@ button {
     margin-left: 1rem;
     font-size: 22px;
     font-weight: 700;
+    border-radius: 4px;
   }
   .button-wrapper__first {
     transform: translateY(-30px);
