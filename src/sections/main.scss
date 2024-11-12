@@ -7,262 +7,262 @@
 
 /* Phone and PC */
 html {
-  font-family: roboto, sans-serif;
-  font-size: 16px;
+   font-family: roboto, sans-serif;
+   font-size: 16px;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   overflow-x: hidden;
 }
 
 button {
-  font-family: roboto, sans-serif;
+   font-family: roboto, sans-serif;
 }
 
 .container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  transition: opacity 0.5s;
+   max-width: 1280px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: white;
+   transition: opacity 0.5s;
 }
 
 .main-challenges-title {
-  text-align: center;
-  font-weight: 400;
-  font-size: 26px;
+   text-align: center;
+   font-weight: 400;
+   font-size: 26px;
 }
 
 /* Button Wrapper Phone */
 @media screen and (max-width: 1280px) {
-  .button-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__online {
-      display: none;
-    }
-    &__onsite {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      border: none;
-      background-color: $lightBlue;
-      width: 19.25rem;
-      height: 4.125rem;
-      font-size: 22px;
-      font-weight: 700;
-    }
-    &__anchor {
-      color: $blue;
-      margin-bottom: 2rem;
-    }
-    &__anchor:visited {
-      color: $blue;
-    }
-  }
+   .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__online {
+         display: none;
+      }
+      &__onsite {
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+         border: none;
+         background-color: $lightBlue;
+         width: 19.25rem;
+         height: 4.125rem;
+         font-size: 22px;
+         font-weight: 700;
+      }
+      &__anchor {
+         color: $blue;
+         margin-bottom: 2rem;
+      }
+      &__anchor:visited {
+         color: $blue;
+      }
+   }
 }
 
 /* Button Wrapper PC */
 @media screen and (min-width: 1280px) {
-  html {
-    background-color: $darkBlue;
-  }
+   html {
+      background-color: $darkBlue;
+   }
 
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
+   .button-wrapper {
+      display: flex;
+      justify-content: center;
 
-    &__online {
-      border: none;
-      background-color: $red;
-      display: inline;
-      @include button-size;
-      font-size: 22px;
-      font-weight: 700;
-      color: white;
-    }
-    &__onsite {
-      border: none;
-      background-color: $lightBlue;
-      @include button-size;
-      margin-left: 1rem;
-      font-size: 22px;
-      font-weight: 700;
-    }
-    &__first {
-      transform: translateY(-30px);
-    }
-    &__second {
-      margin-bottom: 4rem;
-    }
-    a {
-      display: none;
-    }
-  }
+      &__online {
+         border: none;
+         background-color: $red;
+         display: inline;
+         @include button-size;
+         font-size: 22px;
+         font-weight: 700;
+         color: white;
+      }
+      &__onsite {
+         border: none;
+         background-color: $lightBlue;
+         @include button-size;
+         margin-left: 1rem;
+         font-size: 22px;
+         font-weight: 700;
+      }
+      &__first {
+         transform: translateY(-30px);
+      }
+      &__second {
+         margin-bottom: 4rem;
+      }
+      a {
+         display: none;
+      }
+   }
 }
 
 /* Quote Section Universal */
 .quote-container {
-  p {
-    font-style: italic;
-    margin-bottom: 5px;
-  }
+   p {
+      font-style: italic;
+      margin-bottom: 5px;
+   }
 }
 
 /* Quote Section Phone */
 @media screen and (max-width: 1280px) {
-  .quote-container {
-    margin-top: 4rem;
-    &__quote {
-      img {
-        float: left;
-        margin-right: 5%;
-        margin-left: 3%;
+   .quote-container {
+      margin-top: 4rem;
+      &__quote {
+         img {
+            float: left;
+            margin-right: 5%;
+            margin-left: 3%;
+         }
       }
-    }
-    &__quote--featured {
-      display: none;
-    }
-    p {
-      font-size: 18px;
-    }
-    small {
-      font-size: 16px;
-    }
-    @media screen and (max-width: 392px) {
+      &__quote--featured {
+         display: none;
+      }
+      p {
+         font-size: 18px;
+      }
       small {
-        margin-left: 25%;
+         font-size: 16px;
       }
-    }
-  }
+      @media screen and (max-width: 392px) {
+         small {
+            margin-left: 25%;
+         }
+      }
+   }
 }
 
 /* Quote Section PC */
 @media screen and (min-width: 1280px) {
-  .quote-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    &__quote {
-      width: 35%;
-      img {
-        width: 96px;
+   .quote-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      &__quote {
+         width: 35%;
+         img {
+            width: 96px;
 
-        margin-right: 5%;
-        float: left;
+            margin-right: 5%;
+            float: left;
+         }
       }
-    }
-    p {
-      margin-top: 0;
-      font-size: 18px;
-    }
-  }
+      p {
+         margin-top: 0;
+         font-size: 18px;
+      }
+   }
 }
 
 /* Card-container phone */
 @media screen and (max-width: 1280px) {
-  .main-challenges-title {
-    margin-bottom: 4rem;
-    margin-top: 4rem;
-  }
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-x: auto;
+   .main-challenges-title {
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+   }
+   .card-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      overflow-x: auto;
 
-    &__card {
-      box-shadow: $grey 0px 5px 15px;
-      flex: 0 0 300px;
-      border-radius: 1rem;
-      margin: 0 1rem 5% 1rem;
-    }
+      &__card {
+         box-shadow: $grey 0px 5px 15px;
+         flex: 0 0 300px;
+         border-radius: 1rem;
+         margin: 0 1rem 5% 1rem;
+      }
 
-    h3 {
-      font-weight: 400;
-      margin-left: 5%;
-      margin-bottom: 0;
-    }
+      h3 {
+         font-weight: 400;
+         margin-left: 5%;
+         margin-bottom: 0;
+      }
 
-    &__star-container {
-      margin-top: 0.3rem;
-      margin-left: 5%;
-    }
+      &__star-container {
+         margin-top: 0.3rem;
+         margin-left: 5%;
+      }
 
-    p {
-      margin: 5%;
-    }
+      p {
+         margin: 5%;
+      }
 
-    &__button {
-      background-color: $red;
-      border: none;
-      width: 11rem;
-      height: 2.5rem;
-      margin: 0 auto 5% 45%;
-      border-radius: 3px;
-      color: white;
-    }
+      &__button {
+         background-color: $red;
+         border: none;
+         width: 11rem;
+         height: 2.5rem;
+         margin: 0 auto 5% 45%;
+         border-radius: 3px;
+         color: white;
+      }
 
-    small {
-      margin-left: 0.5rem;
-    }
-  }
+      small {
+         margin-left: 0.5rem;
+      }
+   }
 }
 
 /* Card Container PC */
 @media screen and (min-width: 1280px) {
-  .main-challenges-title {
-    font-size: 30px;
-    margin-bottom: 4rem;
-  }
-  .card-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-
-    small {
-      margin-left: 9rem;
-    }
-
-    &__card {
-      box-shadow: $grey 0px 5px 15px;
-      flex: 0 0 300px;
-      border-radius: 1rem;
-      margin: 0 1rem 5% 1rem;
-    }
-
-    &__button {
-      background-color: $red;
-      border: none;
-      width: 11rem;
-      height: 2.5rem;
-      margin: 0 auto 5% 45%;
-      border-radius: 3px;
-      color: white;
-    }
-
-    h3 {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-      font-weight: 400;
-      font-size: 20px;
-      margin-left: 5%;
-    }
-
-    &__star-container {
+   .main-challenges-title {
+      font-size: 30px;
+      margin-bottom: 4rem;
+   }
+   .card-container {
       display: flex;
-      align-items: center;
-      margin-top: 0.3rem;
-      margin-left: 1rem;
-    }
+      justify-content: center;
+      margin-bottom: 2rem;
 
-    p {
-      margin: 5%;
-    }
-  }
+      small {
+         margin-left: 9rem;
+      }
+
+      &__card {
+         box-shadow: $grey 0px 5px 15px;
+         flex: 0 0 300px;
+         border-radius: 1rem;
+         margin: 0 1rem 5% 1rem;
+      }
+
+      &__button {
+         background-color: $red;
+         border: none;
+         width: 11rem;
+         height: 2.5rem;
+         margin: 0 auto 5% 45%;
+         border-radius: 3px;
+         color: white;
+      }
+
+      h3 {
+         margin-top: 0.5rem;
+         margin-bottom: 0;
+         font-weight: 400;
+         font-size: 20px;
+         margin-left: 5%;
+      }
+
+      &__star-container {
+         display: flex;
+         align-items: center;
+         margin-top: 0.3rem;
+         margin-left: 1rem;
+      }
+
+      p {
+         margin: 5%;
+      }
+   }
 }
