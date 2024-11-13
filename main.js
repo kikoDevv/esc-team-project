@@ -127,4 +127,3 @@ function changeCards(data) {
   cardImageTwo.src = data.challenges[1].image;
   cardImageThree.src = data.challenges[2].image;
 }
-card - container__img;
