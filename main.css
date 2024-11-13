@@ -109,7 +109,6 @@
   background-color: #011827;
   border: solid 1px #8acfe5;
   color: #8acfe5;
-  border-radius: 4px;
 }
 .story-container__text {
   color: white;
@@ -136,7 +135,6 @@
     width: 65%;
     height: 3rem;
     margin-right: 25%;
-    border-radius: 3px;
   }
   .play-info-container__content {
     display: flex;
@@ -188,7 +186,6 @@
     border: none;
     color: white;
     font-size: 20px;
-    border-radius: 4px;
   }
 }
 /* Footer Styling */
@@ -283,6 +280,14 @@
     height: 90vh;
   }
 }
+.cutInHalf {
+  clip-path: inset(0 50% 0 0);
+}
+
+/* .hidden {
+  display: none;
+}
+ */
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
@@ -334,7 +339,6 @@ button {
     height: 4.125rem;
     font-size: 22px;
     font-weight: 700;
-    border-radius: 4px;
   }
   .button-wrapper__anchor {
     color: #36769d;
@@ -352,7 +356,6 @@ button {
   .button-wrapper {
     display: flex;
     justify-content: center;
-
   }
   .button-wrapper__online {
     border: none;
@@ -363,7 +366,6 @@ button {
     font-size: 22px;
     font-weight: 700;
     color: white;
-    border-radius: 4px;
   }
   .button-wrapper__onsite {
     border: none;
@@ -373,7 +375,6 @@ button {
     margin-left: 1rem;
     font-size: 22px;
     font-weight: 700;
-    border-radius: 4px;
   }
   .button-wrapper__first {
     transform: translateY(-30px);
@@ -448,15 +449,12 @@ button {
     justify-content: space-between;
     width: 100%;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: center;
   }
   .card-container__card {
     box-shadow: #b6bdb5 0px 5px 15px;
     flex: 0 0 300px;
     border-radius: 1rem;
     margin: 0 1rem 5% 1rem;
-    scroll-snap-align: center;
   }
   .card-container h3 {
     font-weight: 400;
@@ -496,6 +494,12 @@ button {
   }
   .card-container small {
     margin-left: 9rem;
+  }
+  .card-container__img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 364px;
+    height: 219px;
   }
   .card-container__card {
     box-shadow: #b6bdb5 0px 5px 15px;

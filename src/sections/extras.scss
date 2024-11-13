@@ -50,3 +50,12 @@
     height: 90vh;
   }
 }
+
+.cutInHalf {
+  clip-path: inset(0 50% 0 0);
+}
+
+/* .hidden {
+  display: none;
+}
+ */
