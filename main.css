@@ -284,10 +284,10 @@
   clip-path: inset(0 50% 0 0);
 }
 
-/* .hidden {
+.hidden {
   display: none;
 }
- */
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;

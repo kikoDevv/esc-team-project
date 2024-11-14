@@ -64,6 +64,10 @@ const cardImageOne = document.querySelector(".card-container__img-one");
 const cardImageTwo = document.querySelector(".card-container__img-two");
 const cardImageThree = document.querySelector(".card-container__img-three");
 
+const cardRating0 = document.querySelector(".card-one-rating");
+const cardRating1 = document.querySelector(".card-two-rating");
+const cardRating2 = document.querySelector(".card-three-rating");
+
 async function fetchSortAndFindTopIds() {
   try {
     // Fetch data from the API
@@ -126,4 +130,43 @@ function changeCards(data) {
   cardImageOne.src = data.challenges[0].image;
   cardImageTwo.src = data.challenges[1].image;
   cardImageThree.src = data.challenges[2].image;
+
+  for (let i = 0; i < 3; i++) {
+    const ratingVar = data.challenges[i].rating;
+    const ratingArr = [cardRating0, cardRating1, cardRating2];
+    switch (ratingVar) {
+      case 0:
+        break;
+      case 0.5:
+        ratingArr[i].src = "pictures/0.5-star.png";
+        break;
+      case 1:
+        ratingArr[i].src = "pictures/1-stars.png";
+        break;
+      case 1.5:
+        ratingArr[i].src = "pictures/1.5-star.png";
+        break;
+      case 2:
+        ratingArr[i].src = "pictures/2-stars.png";
+        break;
+      case 2.5:
+        ratingArr[i].src = "pictures/2.5-stars.png";
+        break;
+      case 3:
+        ratingArr[i].src = "pictures/3-stars.png";
+        break;
+      case 3.5:
+        ratingArr[i].src = "pictures/3.5-stars.png";
+        break;
+      case 4:
+        ratingArr[i].src = "pictures/4-stars.png";
+        break;
+      case 4.5:
+        ratingArr[i].src = "pictures/4.5-stars.png";
+        break;
+      case 5:
+        ratingArr[i].src = "pictures/5-stars.png";
+        break;
+    }
+  }
 }
