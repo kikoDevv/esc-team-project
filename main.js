@@ -64,10 +64,6 @@ const cardImageOne = document.querySelector(".card-container__img-one");
 const cardImageTwo = document.querySelector(".card-container__img-two");
 const cardImageThree = document.querySelector(".card-container__img-three");
 
-const cardRating0 = document.querySelector(".card-one-rating");
-const cardRating1 = document.querySelector(".card-two-rating");
-const cardRating2 = document.querySelector(".card-three-rating");
-
 async function fetchSortAndFindTopIds() {
   try {
     // Fetch data from the API
@@ -131,42 +127,84 @@ function changeCards(data) {
   cardImageTwo.src = data.challenges[1].image;
   cardImageThree.src = data.challenges[2].image;
 
-  for (let i = 0; i < 3; i++) {
+  const starContainers = Array.from(
+    document.querySelectorAll(".card-container__star-container")
+  );
+
+  /* for (let i = 0; i < starContainers.length; i++) {
     const ratingVar = data.challenges[i].rating;
-    const ratingArr = [cardRating0, cardRating1, cardRating2];
+    const createI1 = document.createElement("i");
+    const createI2 = document.createElement("i");
+    const createI3 = document.createElement("i");
+    const createI4 = document.createElement("i");
+    const createI5 = document.createElement("i");
+
     switch (ratingVar) {
       case 0:
+        console.log("case 0 was run");
+                 createI.classList.add("fa-regular", "fa-star");
+        createI.style.color = "#ff0000";
+        starContainers[i].appendChild(createI);
+        starContainers[i].appendChild(createI);
+        starContainers[i].appendChild(createI);
+        starContainers[i].appendChild(createI);
+        starContainers[i].appendChild(createI); 
         break;
       case 0.5:
-        ratingArr[i].src = "pictures/0.5-star.png";
+        console.log("case 0.5 was run");
         break;
       case 1:
-        ratingArr[i].src = "pictures/1-stars.png";
+        console.log("case 1 was run");
         break;
       case 1.5:
-        ratingArr[i].src = "pictures/1.5-star.png";
+        console.log("case 1.5 was run");
         break;
       case 2:
-        ratingArr[i].src = "pictures/2-stars.png";
+        console.log("case 2 was run");
         break;
       case 2.5:
-        ratingArr[i].src = "pictures/2.5-stars.png";
+        console.log("case 2.5 was run");
         break;
       case 3:
-        ratingArr[i].src = "pictures/3-stars.png";
+        console.log("case 3 was run");
         break;
       case 3.5:
-        ratingArr[i].src = "pictures/3.5-stars.png";
+        console.log("case 3.5 was run");
         break;
       case 4:
-        ratingArr[i].src = "pictures/4-stars.png";
+        createI1.classList.add("fa-solid", "fa-star", "red");
+        createI2.classList.add("fa-solid", "fa-star", "red");
+        createI3.classList.add("fa-solid", "fa-star", "red");
+        createI4.classList.add("fa-solid", "fa-star", "red");
+        createI5.classList.add("fa-regular", "fa-star-half-stroke", "red");
+        starContainers[i].prepend(
+          createI1,
+          createI2,
+          createI3,
+          createI4,
+          createI5
+        );
         break;
       case 4.5:
-        ratingArr[i].src = "pictures/4.5-stars.png";
+        console.log("case 4.5 was run");
+                 createI.classList.add("fa-regular", "fa-star"); 
+                 createI.style.color = "#ff0000"; 
+        createI1.classList.add("fa-solid", "fa-star", "red");
+        createI2.classList.add("fa-solid", "fa-star", "red");
+        createI3.classList.add("fa-solid", "fa-star", "red");
+        createI4.classList.add("fa-solid", "fa-star", "red");
+        createI5.classList.add("fa-regular", "fa-star-half-stroke", "red");
+        starContainers[i].prepend(
+          createI1,
+          createI2,
+          createI3,
+          createI4,
+          createI5
+        );
         break;
       case 5:
-        ratingArr[i].src = "pictures/5-stars.png";
+        console.log("case 5 was run");
         break;
     }
-  }
+  } */
 }

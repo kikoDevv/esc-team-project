@@ -288,6 +288,10 @@
   display: none;
 }
 
+.red {
+  color: #ff0000;
+}
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
