@@ -77,14 +77,29 @@ body {
    font-size: 3vw;
    padding: 0px 0px 0px 5px;
 }
-.ourChallengesTitle{
-   place-self: center;
-   margin-top: 100px;
+.containsBtn-Title{
+   justify-self: center;
+   margin-top: 50px;
+}
+.filterChallengesBtn{
+   /* display: none; */
+   margin: 0px 0px 50px 17px;
+   padding: 10px;
+   border-radius: 5px;
+   background-color: white;
+   color:#6558f5;
+   border: none;
+   box-shadow: #6558f5  0px 0px 4px 0.08px;
+   cursor: pointer;
+}
+.filterChallengesBtn:hover{
+   background-color: #6558f5;
+   color: white;
 }
 /*-----------------------------filterSection--------------*/
 .filterSection{
    display: grid;
-   /* display: none; */
+   display: none;
    margin: 50px 20px;
    box-shadow: #101827  0px 0px 4px 0.08px;
    border-radius: 10px;
