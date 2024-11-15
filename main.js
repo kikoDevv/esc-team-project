@@ -43,16 +43,25 @@ const onlineButtons = document.querySelectorAll(".button-wrapper__online");
 const onsiteButtonsArray = Array.from(onsiteButtons);
 const onlineButtonsArray = Array.from(onlineButtons);
 
-/* Loop eventlisteners for onsite buttons */
+/* Eventlisteners for singe buttons */
+
+function seeAllChallenges () {
+  window.location.href = "./challenges.html";
+}
+
+
+/* Loop eventlisteners for onsite and online buttons */
 
 for (let i = 0; i < onsiteButtonsArray.length; i++) {
   onsiteButtonsArray[i].addEventListener("click", () => {
+    window.location.href = "./challenges.html";
     console.log("Onsite pressed");
   });
 }
 
 for (let i = 0; i < onlineButtonsArray.length; i++) {
   onlineButtonsArray[i].addEventListener("click", () => {
+    window.location.href = "./challenges.html";
     console.log("Online pressed");
   });
 }
@@ -371,3 +380,9 @@ function changeCards(data) {
     }
   }
 }
+
+
+// const allChallengesButton = document.querySelector(".play-info-container__button");
+// allChallengesButton.addEventListener("click", () => {
+//   window.location.href = "./challenges.html";
+// });
