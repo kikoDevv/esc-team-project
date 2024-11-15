@@ -1,341 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>challenges</title>
-      <!-- Link to my stylesheet, Google Fonts, and Font Awesome for icons -->
-      <link rel="stylesheet" href="style-challenges.css" />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-         rel="stylesheet" />
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-         crossorigin="anonymous"
-         referrerpolicy="no-referrer" />
-   </head>
-   <body>
-      <!-- Header section containin logo, title, and navigation menu -->
-      <header class="headSection">
-         <div id="logo-title">
-            <div id="reqtangel">
-               <!-- The letters ESC in a stylized rectangle -->
-               <p class="esc">E</p>
-               <p class="esc">S</p>
-               <p class="esc">C</p>
-            </div>
-            <h1 id="title">Hacker Escape Rooms</h1>
-         </div>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ESC Challenges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./pictures/logo.png" alt="Hacker Escape Rooms Logo" />
+      <h1>Hacker Escape Rooms</h1>
+      <button class="hamburger-button">
+        <img src="./pictures/nav-button-phone.png" />
+      </button>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="#">Play online</a>
+        <a href="#">Play on-site</a>
+        <a href="#">The story</a>
+        <a href="#">Contact us</a>
+      </nav>
+    </header>
 
-         <!-- Hamburger menu for mobile view -->
-         <nav class="navBar">
-            <ul class="navBarItems">
-               <li class="navLi">Play online</li>
-               <li class="navLi">Play on-site</li>
-               <li class="navLi">The story</li>
-               <li class="navLi">Contact us</li>
-            </ul>
-         </nav>
-      </header>
-      <main>
-        <div class="containsBtn-Title">
-         <h2 class="ourChallengesTitle">Our challenges</h2>
-         <button class="filterChallengesBtn">Filter challenges</button>
-        </div>
-         <!--------------------------------------Filter Section------------------------------->
-         <section class="filterSection">
-            <div class="itemsOne">
-               <p>Filter Challenges</p>
-               <button>x</button>
-            </div>
-            <div class="itemsTow">
-               <p>By type</p>
-               <p>By rating</p>
-               <p>By tags</p>
-            </div>
-            <!--------------------Items holder 3--------->
-            <div class="itemsThree">
-               <div>
-                  <input id="includeOnline" type="checkbox" />
-                  <label for="includeOnline">Include Online challenges</label>
-               </div>
-               <div class="starsContainer">
-                  <div>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-regular fa-star"></i>
-                  </div>
-                  <p>To</p>
-                  <div>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-regular fa-star"></i>
-                  </div>
-               </div>
-               <!--tags button-->
-               <div class="tagsContainer">
-                  <button class="tags">Web</button>
-                  <button class="tags">Linux</button>
-                  <button class="tags">Cryptography</button>
-                  <button class="tags">Coding</button>
-               </div>
-            </div>
-            <!---------------------->
+    <footer class="footer">
+      <div class="footer__info">
+        <h2 class="footer__brand">[Esc] Hacker Escape Rooms</h2>
+        <p>
+          Quodsi haberent magnalia inter potentiam et divitias, et non illam
+          quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+          felicitatis libertatisque perficiuntur.
+        </p>
+      </div>
 
-            <!---------------------Items holder 4------------------>
-            <div class="itemsFour">
-               <div>
-                  <input id="includeOnsite" type="checkbox" />
-                  <label for="includeOnsite">Include On-site challenges</label>
-               </div>
-               <div class="tagsContainer">
-                  <button class="tags">Some other tag</button>
-                  <button class="tags">A final tag</button>
-               </div>
-            </div>
-            <!----------------->
-            <!------------------------items holder 5------------->
-            <div class="itemsFive">
-               <p>Or type to search for keyword</p>
-               <input
-                  type="text"
-                  class="filterInput"
-                  placeholder="Start typing or filter" />
-            </div>
-         </section>
+      <nav class="footer__nav" aria-label="Footer Navigation">
+        <h3 class="footer__nav-title">Site map</h3>
+        <ul class="footer__nav-list">
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              >The Story</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              >Contact Us</a
+            >
+          </li>
+          <li class="footer__nav-list-legal">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Legal</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              >Play online</a
+            >
+          </li>
 
-         <!--------------------------card-container--------------------------->
-         <section class="sliderSection">
-            <!-- First card in the slider -->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <!-- Rating icons and participant count -->
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-            <!--Card 2-->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-            <!--Card 3-->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-            <!--card 4-->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-            <!--Card 5-->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-            <!--card 6-->
-            <div class="card">
-               <img
-                  src="bilder/hacker.png"
-                  class="sliderImg"
-                  alt="Hacker image not found!"
-                  srcset="
-                     bilder/hacker400.png   400w,
-                     bilder/hacker800.png   800w,
-                     bilder/hacker1600.png 1600w
-                  " />
-               <div class="textAndBtn">
-                  <p>Title of room (on-site)</p>
-                  <div class="starsAndParticipant">
-                     <div>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                     </div>
-                     <p>2-6 participants</p>
-                  </div>
-                  <p>
-                     Praeterea, ex culpa non invenies unum aut non accusatis
-                     unum. Et nihil inuitam. Nemo nocere tibi erit, et non
-                     inimicos, et
-                  </p>
-                  <button class="cardBtn">Book this room</button>
-               </div>
-            </div>
-         </section>
-      </main>
-      <!----------------------------->
-      <!--Footer with contact information and social media links-->
-      <footer class="foter">
-         <div>
-            <h1>[Esc] Hacker Escape Rooms</h1>
-            <p>
-               Quodsi haberent magnalia inter potentiam et divitias, et non
-               illam quidem haec eo spectant haec quoque vos omnino desit illud
-               quo solo felicitatis libertatisque perficiuntur.
-            </p>
-         </div>
-         <div>
-            <h1>Site map</h1>
-            <p>
-               The Story
-               <br />
-               Contact Us
-               <br />
-               Legal
-               <br />
-               Play online Play on-site.
-            </p>
-         </div>
-         <div>
-            <h1>Follow us on</h1>
-            <p>
-               Facebook
-               <br />
-               Instagram
-               <br />
-               Twitter
-            </p>
-         </div>
-      </footer>
+          <li>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              >Play on-site</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-      <script src="main.js"></script>
-   </body>
+      <div class="footer__social">
+        <h3 class="footer__social-title">Follow us on</h3>
+        <ul class="footer__nav-social">
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.Twitter.com/">Twitter</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+  </body>
 </html>
