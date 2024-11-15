@@ -77,104 +77,84 @@ body {
    font-size: 3vw;
    padding: 0px 0px 0px 5px;
 }
-.containsBtn-Title{
+.containsBtn-Title {
    justify-self: center;
    margin-top: 50px;
 }
-.filterChallengesBtn{
+.filterChallengesBtn {
    /* display: none; */
    margin: 0px 0px 50px 17px;
    padding: 10px;
    border-radius: 5px;
    background-color: white;
-   color:#6558f5;
+   color: #6558f5;
    border: none;
-   box-shadow: #6558f5  0px 0px 4px 0.08px;
+   box-shadow: #6558f5 0px 0px 4px 0.08px;
    cursor: pointer;
 }
-.filterChallengesBtn:hover{
+.filterChallengesBtn:hover {
    background-color: #6558f5;
    color: white;
 }
 /*-----------------------------filterSection--------------*/
-.filterSection{
+.filterSection {
    display: grid;
    display: none;
    margin: 50px 20px;
-   box-shadow: #101827  0px 0px 4px 0.08px;
+   box-shadow: #101827 0px 0px 4px 0.08px;
    border-radius: 10px;
 }
-.filterSection p{
+.filterSection p {
    margin: 0px;
 }
-.itemsOne{
+.itemsOne {
    display: flex;
    justify-content: space-between;
    padding: 20px 20px 30px 20px;
 }
-.itemsTow{
+.itemsTow {
    display: flex;
    justify-content: space-between;
    padding: 5px 20px 5px 20px;
 }
-.itemsThree{
+.itemsThree {
    display: flex;
    justify-content: space-between;
    padding: 5px 20px 0px 15px;
 }
-.itemsFour{
+.itemsFour {
    display: flex;
    justify-content: space-between;
    padding: 5px 83px 20px 15px;
 }
-.itemsFive{
+.itemsFive {
    display: grid;
    justify-self: center;
    margin: 50px 57px 0px 0px;
    padding: 20px 5px;
    gap: 10px;
 }
-.starsContainer{
+.starsContainer {
    display: flex;
    gap: 20px;
 }
-.tagsContainer button{
+.tagsContainer button {
    border: none;
    border-radius: 20px;
-   box-shadow: black  0px 0px 1px 0.3px;
+   box-shadow: black 0px 0px 1px 0.3px;
 }
-.tagsContainer button:hover{
+.tagsContainer button:hover {
    background-color: #788797;
    color: white;
    cursor: pointer;
 }
-.filterInput{
+.filterInput {
    padding: 10px 111px 10px 10px;
    border: none;
    border-radius: 5px;
-   box-shadow: black  0px 0px 1px 0.3px;
+   box-shadow: black 0px 0px 1px 0.3px;
 }
 /*----------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*------------------------*/
 /*style for the slider section*/
