@@ -1,0 +1,331 @@
+/*root colors from figma design for buttons and background.*/
+:root {
+   --redBtnColor: #e3170a;
+   --blueBtnColor: #8acfe5;
+   --backgroundColor: #011827;
+   --HoverColor: #36769d;
+}
+
+body {
+   margin: 0px;
+   font-family: "Roboto";
+   /*font from figma design*/
+}
+
+.navBarItems {
+   display: flex;
+   /*telling contants to stay horizontal*/
+   justify-content: center;
+   /*stay in center*/
+   margin: 0px;
+   /*no marign, margin: none; dont work for me*/
+   list-style-type: none;
+   color: white;
+   /*any main color in ul should be white*/
+   justify-content: space-evenly;
+   /*space evently between contens*/
+}
+
+.navLi {
+   float: left;
+   padding: 30px;
+   border-radius: 10px;
+   font-weight: bold;
+}
+
+.navLi:hover {
+   color: var(--HoverColor);
+   /*using universal color navigatin hover*/
+   user-select: none;
+   cursor: pointer;
+}
+
+.headSection {
+   background-color: var(--backgroundColor);
+}
+
+#reqtangel {
+   display: flex;
+   padding: 0px 0px 5px 5px;
+   background-color: var(--backgroundColor);
+   align-items: end;
+   /*telling contents to stay att the end of layout*/
+   border: 5px solid white;
+   /*tellin the regtangel to have a border*/
+   border-radius: 15px;
+   width: 113px;
+   height: 67px;
+}
+
+.esc {
+   background-color: rgb(251, 251, 251);
+   padding: 8px;
+   border-radius: 8px;
+   margin: 0px;
+}
+
+#logo-title {
+   display: flex;
+   align-items: end;
+   padding: 26px 0px 30px 27px;
+}
+#title {
+   margin: 0px;
+   color: white;
+   font-weight: 100;
+   font-weight: bold;
+   font-size: 3vw;
+   padding: 0px 0px 0px 5px;
+}
+.ourChallengesTitle{
+   place-self: center;
+   margin-top: 100px;
+}
+/*-----------------------------filterSection--------------*/
+.filterSection{
+   display: grid;
+   /* display: none; */
+   margin: 50px 20px;
+   box-shadow: #101827  0px 0px 4px 0.08px;
+   border-radius: 10px;
+}
+.filterSection p{
+   margin: 0px;
+}
+.itemsOne{
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 20px 30px 20px;
+}
+.itemsTow{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 20px 5px 20px;
+}
+.itemsThree{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 20px 0px 15px;
+}
+.itemsFour{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 83px 20px 15px;
+}
+.itemsFive{
+   display: grid;
+   justify-self: center;
+   margin: 50px 57px 0px 0px;
+   padding: 20px 5px;
+   gap: 10px;
+}
+.starsContainer{
+   display: flex;
+   gap: 20px;
+}
+.tagsContainer button{
+   border: none;
+   border-radius: 20px;
+   box-shadow: black  0px 0px 1px 0.3px;
+}
+.tagsContainer button:hover{
+   background-color: #788797;
+   color: white;
+   cursor: pointer;
+}
+.filterInput{
+   padding: 10px 111px 10px 10px;
+   border: none;
+   border-radius: 5px;
+   box-shadow: black  0px 0px 1px 0.3px;
+}
+/*----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------*/
+/*style for the slider section*/
+.sliderSection {
+   display: grid;
+   /*telling contents to stay vertically*/
+   grid-template-columns: 1fr 1fr 1fr;
+   /*grid should have 3 columns all the same size*/
+   overflow-x: auto;
+   /*if overflow, use scroll*/
+}
+
+.sliderImg {
+   max-width: 100%;
+   max-height: 100%;
+   border-radius: 15px 15px 0px 0px;
+}
+
+.card {
+   display: grid;
+   margin: 20px;
+   border-radius: 15px;
+   min-width: fit-content;
+   scroll-snap-type: x mandatory;
+   box-shadow: #b6bdb5 0px 5px 15px;
+}
+
+.textAndBtn {
+   display: grid;
+   padding: 0px 15px 15px 15px;
+}
+
+.starsAndParticipant {
+   display: flex;
+   justify-content: space-between;
+}
+
+.fa-solid {
+   color: var(--redBtnColor);
+}
+
+.fa-regular {
+   color: var(--redBtnColor);
+}
+
+.starsAndParticipant p {
+   margin: 0px;
+}
+
+/*style for the buttons inside the sliders card*/
+.cardBtn {
+   background-color: var(--redBtnColor);
+   max-width: fit-content;
+   border: none;
+   justify-self: end;
+   cursor: pointer;
+   padding: 10px;
+   border-radius: 6px;
+}
+
+.cardBtn:hover {
+   background-color: aquamarine;
+   color: black;
+}
+
+.foter {
+   display: grid;
+   height: 460px;
+   background-color: #011827;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 50px;
+   color: white;
+   padding: 0px 20px 50px 20px;
+   height: fit-content;
+   margin-top: 100px;
+}
+/*This blocks of codes should be run when the display is <= 768px*/
+@media (max-width: 768px) {
+   #reqtangel {
+      height: fit-content;
+      padding: 30px 0px 5px 5px;
+   }
+
+   .esc {
+      padding: 7px;
+   }
+   .sliderSection {
+      display: flex;
+      /*telling the sliderSection layout to be change from grid to flex*/
+      overflow-x: auto;
+      /*when contant is overflowing should be scrollable*/
+      scroll-snap-type: x mandatory;
+      scroll-snap-align: center;
+      /*alig in content in center when scrolling is finished*/
+   }
+
+   .card {
+      scroll-snap-align: center;
+      /*telling the each colum inside the sliderSection to be centered once scroll is finished*/
+   }
+
+   #title {
+      max-width: 100px;
+      font-size: 2.7vh;
+      margin: 0px;
+   }
+
+   .btnsHolder {
+      display: grid;
+      padding-top: 30px;
+      justify-content: center;
+      transform: translateY(0px);
+   }
+
+   .imgCard {
+      order: -1;
+   }
+
+   .navBar {
+      display: none;
+   }
+
+   .navBar.active {
+      display: flex;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      min-width: 100%;
+      min-height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.488);
+   }
+
+   .navBarItems {
+      display: grid;
+      background-color: var(--backgroundColor);
+      width: 90%;
+      height: 100vh;
+      margin: 20px;
+      padding: 0px;
+      align-content: center;
+      animation: fadeIn 0.3s ease-in-out;
+      /* box-shadow: 0px 0px 30px 20px white; */
+   }
+
+   .navLi {
+      font-size: x-large;
+      font-weight: bold;
+      /* background-color:black; */
+      color: white;
+      max-height: fit-content;
+      max-width: fit-content;
+      place-self: center;
+   }
+}
+
+/*animation for and transition for hamburger menu*/
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: scale(0.97);
+   }
+
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
