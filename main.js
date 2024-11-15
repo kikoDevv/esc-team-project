@@ -1,4 +1,6 @@
-const hamburgerButton = document.querySelector(".hamburger-button");
+/* This section is for hamburger menu on phone */
+
+/* const hamburgerButton = document.querySelector(".hamburger-button");
 const headerNav = document.querySelector(".header-nav");
 const container = document.querySelector(".container");
 
@@ -18,10 +20,9 @@ hamburgerButton.addEventListener("click", () => {
   closeNavBtn.appendChild(img);
 
   container.classList.add("opacity-transition");
-
-  const aTexts = ["Play online", "Play on-site", "The story", "Contact"];
-  /*   const aTextsHref = ["#", "#", "#", "#"]; */
-
+  const aTexts = ["Play online", "Play on-site", "The story", "Contact"]; */
+/*   const aTextsHref = ["#", "#", "#", "#"]; */
+/* 
   for (let i = 0; i < 4; i++) {
     const a = document.createElement("a");
     a.textContent = aTexts[i];
@@ -33,7 +34,33 @@ hamburgerButton.addEventListener("click", () => {
     document.querySelector(".container").classList.remove("opacity-transition");
     hamburgerButton.style.display = "inline";
   });
-});
+}); */
+
+/* Functions for buttons */
+
+const onsiteButtons = document.querySelectorAll(".button-wrapper__onsite");
+const onlineButtons = document.querySelectorAll(".button-wrapper__online");
+const onsiteButtonsArray = Array.from(onsiteButtons);
+const onlineButtonsArray = Array.from(onlineButtons);
+
+/* Loop eventlisteners for onsite buttons */
+
+for (let i = 0; i < onsiteButtonsArray.length; i++) {
+  onsiteButtonsArray[i].addEventListener("click", () => {
+    console.log("Onsite pressed");
+  });
+}
+
+for (let i = 0; i < onlineButtonsArray.length; i++) {
+  onlineButtonsArray[i].addEventListener("click", () => {
+    console.log("Online pressed");
+  });
+}
+
+console.log(onlineButtonsArray);
+console.log(onsiteButtonsArray);
+
+/* This section calls and applies from the API */
 
 const cardOneTitle = document.querySelector(".card-container__card-one");
 const cardTwoTitle = document.querySelector(".card-container__card-two");
