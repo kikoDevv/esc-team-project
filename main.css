@@ -292,6 +292,29 @@
   color: #ff0000;
 }
 
+/* Styling for challenges.html */
+.challenges-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.challenges-filter-button {
+  width: 10rem;
+  height: 3rem;
+}
+
+/* Styling for sections on challenges site */
+.challenges-filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
@@ -308,6 +331,10 @@ body {
 
 button {
   font-family: roboto, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .container {
