@@ -50,24 +50,25 @@ function createCardsFromAPI(api) {
     const img = document.createElement("img");
     const h3 = document.createElement("h3");
     const stars = createStars(rating[i]);
-    const minParticipants = [];
-    const maxParticipants = [];
+    const participantsText = document.createElement("small");
 
 
     h3.innerText = titles[i];
     img.setAttribute("src", images[i]);
-    
-    div.append(img); 
-    div.append(h3);
+
+    const participants = getParticipants(challenges[i].minParticipants, challenges[i].maxParticipants);
+    participantsText.innerText = participants;
 
     cardContainer.append(div);
+    div.append(img); 
+    div.append(h3);
     stars.forEach((star) => div.appendChild(star));
-    
+    div.append(participantsText);
   }
 }
 
-function getParticipants(minParticipants, maxParticipants, data) {
-
+function getParticipants(minParticipants, maxParticipants) {
+  return `${minParticipants} - ${maxParticipants} participants`;
 }
 
 function createStars(rating) {
