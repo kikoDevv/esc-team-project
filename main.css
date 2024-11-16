@@ -292,6 +292,20 @@
   color: #ff0000;
 }
 
+/* Styling for challenges.html */
+.challenges-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.challenges-filter-button {
+  width: 10rem;
+  height: 3rem;
+}
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
