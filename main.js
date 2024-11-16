@@ -1,6 +1,40 @@
-const hamburgerButton = document.querySelector(".hamburger-button");
+/* This section is for hamburger menu on phone */
+
+/* const hamburgerButton = document.querySelector(".hamburger-button");
 const headerNav = document.querySelector(".header-nav");
 const container = document.querySelector(".container");
+
+hamburgerButton.addEventListener("click", () => {
+  hamburgerButton.style.display = "none";
+  const nav = document.createElement("nav");
+  const closeNavBtn = document.createElement("button");
+  const img = document.createElement("img");
+  img.setAttribute("src", "./pictures/nav-button-close.png");
+  nav.classList.add("phone-nav");
+  closeNavBtn.classList.add("close-nav-btn");
+  setTimeout(() => {
+    closeNavBtn.classList.add("hidden-to-visible-transition");
+  }, 10);
+  document.body.prepend(nav);
+  nav.appendChild(closeNavBtn);
+  closeNavBtn.appendChild(img);
+
+  container.classList.add("opacity-transition");
+  const aTexts = ["Play online", "Play on-site", "The story", "Contact"]; */
+/*   const aTextsHref = ["#", "#", "#", "#"]; */
+/* 
+  for (let i = 0; i < 4; i++) {
+    const a = document.createElement("a");
+    a.textContent = aTexts[i];
+    nav.append(a);
+  }
+
+  closeNavBtn.addEventListener("click", () => {
+    nav.remove();
+    document.querySelector(".container").classList.remove("opacity-transition");
+    hamburgerButton.style.display = "inline";
+  });
+}); */
 
 const cardOneTitle = document.querySelector(".card-container__card-one");
 const cardTwoTitle = document.querySelector(".card-container__card-two");
@@ -24,38 +58,40 @@ const cardImageThree = document.querySelector(".card-container__img-three");
 
 let challengesSorted = [];
 
-hamburgerButton.addEventListener("click", () => {
-  hamburgerButton.style.display = "none";
-  const nav = document.createElement("nav");
-  const closeNavBtn = document.createElement("button");
-  const img = document.createElement("img");
-  img.setAttribute("src", "./pictures/nav-button-close.png");
-  nav.classList.add("phone-nav");
-  closeNavBtn.classList.add("close-nav-btn");
-  setTimeout(() => {
-    closeNavBtn.classList.add("hidden-to-visible-transition");
-  }, 10);
-  document.body.prepend(nav);
-  nav.appendChild(closeNavBtn);
-  closeNavBtn.appendChild(img);
+/* Functions for buttons */
 
-  container.classList.add("opacity-transition");
+const onsiteButtons = document.querySelectorAll(".button-wrapper__onsite");
+const onlineButtons = document.querySelectorAll(".button-wrapper__online");
+const onsiteButtonsArray = Array.from(onsiteButtons);
+const onlineButtonsArray = Array.from(onlineButtons);
 
-  const aTexts = ["Play online", "Play on-site", "The story", "Contact"];
-  /*   const aTextsHref = ["#", "#", "#", "#"]; */
+/* Eventlisteners for singe buttons */
 
-  for (let i = 0; i < 4; i++) {
-    const a = document.createElement("a");
-    a.textContent = aTexts[i];
-    nav.append(a);
-  }
+function seeAllChallenges() {
+  window.location.href = "./challenges.html";
+}
 
-  closeNavBtn.addEventListener("click", () => {
-    nav.remove();
-    document.querySelector(".container").classList.remove("opacity-transition");
-    hamburgerButton.style.display = "inline";
+
+/* Loop eventlisteners for onsite and online buttons */
+
+for (let i = 0; i < onsiteButtonsArray.length; i++) {
+  onsiteButtonsArray[i].addEventListener("click", () => {
+    window.location.href = "./challenges.html";
+    console.log("Onsite pressed");
   });
-});
+}
+
+for (let i = 0; i < onlineButtonsArray.length; i++) {
+  onlineButtonsArray[i].addEventListener("click", () => {
+    window.location.href = "./challenges.html";
+    console.log("Online pressed");
+  });
+}
+
+console.log(onlineButtonsArray);
+console.log(onsiteButtonsArray);
+
+/* This section calls and applies from the API */
 
 async function fetchAPI() {
   try {

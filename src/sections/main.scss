@@ -4,6 +4,8 @@
 @use "section";
 @use "footer";
 @use "extras" as *;
+@use "main-challenges" as *;
+@use "sections-challenges" as *;
 
 /* Phone and PC */
 html {
@@ -21,6 +23,10 @@ body {
 
 button {
   font-family: roboto, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .container {
