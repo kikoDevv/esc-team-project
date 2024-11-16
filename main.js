@@ -159,183 +159,35 @@ function updateCardsRating() {
     document.querySelectorAll(".card-container__star-container")
   );
 
-  for (let i = 0; i < starContainers.length; i++) {
-    const ratingVar = challengesSorted[i].rating;
-    const createI1 = document.createElement("i");
-    const createI2 = document.createElement("i");
-    const createI3 = document.createElement("i");
-    const createI4 = document.createElement("i");
-    const createI5 = document.createElement("i");
+  // Helper function to create and append stars
+  function createStars(rating) {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement("i");
 
-    switch (ratingVar) {
-      case 0:
-        console.log("case 0 was run");
-        createI1.classList.add("fa-regular", "fa-star", "red");
-        createI2.classList.add("fa-regular", "fa-star", "red");
-        createI3.classList.add("fa-regular", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
+      if (rating >= i + 1) {
+        star.classList.add("fa-solid", "fa-star", "red");
+      } else if (rating > i && rating < i + 1) {
+        star.classList.add("fa-regular", "fa-star-half-stroke", "red");
+      } else {
+        star.classList.add("fa-regular", "fa-star", "red");
+      }
 
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 0.5:
-        console.log("case 0.5 was run");
-        createI1.classList.add("fa-regular", "fa-star-half-stroke", "red");
-        createI2.classList.add("fa-regular", "fa-star", "red");
-        createI3.classList.add("fa-regular", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 1:
-        console.log("case 1 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-regular", "fa-star", "red");
-        createI3.classList.add("fa-regular", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 1.5:
-        console.log("case 1.5 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-regular", "fa-star-half-stroke", "red");
-        createI3.classList.add("fa-regular", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 2:
-        console.log("case 2 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-regular", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 2.5:
-        console.log("case 2.5 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-regular", "fa-star-half-stroke", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 3:
-        console.log("case 3 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-solid", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 3.5:
-        console.log("case 3.5 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-solid", "fa-star", "red");
-        createI4.classList.add("fa-regular", "fa-star-half-stroke", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 4:
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-solid", "fa-star", "red");
-        createI4.classList.add("fa-solid", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 4.5:
-        console.log("case 4.5 was run");
-        createI1.classList.add("fa-regular", "fa-star", "red");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-solid", "fa-star", "red");
-        createI4.classList.add("fa-solid", "fa-star", "red");
-        createI5.classList.add("fa-regular", "fa-star-half-stroke", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
-      case 5:
-        console.log("case 5 was run");
-        createI1.classList.add("fa-solid", "fa-star", "red");
-        createI2.classList.add("fa-solid", "fa-star", "red");
-        createI3.classList.add("fa-solid", "fa-star", "red");
-        createI4.classList.add("fa-solid", "fa-star", "red");
-        createI5.classList.add("fa-solid", "fa-star", "red");
-        starContainers[i].prepend(
-          createI1,
-          createI2,
-          createI3,
-          createI4,
-          createI5
-        );
-        break;
+      stars.push(star);
     }
+    return stars;
   }
+
+  // Iterate through the star containers and update ratings
+  starContainers.forEach((container, index) => {
+    const rating = challengesSorted[index].rating;
+
+    // Create the stars based on the rating
+    const stars = createStars(rating);
+
+    // Prepend all stars in one go (avoiding multiple prepend calls)
+    container.prepend(...stars);
+  });
 }
 
 getTopRanked();
