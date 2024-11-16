@@ -25,6 +25,10 @@ button {
   font-family: roboto, sans-serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .container {
   max-width: 1280px;
   margin-left: auto;
