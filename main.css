@@ -292,6 +292,8 @@
   color: #ff0000;
 }
 
+<<<<<<< HEAD
+=======
 /* Styling for challenges.html */
 .challenges-main {
   display: flex;
@@ -315,6 +317,7 @@
   color: white;
 }
 
+>>>>>>> a9c155d77cc1ed32b657b8ad4eb1726195be4387
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
