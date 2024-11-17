@@ -1,0 +1,121 @@
+/* Coder picture code for phone */
+@media screen and (max-width: 1280px) {
+  .coder-section__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .coder-section__pc-img {
+    display: none;
+  }
+}
+/* Coder picture for PC */
+@media screen and (min-width: 1280px) {
+  .coder-section__img {
+    display: none;
+  }
+  .coder-section__pc-img {
+    max-width: 1280px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* Story container phone */
+.story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #011827;
+  font-size: 22px;
+  height: 30rem;
+}
+.story-container__button {
+  width: 19.25rem;
+  height: 4.125rem;
+  font-size: 18px;
+  margin-top: 2rem;
+  background-color: #011827;
+  border: solid 1px #8acfe5;
+  color: #8acfe5;
+}
+.story-container__text {
+  color: white;
+  text-align: center;
+  width: 90%;
+}
+
+/* Story container pc  */
+@media screen and (min-width: 1280px) {
+  .story-container__text {
+    width: 40%;
+  }
+  .story-container__button {
+    width: 19.25rem;
+    height: 4.125rem;
+  }
+}
+/* Play info container phone */
+@media screen and (max-width: 1280px) {
+  .play-info-container__button {
+    border: none;
+    background-color: #e3170a;
+    color: white;
+    width: 65%;
+    height: 3rem;
+    margin-right: 25%;
+  }
+  .play-info-container__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+  }
+  .play-info-container__content-title {
+    width: 90%;
+  }
+  .play-info-container__content p {
+    width: 90%;
+  }
+  .play-info-container__img {
+    width: 100%;
+  }
+}
+/* Play info container PC */
+@media screen and (min-width: 1280px) {
+  .play-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 8rem;
+  }
+  .play-info-container__img-wrapper2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .play-info-container img {
+    width: 100%;
+  }
+  .play-info-container__content-title {
+    width: 70%;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .play-info-container p {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .play-info-container__button {
+    margin-left: 15%;
+    width: 19.25rem;
+    height: 4.125rem;
+    background-color: #e3170a;
+    border: none;
+    color: white;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=section.css.map */
