@@ -1,0 +1,36 @@
+@use "variables" as *;
+/* .api-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 200px;
+  max-height: fit-content;
+  // overflow: auto;
+  &__card {
+    // max-width: 400px;
+  }
+  img {
+    width: 364px;
+    height: 219px;
+  }
+}
+ */
+body {
+  justify-content: center;
+}
+.api-card-container {
+  margin: 0 auto 0 auto;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  justify-items: center;
+  .api-card-container {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  img {
+    width: 364px;
+    height: 219px;
+  }
+}

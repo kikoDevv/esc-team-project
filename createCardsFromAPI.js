@@ -22,14 +22,17 @@ async function fetchAPI() {
 
 fetchAPI();
 
- const cardContainer = document.querySelector(".api-cards-container"); 
-
+const cardContainer = document.querySelector(".api-card-container");
 
 function createCardsFromAPI(api) {
   const challenges = [];
   const images = [];
   const titles = [];
   const rating = [];
+  const descriptions = [];
+  //_____________test-----
+  const textBtn = [];
+  //-----
 
   api.challenges.forEach((challenge) => {
     challenges.push(challenge);
@@ -38,12 +41,16 @@ function createCardsFromAPI(api) {
     }
     titles.push(challenge.title);
     rating.push(challenge.rating);
+    descriptions.push(challenge.description);
+    textBtn.push(challenge.type);
   });
 
   console.log("Challenges:", challenges);
   console.log("Images:", images);
   console.log("Titles: " + titles);
   console.log("rating: " + rating);
+  console.log("Descriptions: " + descriptions);
+  console.log("Btn types: " + textBtn);
 
   for (let i = 0; i < challenges.length; i++) {
     const div = document.createElement("div");
@@ -51,19 +58,35 @@ function createCardsFromAPI(api) {
     const h3 = document.createElement("h3");
     const stars = createStars(rating[i]);
     const participantsText = document.createElement("small");
+    const p = document.createElement("p");
+    const btnCard = document.createElement("button");
 
-
+    p.innerText = descriptions[i];
     h3.innerText = titles[i];
     img.setAttribute("src", images[i]);
 
-    const participants = getParticipants(challenges[i].minParticipants, challenges[i].maxParticipants);
+    const participants = getParticipants(
+      challenges[i].minParticipants,
+      challenges[i].maxParticipants
+    );
     participantsText.innerText = participants;
 
+    div.classList.add("api-card-container__card");
+
     cardContainer.append(div);
-    div.append(img); 
+    div.append(img);
     div.append(h3);
     stars.forEach((star) => div.appendChild(star));
     div.append(participantsText);
+    div.append(p);
+
+    if (textBtn[i] === "onsite") {
+      div.append(btnCard);
+      btnCard.textContent = "Take challenge online";
+    } else {
+      div.append(btnCard);
+      btnCard.textContent = "Book this room";
+    }
   }
 }
 
