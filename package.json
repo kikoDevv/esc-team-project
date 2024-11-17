@@ -11,6 +11,6 @@
   "author": "Christian",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.80.3"
+    "sass": "^1.81.0"
   }
 }
