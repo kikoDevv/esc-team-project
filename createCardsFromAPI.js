@@ -22,7 +22,7 @@ async function fetchAPI() {
 
 fetchAPI();
 
-const cardContainer = document.querySelector(".api-cards-container");
+const cardContainer = document.querySelector(".api-card-container");
 
 function createCardsFromAPI(api) {
   const challenges = [];
@@ -70,6 +70,8 @@ function createCardsFromAPI(api) {
       challenges[i].maxParticipants
     );
     participantsText.innerText = participants;
+
+    div.classList.add("api-card-container__card");
 
     cardContainer.append(div);
     div.append(img);
