@@ -36,4 +36,3 @@ hamburgerButton.addEventListener("click", () => {
   });
 });
 
-// test commit comment
