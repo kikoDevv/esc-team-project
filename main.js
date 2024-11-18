@@ -39,14 +39,14 @@ function seeAllChallenges() {
 
 for (let i = 0; i < onsiteButtonsArray.length; i++) {
   onsiteButtonsArray[i].addEventListener("click", () => {
-    window.location.href = "./filterChallenges/challenges.html";
+    window.location.href = "./challenges.html";
     console.log("Onsite pressed");
   });
 }
 
 for (let i = 0; i < onlineButtonsArray.length; i++) {
   onlineButtonsArray[i].addEventListener("click", () => {
-    window.location.href = "./filterChallenges/challenges.html";
+    window.location.href = "./challenges.html";
     console.log("Online pressed");
   });
 }
