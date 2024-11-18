@@ -1,8 +1,7 @@
 const includeOnline = document.querySelector("#includeOnline");
 const includeOnsite = document.querySelector("#includeOnsite");
 const filterInput = document.querySelector(".filterInput");
-
-
+const bookRoomBtn = document.querySelector(".btnCloseFilter")
 async function fetchData() {
     try {
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
@@ -69,3 +68,24 @@ async function sortByText() {
 includeOnline.addEventListener("change", sortByType)
 includeOnsite.addEventListener("change", sortByType)
 filterInput.addEventListener("keydown", sortByText)
+bookRoomBtn.addEventListener("click", ()=>{
+    OpenBookingPageOne();
+});
+
+
+
+
+
+
+function OpenBookingPageOne() {
+    const section = document.createElement('section');
+    section.className = 'book-page-one';
+    section.innerHTML = `
+        <p>Book room "title of room step one"</p>
+        <p>What date would you like to come</p>
+        <p>date</p>
+        <input type="text" class="date-input">
+        <button class="search-btn">Search available times</button>
+    `;
+    document.body.appendChild(section);
+}
