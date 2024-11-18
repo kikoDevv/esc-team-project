@@ -14,7 +14,7 @@ async function fetchAPI() {
 
     const data = await response.json();
     console.log(data);
-    createCardsFromAPI(data);
+    createCardsFromAPI(data.challenges);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -24,18 +24,16 @@ fetchAPI();
 
 const cardContainer = document.querySelector(".api-card-container");
 
-function createCardsFromAPI(api) {
-  const challenges = [];
+function createCardsFromAPI(challenges) {
   const images = [];
   const titles = [];
   const rating = [];
   const descriptions = [];
-  //_____________test-----
   const textBtn = [];
-  //-----
 
-  api.challenges.forEach((challenge) => {
-    challenges.push(challenge);
+  cardContainer.innerHTML = "";
+
+  challenges.forEach((challenge) => {
     if (challenge.image) {
       images.push(challenge.image);
     }
