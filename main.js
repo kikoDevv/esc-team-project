@@ -1,15 +1,22 @@
-
 const cardOneTitle = document.querySelector(".card-container__card-one");
 const cardTwoTitle = document.querySelector(".card-container__card-two");
 const cardThreeTitle = document.querySelector(".card-container__card-three");
 
 const cardOneText = document.querySelector(".card-container__card-text-one");
 const cardTwoText = document.querySelector(".card-container__card-text-two");
-const cardThreeText = document.querySelector(".card-container__card-text-three");
+const cardThreeText = document.querySelector(
+  ".card-container__card-text-three"
+);
 
-const cardParticipantsOne = document.querySelector(".card-container__participants-one");
-const cardParticipantsTwo = document.querySelector(".card-container__participants-two");
-const cardParticipantsThree = document.querySelector(".card-container__participants-three");
+const cardParticipantsOne = document.querySelector(
+  ".card-container__participants-one"
+);
+const cardParticipantsTwo = document.querySelector(
+  ".card-container__participants-two"
+);
+const cardParticipantsThree = document.querySelector(
+  ".card-container__participants-three"
+);
 
 const cardButtonOne = document.querySelector(".card-container__button-one");
 const cardButtonTwo = document.querySelector(".card-container__button-two");
@@ -33,7 +40,6 @@ const onlineButtonsArray = Array.from(onlineButtons);
 function seeAllChallenges() {
   window.location.href = "./challenges.html";
 }
-
 
 /* Loop eventlisteners for onsite and online buttons */
 
@@ -71,7 +77,6 @@ async function fetchAPI() {
     const data = await response.json();
 
     challengesSorted = data.challenges.sort((a, b) => b.rating - a.rating);
-
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -106,9 +111,18 @@ function updateCardsParticipants() {
 }
 
 function updateCardsButtonText() {
-  cardButtonOne.innerText = challengesSorted[0].type === "online" ? "Take challenge online" : "Book this room";
-  cardButtonTwo.innerText = challengesSorted[1].type === "online" ? "Take challenge online" : "Book this room";
-  cardButtonThree.innerText = challengesSorted[2].type === "online" ? "Take challenge online" : "Book this room";
+  cardButtonOne.innerText =
+    challengesSorted[0].type === "online"
+      ? "Take challenge online"
+      : "Book this room";
+  cardButtonTwo.innerText =
+    challengesSorted[1].type === "online"
+      ? "Take challenge online"
+      : "Book this room";
+  cardButtonThree.innerText =
+    challengesSorted[2].type === "online"
+      ? "Take challenge online"
+      : "Book this room";
 }
 
 function updateCardsImage() {
