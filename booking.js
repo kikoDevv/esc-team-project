@@ -1,8 +1,6 @@
-/* async function fetchData() {
+ async function fetchData(URL) {
   try {
-     const response = await fetch(
-        "https://lernia-sjj-assignments.vercel.app/api/booking/available-times"
-     );
+     const response = await fetch(URL);
 
      if (!response.ok) {
         throw new Error(`HTTP ERROR! Status: ${response.status}`);
@@ -15,9 +13,13 @@
      console.error(error);
   }
 }
-fetchData(); */
 
-
+   
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    const currentDate = `${year}-${month}-${day}`; 
 
 // Function to generate booking page one
 function openBookingPageOne() {
@@ -28,19 +30,24 @@ function openBookingPageOne() {
        <p>Book room "title of room step one"</p>
        <p>What date would you like to come</p>
        <p>date</p>
-       <input type="date" class="date-input">
+       <input type="date" class="date-input" min="${currentDate}">
        <button class="search-btn">Search available times</button>
    `;
   document.body.appendChild(section);
   const searchTimesBtn = document.querySelector(".search-btn");
   searchTimesBtn.addEventListener("click", () => {
-     console.log("searchBtn is clicked!!");
+    const chosenDate = document.querySelector(".date-input").value;
 
 
-
-
+     if(chosenDate === "") {
+      return;
+    } else {
+     console.log(chosenDate);
      document.querySelector(".book-page-one").remove();
      openBookingPageTwo();
+    }
+
+
   });
 }
 
