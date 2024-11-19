@@ -4,13 +4,18 @@
     let year = date.getFullYear();
     const currentDate = `${year}-${month}-${day}`; 
 
+//-----temporar------
+openBookingPageOne();
+//--------
+
+
+
 // Function to generate booking page one
 function openBookingPageOne() {
   const section = document.createElement("section");
   section.className = "book-page-one";
   section.innerHTML = `
-       <p>This is beta version of the menu!!<p>
-       <p>Book room "title of room step one"</p>
+       <p>Book room "Title of room" (step one)</p>
        <p>What date would you like to come</p>
        <p>date</p>
        <input type="date" class="date-input" min="${currentDate}">

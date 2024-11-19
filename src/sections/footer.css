@@ -1,0 +1,41 @@
+/* Footer Styling */
+.footer {
+  color: white;
+  background-color: #011827;
+  height: 26rem;
+  padding-top: 1rem;
+  /* PC Styles */
+}
+.footer__info, .footer__nav-title, .footer__social-title {
+  padding-left: 1rem;
+}
+.footer__nav-list, .footer__nav-social {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer__info {
+    margin: 0 15% 0 10%;
+    width: 30%;
+  }
+  .footer__social {
+    margin-bottom: 4%;
+  }
+  .footer__nav {
+    margin-right: 5%;
+  }
+  .footer__nav-list-legal {
+    margin-bottom: 1rem;
+  }
+}/*# sourceMappingURL=footer.css.map */
