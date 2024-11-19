@@ -1,20 +1,3 @@
- async function fetchData(URL) {
-  try {
-     const response = await fetch(URL);
-
-     if (!response.ok) {
-        throw new Error(`HTTP ERROR! Status: ${response.status}`);
-     }
-
-     const data = await response.json();
-     console.log(data);
-     return data;
-  } catch (error) {
-     console.error(error);
-  }
-}
-
-   
     const date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
