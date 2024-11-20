@@ -48,8 +48,12 @@ function createCardsFromAPI(challenges) {
     // Set button text
     if (challenge.type === "onsite") {
       btnCard.textContent = "Book this room";
+      btnCard.classList.add("onsite");
+      btnCard.classList.add("book-btn");
     } else {
       btnCard.textContent = "Take challenge online";
+      btnCard.classList.add("online");
+      btnCard.classList.add("book-btn");
     }
 
     // Apply styles
@@ -67,6 +71,14 @@ function createCardsFromAPI(challenges) {
 
     // Append card to the container
     cardContainer.append(cardDiv);
+
+    btnCard.addEventListener("click", () => {
+      openBookingPageOne(
+        challenge.id,
+        challenge.minParticipants,
+        challenge.maxParticipants
+      );
+    });
   }
 }
 
