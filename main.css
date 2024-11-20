@@ -365,30 +365,31 @@
 }
 
 .api-card-container {
+  background-color: white;
   margin: 0 auto 0 auto;
-  max-width: 90%;
+  padding: 5%;
+  max-width: 1400px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   justify-items: center;
 }
 .api-card-container img {
-  width: 364px;
-  height: 219px;
+  width: 100%;
+  height: auto;
   border-radius: 10px 10px 0px 0px;
 }
 .api-card-container__card {
   background-color: white;
+  box-shadow: #b6bdb5 0px 5px 15px;
   border-radius: 10px;
 }
 .api-card-container__card h3 {
-  margin-left: 5%;
+  margin: 5%;
 }
 .api-card-container__card i {
   float: left;
-}
-.api-card-container__card i:first-child {
-  margin-left: 5%;
+  transform: translateX(18px);
 }
 .api-card-container__card small {
   display: flex;
@@ -397,7 +398,6 @@
 }
 .api-card-container__card p {
   margin: 5%;
-  width: 90%;
 }
 .api-card-container__card button {
   background-color: #e3170a;

@@ -4,28 +4,30 @@
   display: block;
 }
 .api-card-container {
+  background-color: white;
   margin: 0 auto 0 auto;
-  max-width: 90%;
+  padding: 5%;
+  max-width: 1400px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   justify-items: center;
   img {
-    width: 364px;
-    height: 219px;
+    width: 100%;
+    height: auto;
     border-radius: 10px 10px 0px 0px;
   }
   &__card {
     background-color: white;
+    box-shadow: $grey 0px 5px 15px;
     border-radius: 10px;
+    
     h3 {
-      margin-left: 5%;
+      margin: 5%;
     }
     i {
       float: left;
-    }
-    i:first-child {
-      margin-left: 5%;
+      transform: translateX(18px);
     }
     small {
       display: flex;
@@ -34,10 +36,9 @@
     }
     p {
       margin: 5%;
-      width: 90%;
     }
     button {
-      background-color: #e3170a;
+      background-color: $red;
       border: none;
       width: 11rem;
       height: 2.5rem;
