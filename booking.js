@@ -1,8 +1,8 @@
-    const date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    const currentDate = `${year}-${month}-${day}`; 
+const date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+const currentDate = `${year}-${month}-${day}`;
 
 // Function to generate booking page one
 function openBookingPageOne() {
@@ -21,21 +21,20 @@ function openBookingPageOne() {
   searchTimesBtn.addEventListener("click", () => {
     const chosenDate = document.querySelector(".date-input").value;
 
-
-     if(chosenDate === "") {
+    if (chosenDate === "") {
       return;
     } else {
-     console.log(chosenDate);
-     document.querySelector(".book-page-one").remove();
-     openBookingPageTwo();
+      console.log(chosenDate);
+      document.querySelector(".book-page-one").remove();
+
+      console.log(dateInfo);
+      openBookingPageTwo();
     }
-
-
   });
 }
 
 // Function to generate booking page two
-function openBookingPageTwo() {
+function openBookingPageTwo(data) {
   const section = document.createElement("section");
   section.className = "booking-step-two";
   section.innerHTML = `
@@ -68,11 +67,14 @@ function openBookingPageTwo() {
    `;
   document.body.appendChild(section);
   const submitBtn = document.querySelector(".submit-booking");
-  submitBtn.addEventListener("click", ()=>{
-   document.querySelector(".booking-step-two").remove();
+
+  submitBtn.addEventListener("click", () => {
+    const bookedName = document.querySelector(".input-name").value;
+    const bookedEmail = document.querySelector(".input-email").value;
+
+    document.querySelector(".booking-step-two").remove();
   });
 }
-
 
 bookRoomBtn.addEventListener("click", () => {
   openBookingPageOne();

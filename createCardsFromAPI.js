@@ -48,8 +48,10 @@ function createCardsFromAPI(challenges) {
     // Set button text
     if (challenge.type === "onsite") {
       btnCard.textContent = "Book this room";
+      btnCard.classList.add("onsite");
     } else {
       btnCard.textContent = "Take challenge online";
+      btnCard.classList.add("online");
     }
 
     // Apply styles
