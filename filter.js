@@ -1,7 +1,14 @@
 const includeOnline = document.querySelector("#includeOnline");
 const includeOnsite = document.querySelector("#includeOnsite");
 const filterInput = document.querySelector(".filterInput");
-const bookRoomBtn = document.querySelector(".btnCloseFilter");
+const btnCloseFilterMenu = document.querySelector(".btnCloseFilter");
+const filterSection = document.querySelector(".filterSection");
+const filterBtn = document.querySelector("#filterBtn");
+//--root--
+switchFilterMenu();
+
+
+
 async function fetchData() {
    try {
       const response = await fetch(
@@ -79,3 +86,17 @@ filterInput.addEventListener("keydown", sortByText);
 
 
 
+
+
+
+//----funtion to switch the filter menu on and off--
+function switchFilterMenu(){
+   btnCloseFilterMenu.addEventListener("click", ()=>{
+      filterSection.classList.toggle("active");
+   });
+   filterBtn.addEventListener("click", ()=>{
+      console.log("filterBtn clicked!!");
+      filterSection.classList.toggle("active");
+   });
+}
+//------

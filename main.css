@@ -291,9 +291,37 @@
 .red {
   color: #ff0000;
 }
-
-.filterSection {
+/*--this code may needs to be converted to scss!!*/
+/*--------filter button-------*/
+.filterBtnContainer.active{
+  display: none;
+}
+.filterBtnContainer{
   display: grid;
+  justify-content: center;
+  place-items: center;
+  padding: 50px 0px 50px 0px;
+  color: white;
+}
+#filterBtn{
+  background-color: white;
+  color: darkviolet;
+  border: none;
+  box-shadow:#e3170a 0px 0px 5px 0.9px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+#filterBtn:hover{
+  background-color: darkorchid;
+  color: white;
+}
+/*swich filter menu on and off*/
+.filterSection.active{
+  display: grid;
+}
+.filterSection {
+  display: none;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
