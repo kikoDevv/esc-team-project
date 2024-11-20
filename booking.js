@@ -5,7 +5,7 @@ let year = date.getFullYear();
 const currentDate = `${year}-${month}-${day}`;
 
 // Function to generate booking page one
-function openBookingPageOne() {
+function openBookingPageOne(ID, minParticipants, maxParticipants) {
   const section = document.createElement("section");
   section.className = "book-page-one";
   section.innerHTML = `
@@ -17,24 +17,25 @@ function openBookingPageOne() {
        <button class="search-btn">Search available times</button>
    `;
   document.body.appendChild(section);
+  console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
+
   const searchTimesBtn = document.querySelector(".search-btn");
+
   searchTimesBtn.addEventListener("click", () => {
     const chosenDate = document.querySelector(".date-input").value;
-
     if (chosenDate === "") {
       return;
     } else {
       console.log(chosenDate);
       document.querySelector(".book-page-one").remove();
 
-      console.log(dateInfo);
-      openBookingPageTwo();
+      openBookingPageTwo(ID, minParticipants, maxParticipants);
     }
   });
 }
 
 // Function to generate booking page two
-function openBookingPageTwo(data) {
+function openBookingPageTwo(ID, minParticipants, maxParticipants) {
   const section = document.createElement("section");
   section.className = "booking-step-two";
   section.innerHTML = `
@@ -55,18 +56,28 @@ function openBookingPageTwo(data) {
        <form>
            <label for="participants-count">How many participants:</label>
            <select id="participants-count" name="options">
-               <option value="1">1 participant</option>
+  <!--         <option value="1">1 participant</option>
                <option value="2">2 participants</option>
                <option value="3">3 participants</option>
                <option value="4">4 participants</option>
-               <option value="5">5 participants</option>
-               <option value="6">6 participants</option>
+               <option value="2">5 participants</option>
+               <option value="1">6 participants</option>  -->
            </select>
        </form>
        <button class="submit-booking">Submit booking</button>
    `;
   document.body.appendChild(section);
   const submitBtn = document.querySelector(".submit-booking");
+
+  for (let i = minParticipants; i <= maxParticipants; i++) {
+    const option = document.createElement("option");
+    option.setAttribute("value", `${i}`);
+    option.innerText = i + " participants";
+    document.querySelector("#participants-count").prepend(option);
+  }
+
+  /* max - min + 1 */
+  /* 5 - 2 + 1 */
 
   submitBtn.addEventListener("click", () => {
     const bookedName = document.querySelector(".input-name").value;
