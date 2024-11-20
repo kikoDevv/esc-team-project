@@ -62,22 +62,26 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
   section.innerHTML = `
        <p>Work is ongoing..!!<p>
        <p>book room title of room step 2</p>
-       <p>name</p>
-       <input class="input-name" type="text" required>
-       <p>E-mail</p>
-       <input class="input-email" type="email" required>
+
+
        <form>
+
+           <label for="input-name">Name</label>
+           <input id="input-name" name="input-name" type="text" required />
+
+           <label for="input-email">Email</label>
+           <input id="input-email" name="input-email" type="email" required />
+
            <label for="what-time">What time?</label>
            <select id="what-time" name="time" required>
            </select>
-       </form>
-       <form>
            <label for="participants-count">How many participants:</label>
-           <select id="participants-count" name="options ">
-  <!--         <option value="1">1 participant</option>  -->
+           <select id="participants-count" name="options">
            </select>
+
+           <input type="submit" class="submit-booking" value="Submit booking" />
        </form>
-       <button class="submit-booking">Submit booking</button>
+
    `;
   document.body.appendChild(section);
   const submitBtn = document.querySelector(".submit-booking");
@@ -102,9 +106,18 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
 
   console.log(data.slots);
 
-  submitBtn.addEventListener("click", () => {
-    const bookedName = document.querySelector(".input-name").value;
-    const bookedEmail = document.querySelector(".input-email").value;
+  submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const form = document.querySelector("form");
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const bookedName = document.querySelector("#input-name").value;
+    const bookedEmail = document.querySelector("#input-email").value;
     const chosenTime = document.querySelector("#what-time").value;
     const chosenParticipants = parseInt(
       document.querySelector("#participants-count").value
