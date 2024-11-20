@@ -1,7 +1,5 @@
-body {
-  color: red;
-  background-color: red;
-  display: flex;
+.challenges-body {
+  display: block;
 }
 
 .api-card-container {

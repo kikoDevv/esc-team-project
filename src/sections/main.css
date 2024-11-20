@@ -361,10 +361,8 @@
   color: white;
 }
 
-body {
-  color: red;
-  background-color: red;
-  display: flex;
+.challenges-body {
+  display: block;
 }
 
 .api-card-container {
@@ -410,6 +408,32 @@ body {
   margin: 0 auto 5% 45%;
   border-radius: 3px;
   color: white;
+}
+
+.book-page-one {
+  display: grid;
+  position: fixed;
+  background-color: white;
+  place-content: start;
+  top: 30%;
+  left: 30%;
+  padding: 30px 200px 100px 30px;
+  z-index: 999;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.booking-step-two {
+  display: grid;
+  position: fixed;
+  background-color: red;
+  place-content: start;
+  top: 10%;
+  left: 30%;
+  padding: 30px 200px 100px 30px;
+  z-index: 999;
+  border-radius: 20px;
+  gap: 20px;
 }
 
 /* Phone and PC */
