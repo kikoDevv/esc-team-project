@@ -3,7 +3,7 @@ const includeOnsite = document.querySelector("#includeOnsite");
 const filterInput = document.querySelector(".filterInput");
 const btnCloseFilterMenu = document.querySelector(".btnCloseFilter");
 const filterSection = document.querySelector(".filterSection");
-const filterBtn = document.querySelector("#filterBtn");
+const filterBtn = document.querySelector("#filter-btn");
 //--root--
 switchFilterMenu();
 
@@ -93,10 +93,12 @@ filterInput.addEventListener("keydown", sortByText);
 function switchFilterMenu(){
    btnCloseFilterMenu.addEventListener("click", ()=>{
       filterSection.classList.toggle("active");
+      filterBtn.classList.toggle("active");
    });
    filterBtn.addEventListener("click", ()=>{
       console.log("filterBtn clicked!!");
       filterSection.classList.toggle("active");
+      filterBtn.classList.toggle("active");
    });
 }
 //------
