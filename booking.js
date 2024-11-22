@@ -30,15 +30,15 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
   const section = document.createElement("section");
   section.className = "book-page-one";
   section.innerHTML = `
-        <di class="container-top">
+        <div class="container-top">
             <p><b>Book room "Title of room"(step 1)</b></p>
             <p>What date would you like to come?</p>
             <p>Date</p>
             <input type="date" class="date-input" min="${currentDate}">
-        </di>
-        <di class="container-bottom">
+        </div>
+        <div class="container-bottom">
             <button id="btn-search-time"> search available time</button>
-        </di>
+        </div>
    `;
   document.body.appendChild(section);
   console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
