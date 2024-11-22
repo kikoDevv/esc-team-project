@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 .challenges-body {
-  display: block;
+   display: block;
 }
 .api-card-container {
   background-color: white;
@@ -56,3 +56,31 @@
     }
   }
 }
+//----- to style and control the our challenges title and filter button---
+.title-btn-container {
+   display: grid;
+   justify-content: center;
+   h1{
+      color: red;
+      user-select: none;
+   }
+   #filter-btn.active{
+      display: none;
+   }
+   #filter-btn{
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 7px;
+      max-width: fit-content;
+      place-self: center;
+      border-width: 1px;
+      color: #6558f5;
+      border-color: #6558f5;
+      margin-bottom: 70px;
+      &:hover{
+         background-color:#6558f5;
+         color: white;
+      }
+   }
+}
+//----------
