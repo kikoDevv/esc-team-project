@@ -1,49 +1,77 @@
 @use "variables" as *;
 
 .challenges-body {
-  display: block;
+   display: block;
 }
 .api-card-container {
-  margin: 0 auto 0 auto;
-  max-width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
-  justify-items: center;
-  img {
-    width: 364px;
-    height: 219px;
-    border-radius: 10px 10px 0px 0px;
-  }
-  &__card {
-    background-color: white;
-    border-radius: 10px;
-    h3 {
-      margin-left: 5%;
-    }
-    i {
-      float: left;
-    }
-    i:first-child {
-      margin-left: 5%;
-    }
-    small {
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 25px;
-    }
-    p {
-      margin: 5%;
-      width: 90%;
-    }
-    button {
-      background-color: #e3170a;
-      border: none;
-      width: 11rem;
-      height: 2.5rem;
-      margin: 0 auto 5% 45%;
-      border-radius: 3px;
-      color: white;
-    }
-  }
+   margin: 0 auto 0 auto;
+   max-width: 90%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 15px;
+   justify-items: center;
+   img {
+      width: 364px;
+      height: 219px;
+      border-radius: 10px 10px 0px 0px;
+   }
+   &__card {
+      background-color: white;
+      border-radius: 10px;
+      h3 {
+         margin-left: 5%;
+      }
+      i {
+         float: left;
+      }
+      i:first-child {
+         margin-left: 5%;
+      }
+      small {
+         display: flex;
+         justify-content: flex-end;
+         margin-right: 25px;
+      }
+      p {
+         margin: 5%;
+         width: 90%;
+      }
+      button {
+         background-color: red;
+         border: none;
+         width: 11rem;
+         height: 2.5rem;
+         margin: 0 auto 5% 45%;
+         border-radius: 3px;
+         color: white;
+      }
+   }
 }
+//----- to style and control the our challenges title and filter button---
+.title-btn-container {
+   display: grid;
+   justify-content: center;
+   h1{
+      color: red;
+      user-select: none;
+   }
+   #filter-btn.active{
+      display: none;
+   }
+   #filter-btn{
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 7px;
+      max-width: fit-content;
+      place-self: center;
+      border-width: 1px;
+      color: #6558f5;
+      border-color: #6558f5;
+      margin-bottom: 70px;
+      &:hover{
+         background-color:#6558f5;
+         color: white;
+      }
+   }
+}
+//----------

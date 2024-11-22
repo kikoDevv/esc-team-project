@@ -1,5 +1,8 @@
-.filterSection {
+.filterSection.active{
    display: grid;
+}
+.filterSection {
+   display: none;
    padding: 20px;
    background-color: white;
    border-radius: 10px;
@@ -62,7 +65,7 @@
             cursor: pointer;
             box-shadow: #101827 0px 0px 1px 0.08px;
             &:hover {
-                background-color: #788797;
+               background-color: #788797;
                color: white;
             }
          }
