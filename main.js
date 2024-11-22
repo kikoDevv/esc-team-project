@@ -22,6 +22,9 @@ const cardButtonOne = document.querySelector(".card-container__button-one");
 const cardButtonTwo = document.querySelector(".card-container__button-two");
 const cardButtonThree = document.querySelector(".card-container__button-three");
 
+const cardButtonsNode = document.querySelectorAll(".card-container__button");
+const cardButtons = Array.from(cardButtonsNode);
+
 const cardImageOne = document.querySelector(".card-container__img-one");
 const cardImageTwo = document.querySelector(".card-container__img-two");
 const cardImageThree = document.querySelector(".card-container__img-three");
@@ -39,6 +42,20 @@ const onlineButtonsArray = Array.from(onlineButtons);
 
 function seeAllChallenges() {
   window.location.href = "./challenges.html";
+}
+
+/* Loop evenlisteners for booking buttons */
+
+for (let i = 0; i < cardButtons.length; i++) {
+  cardButtons[i].addEventListener("click", () => {
+    const challenge = challengesSorted[i];
+
+    openBookingPageOne(
+      challenge.id,
+      challenge.minParticipants,
+      challenge.maxParticipants
+    );
+  });
 }
 
 /* Loop eventlisteners for onsite and online buttons */
