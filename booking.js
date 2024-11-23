@@ -82,7 +82,6 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
    `;
    document.body.appendChild(section);
    const submitBtn = document.querySelector(".submit-booking");
-
    /* Generate options for participants */
    for (let i = minParticipants; i <= maxParticipants; i++) {
       const option = document.createElement("option");
@@ -90,9 +89,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       option.innerText = i + " participants";
       document.querySelector("#participants-count").prepend(option);
    }
-
    const data = await fetchBookingTimes(date, ID);
-
    /* Generate options for times */
    for (let i = 0; i < data.slots.length; i++) {
       const option = document.createElement("option");
@@ -154,13 +151,13 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
 }
 //----- funtion to book-page three. confirmation page
 function bookPageConfirm() {
-  const section = document.createElement('section');
-  section.className = 'book-page-confirm';
-  section.innerHTML = `
+   const section = document.createElement("section");
+   section.className = "book-page-confirm";
+   section.innerHTML = `
      <div>
         <h1>Thank you!</h1>
         <a href="challenges.html">Back to challenges</a>
      </div>
   `;
-  document.body.appendChild(section);
+   document.body.appendChild(section);
 }

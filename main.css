@@ -303,6 +303,7 @@
   border-radius: 10px;
   margin: 50px;
   box-shadow: #101827 0px 0px 4px 0.08px;
+  user-select: none;
 }
 .filterSection .containerHead {
   display: flex;
@@ -318,11 +319,16 @@
   display: flex;
   justify-content: space-between;
 }
+.filterSection .filterContainer .containerLeft label {
+  cursor: pointer;
+}
 .filterSection .filterContainer .containerLeft #includeOnline {
   margin: 0px;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerLeft #includeOnsite {
   margin: 0px;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerMiddle {
   display: grid;
@@ -557,6 +563,9 @@
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
   border-radius: 10px;
+}
+.book-page-confirm a {
+  color: #6558f5;
 }
 
 /* Phone and PC */

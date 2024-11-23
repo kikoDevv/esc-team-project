@@ -8,6 +8,7 @@
    border-radius: 10px;
    margin: 50px;
    box-shadow: #101827 0px 0px 4px 0.08px;
+   user-select: none;
    .containerHead {
       display: flex;
       flex: none;
@@ -22,11 +23,16 @@
       display: flex;
       justify-content: space-between;
       .containerLeft {
+         label{
+            cursor: pointer;
+         }
          #includeOnline {
             margin: 0px;
+            cursor: pointer;
          }
          #includeOnsite {
             margin: 0px;
+            cursor: pointer;
          }
       }
       .containerMiddle {
