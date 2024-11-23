@@ -1,7 +1,7 @@
 const includeOnline = document.querySelector("#includeOnline");
 const includeOnsite = document.querySelector("#includeOnsite");
 const filterInput = document.querySelector(".filterInput");
-const btnCloseFilterMenu = document.querySelector(".btnCloseFilter");
+const btnCloseFilterMenu = document.querySelector("#btnCloseFilter");
 const filterSection = document.querySelector(".filterSection");
 const filterBtn = document.querySelector("#filter-btn");
 //--root--

@@ -310,6 +310,14 @@
   box-shadow: #101827 0px 0px 4px 0.08px;
   user-select: none;
 }
+.filterSection #btnCloseFilter {
+  background: 0px;
+  padding: 0px;
+  border: none;
+}
+.filterSection #btnCloseFilter:hover {
+  color: red;
+}
 .filterSection .containerHead {
   display: flex;
   flex: none;

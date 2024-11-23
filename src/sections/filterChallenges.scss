@@ -13,6 +13,14 @@
    margin: 50px;
    box-shadow: #101827 0px 0px 4px 0.08px;
    user-select: none;
+   #btnCloseFilter{
+      background: 0px;
+      padding: 0px;
+      border: none;
+      &:hover{
+         color: red;
+      }
+   }
    .containerHead {
       display: flex;
       flex: none;
