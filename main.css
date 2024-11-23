@@ -455,7 +455,7 @@
   height: 60vh;
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .book-page-one .container-top {
   display: grid;
@@ -494,16 +494,54 @@
 }
 
 .booking-step-two {
-  display: grid;
   position: fixed;
-  background-color: red;
+  background-color: white;
   place-content: start;
+  min-width: 50%;
   top: 10%;
   left: 30%;
-  padding: 30px 200px 100px 30px;
   z-index: 999;
-  border-radius: 20px;
-  gap: 20px;
+  border-radius: 10px;
+  box-shadow: #101827 0px 0px 3px 0.3px;
+}
+.booking-step-two .container-form {
+  display: grid;
+  min-width: fit-content;
+  max-width: 50%;
+  padding: 0px 0px 100px 20px;
+}
+.booking-step-two .container-form input {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-width: 1.5px;
+  border-radius: 5px;
+  cursor: text;
+}
+.booking-step-two .container-form select {
+  margin-bottom: 20px;
+  min-width: fit-content;
+  max-width: 50%;
+  padding: 5px;
+  border-width: 1.5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.booking-step-two div {
+  display: flex;
+  justify-content: end;
+  padding: 0px 20px 20px 0px;
+}
+.booking-step-two div .submit-booking {
+  padding: 10px;
+  border: none;
+  background-color: #6558f5;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.booking-step-two div .submit-booking:hover {
+  background-color: yellow;
+  color: black;
 }
 
 /* Phone and PC */
