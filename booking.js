@@ -18,7 +18,6 @@ async function fetchBookingTimes(date, id) {
       console.error(error);
    }
 }
-
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
@@ -52,7 +51,6 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
       } else {
          console.log(chosenDate);
          document.querySelector(".book-page-one").remove();
-
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
       }
    });
@@ -151,7 +149,18 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
          .catch((error) => console.error("Error: ", error));
 
       document.querySelector(".booking-step-two").remove();
+      bookPageConfirm();
    });
 }
-
-// openBookingPageTwo();
+//----- funtion to book-page three. confirmation page
+function bookPageConfirm() {
+  const section = document.createElement('section');
+  section.className = 'book-page-confirm';
+  section.innerHTML = `
+     <div>
+        <h1>Thank you!</h1>
+        <a href="challenges.html">Back to challenges</a>
+     </div>
+  `;
+  document.body.appendChild(section);
+}
