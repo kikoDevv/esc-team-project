@@ -296,6 +296,11 @@
   display: grid;
 }
 
+.filled {
+  background-color: #788797;
+  color: white;
+}
+
 .filterSection {
   display: none;
   padding: 20px;

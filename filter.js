@@ -96,75 +96,87 @@ function switchFilterMenu() {
 }
 //------
 
-
-
-
 //---------------event listener for the stars----------
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
    //for the stars container in left side.
-   const stars = document.querySelectorAll('.stars-container-left i');
+   const stars = document.querySelectorAll(".stars-container-left i");
    let lastClickedIndex = -1;
    let clickCount = 0;
    stars.forEach((star, index) => {
-       star.addEventListener('click', function() {
-           if (lastClickedIndex === index) {
-               //count the repeted click on one index.
-               clickCount++;
-               if (clickCount === 2) {
-                   //If the same star is clicked twice, switch the class of the stars to half fill.
-                   star.classList.toggle("fa-star-half-stroke");
-               } else if (clickCount === 3) {
-                   //same stars clicked for 3 times, remove hafl and solid, putt regular stars.
-                   star.classList.remove("fa-solid", "fa-star-half-stroke");
-                   star.classList.add("fa-regular");
-                   clickCount = 0; //Reset the click count
-                   lastClickedIndex = -1; //Reset the last clicked index
+      star.addEventListener("click", function () {
+         if (lastClickedIndex === index) {
+            //count the repeted click on one index.
+            clickCount++;
+            if (clickCount === 2) {
+               //If the same star is clicked twice, switch the class of the stars to half fill.
+               star.classList.toggle("fa-star-half-stroke");
+            } else if (clickCount === 3) {
+               //same stars clicked for 3 times, remove hafl and solid, putt regular stars.
+               star.classList.remove("fa-solid", "fa-star-half-stroke");
+               star.classList.add("fa-regular");
+               clickCount = 0; //Reset the click count
+               lastClickedIndex = -1; //Reset the last clicked index
+            }
+         } else {
+            //Fill all stars up to and including the clicked star
+            stars.forEach((s, i) => {
+               if (i <= index) {
+                  s.classList.add("fa-solid");
+                  s.classList.remove("fa-star-half-stroke");
+               } else {
+                  s.classList.remove("fa-solid", "fa-star-half-stroke");
                }
-           } else {
-               //Fill all stars up to and including the clicked star
-               stars.forEach((s, i) => {
-                   if (i <= index) {
-                       s.classList.add("fa-solid");
-                       s.classList.remove("fa-star-half-stroke");
-                   } else {
-                       s.classList.remove("fa-solid", "fa-star-half-stroke");
-
-                   }
-               });
-               lastClickedIndex = index; //Update the last clicked index so we know
-               clickCount = 1; //Reset the click count to 1 for the new star.
-           }
-       });
+            });
+            lastClickedIndex = index; //Update the last clicked index so we know
+            clickCount = 1; //Reset the click count to 1 for the new star.
+         }
+      });
    });
    // same procces but for the stars container in right side.
-   const starsx = document.querySelectorAll('.stars-container-right i');
+   const starsx = document.querySelectorAll(".stars-container-right i");
    let lastClickedIndexx = -1;
    let clickCountx = 0;
    starsx.forEach((star, index) => {
-       star.addEventListener('click', function() {
-           if (lastClickedIndex === index) {
-               clickCount++;
-               if (clickCount === 2) {
-                   star.classList.toggle("fa-star-half-stroke");
-               } else if (clickCount === 3) {
-                   star.classList.remove("fa-solid", "fa-star-half-stroke");
-                   star.classList.add("fa-regular");
-                   clickCount = 0; //Reset the click count
-                   lastClickedIndex = -1; //Reset the last clicked index
+      star.addEventListener("click", function () {
+         if (lastClickedIndex === index) {
+            clickCount++;
+            if (clickCount === 2) {
+               star.classList.toggle("fa-star-half-stroke");
+            } else if (clickCount === 3) {
+               star.classList.remove("fa-solid", "fa-star-half-stroke");
+               star.classList.add("fa-regular");
+               clickCount = 0; //Reset the click count
+               lastClickedIndex = -1; //Reset the last clicked index
+            }
+         } else {
+            starsx.forEach((s, i) => {
+               if (i <= index) {
+                  s.classList.add("fa-solid");
+                  s.classList.remove("fa-star-half-stroke");
+               } else {
+                  s.classList.remove("fa-solid", "fa-star-half-stroke");
                }
-           } else {
-               starsx.forEach((s, i) => {
-                   if (i <= index) {
-                       s.classList.add("fa-solid");
-                       s.classList.remove("fa-star-half-stroke");
-                   } else {
-                       s.classList.remove("fa-solid", "fa-star-half-stroke");
-                   }
-               });
-               lastClickedIndex = index; //Update the last clicked index so we know
-               clickCount = 1; //Reset the click count to 1 for the new star.
-           }
-       });
+            });
+            lastClickedIndex = index; //Update the last clicked index so we know
+            clickCount = 1; //Reset the click count to 1 for the new star.
+         }
+      });
    });
 });
-//------------
+//----------------event listener for tags----------
+document.addEventListener("DOMContentLoaded", () => {
+   const buttons = document.querySelectorAll(".tagsGrupTop button");
+   console.log("tags clicked!");
+   buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+         button.classList.toggle("filled");
+      });
+   });
+   //for button group down.
+   const buttonsx = document.querySelectorAll(".tagsGrupBottom button");
+   buttonsx.forEach((button) => {
+      button.addEventListener("click", () => {
+         button.classList.toggle("filled");
+      });
+   });
+});
