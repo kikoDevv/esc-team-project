@@ -423,7 +423,7 @@
   justify-content: center;
 }
 .title-btn-container h1 {
-  color: red;
+  color: white;
   user-select: none;
 }
 .title-btn-container #filter-btn.active {
@@ -449,8 +449,8 @@
   position: fixed;
   display: grid;
   padding: 20px;
-  top: 20%;
-  left: 25%;
+  top: 15%;
+  left: 28%;
   width: 40vw;
   height: 60vh;
   background-color: white;
@@ -495,20 +495,20 @@
 
 .booking-step-two {
   position: fixed;
+  display: grid;
+  padding: 20px;
+  top: 15%;
+  left: 28%;
+  width: 40vw;
+  height: 60vh;
   background-color: white;
-  place-content: start;
-  min-width: 50%;
-  top: 10%;
-  left: 30%;
-  z-index: 999;
-  border-radius: 10px;
   box-shadow: #101827 0px 0px 3px 0.3px;
+  border-radius: 10px;
 }
 .booking-step-two .container-form {
   display: grid;
   min-width: fit-content;
   max-width: 50%;
-  padding: 0px 0px 100px 20px;
 }
 .booking-step-two .container-form input {
   margin-bottom: 20px;
@@ -529,7 +529,7 @@
 .booking-step-two div {
   display: flex;
   justify-content: end;
-  padding: 0px 20px 20px 0px;
+  align-items: end;
 }
 .booking-step-two div .submit-booking {
   padding: 10px;
