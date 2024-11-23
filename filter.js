@@ -7,8 +7,6 @@ const filterBtn = document.querySelector("#filter-btn");
 //--root--
 switchFilterMenu();
 
-
-
 async function fetchData() {
    try {
       const response = await fetch(
@@ -84,21 +82,45 @@ includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
 filterInput.addEventListener("keydown", sortByText);
 
-
-
-
-
-
 //----funtion to switch the filter menu on and off--
-function switchFilterMenu(){
-   btnCloseFilterMenu.addEventListener("click", ()=>{
+function switchFilterMenu() {
+   btnCloseFilterMenu.addEventListener("click", () => {
       filterSection.classList.toggle("active");
       filterBtn.classList.toggle("active");
    });
-   filterBtn.addEventListener("click", ()=>{
+   filterBtn.addEventListener("click", () => {
       console.log("filterBtn clicked!!");
       filterSection.classList.toggle("active");
       filterBtn.classList.toggle("active");
    });
 }
 //------
+//--------funtion to change the selected starts class to be filled or not depending on cliked index.
+document.addEventListener("DOMContentLoaded", function () {
+   //---stars container left
+   const stars = document.querySelectorAll(".stars-container-left i");
+   stars.forEach((star, index) => {
+      star.addEventListener("click", () => {
+         console.log(`Star ${index + 1} clicked`);
+         //setting the stars class to solid which removes any filled stars. 
+         stars.forEach(s => s.classList.remove("fa-solid"));
+         //Adding filled class to any stars upp to index number.
+         for (let i = 0; i <= index; i++) {
+            stars[i].classList.add("fa-solid");
+         }
+      });
+   });
+   //---stars container righ
+   const starsx = document.querySelectorAll(".stars-container-right i");
+   starsx.forEach((starx, index) => {
+      starx.addEventListener("click", () => {
+         console.log(`Star ${index + 1} clicked`);
+         // same process
+         starsx.forEach(s => s.classList.remove("fa-solid"));
+         // same
+         for (let i = 0; i <= index; i++) {
+            starsx[i].classList.add("fa-solid");
+         }
+      });
+   });
+});

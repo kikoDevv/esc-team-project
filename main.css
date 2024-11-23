@@ -339,6 +339,7 @@
 }
 .filterSection .filterContainer .containerMiddle .starsContainer i {
   color: red;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerMiddle .starsContainer p {
   margin: 0;
