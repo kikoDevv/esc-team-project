@@ -1,6 +1,10 @@
 .filterSection.active{
    display: grid;
 }
+.filled{
+   background-color: #788797;
+   color: white;
+}
 .filterSection {
    display: none;
    padding: 20px;
@@ -8,6 +12,15 @@
    border-radius: 10px;
    margin: 50px;
    box-shadow: #101827 0px 0px 4px 0.08px;
+   user-select: none;
+   #btnCloseFilter{
+      background: 0px;
+      padding: 0px;
+      border: none;
+      &:hover{
+         color: red;
+      }
+   }
    .containerHead {
       display: flex;
       flex: none;
@@ -22,11 +35,16 @@
       display: flex;
       justify-content: space-between;
       .containerLeft {
+         label{
+            cursor: pointer;
+         }
          #includeOnline {
             margin: 0px;
+            cursor: pointer;
          }
          #includeOnsite {
             margin: 0px;
+            cursor: pointer;
          }
       }
       .containerMiddle {
@@ -36,6 +54,7 @@
             align-items: center;
             i {
                color: red;
+               cursor: pointer;
             }
             p {
                margin: 0;
@@ -49,9 +68,9 @@
             padding-top: 10px;
             padding-bottom: 10px;
             padding-left: 5px;
-            border-radius: 5px;
             border: none;
-            box-shadow: black 0px 0px 1px 0.3px;
+            box-shadow: black 0px 0px 0px 0.6px;
+            border-radius: 5px;
          }
       }
       .containerRight {

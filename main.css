@@ -296,6 +296,11 @@
   display: grid;
 }
 
+.filled {
+  background-color: #788797;
+  color: white;
+}
+
 .filterSection {
   display: none;
   padding: 20px;
@@ -303,6 +308,15 @@
   border-radius: 10px;
   margin: 50px;
   box-shadow: #101827 0px 0px 4px 0.08px;
+  user-select: none;
+}
+.filterSection #btnCloseFilter {
+  background: 0px;
+  padding: 0px;
+  border: none;
+}
+.filterSection #btnCloseFilter:hover {
+  color: red;
 }
 .filterSection .containerHead {
   display: flex;
@@ -318,11 +332,16 @@
   display: flex;
   justify-content: space-between;
 }
+.filterSection .filterContainer .containerLeft label {
+  cursor: pointer;
+}
 .filterSection .filterContainer .containerLeft #includeOnline {
   margin: 0px;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerLeft #includeOnsite {
   margin: 0px;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerMiddle {
   display: grid;
@@ -333,6 +352,7 @@
 }
 .filterSection .filterContainer .containerMiddle .starsContainer i {
   color: red;
+  cursor: pointer;
 }
 .filterSection .filterContainer .containerMiddle .starsContainer p {
   margin: 0;
@@ -345,9 +365,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 5px;
-  border-radius: 5px;
   border: none;
-  box-shadow: black 0px 0px 1px 0.3px;
+  box-shadow: black 0px 0px 0px 0.6px;
+  border-radius: 5px;
 }
 .filterSection .filterContainer .containerRight .tagsGrupTop {
   margin-bottom: 5px;
@@ -423,7 +443,7 @@
   justify-content: center;
 }
 .title-btn-container h1 {
-  color: red;
+  color: white;
   user-select: none;
 }
 .title-btn-container #filter-btn.active {
@@ -449,13 +469,13 @@
   position: fixed;
   display: grid;
   padding: 20px;
-  top: 20%;
-  left: 25%;
+  top: 15%;
+  left: 28%;
   width: 40vw;
   height: 60vh;
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .book-page-one .container-top {
   display: grid;
@@ -494,16 +514,72 @@
 }
 
 .booking-step-two {
-  display: grid;
   position: fixed;
-  background-color: red;
-  place-content: start;
-  top: 10%;
-  left: 30%;
-  padding: 30px 200px 100px 30px;
-  z-index: 999;
-  border-radius: 20px;
-  gap: 20px;
+  display: grid;
+  padding: 20px;
+  top: 15%;
+  left: 28%;
+  width: 40vw;
+  height: 60vh;
+  background-color: white;
+  box-shadow: #101827 0px 0px 3px 0.3px;
+  border-radius: 10px;
+}
+.booking-step-two .container-form {
+  display: grid;
+  min-width: fit-content;
+  max-width: 50%;
+}
+.booking-step-two .container-form input {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-width: 1.5px;
+  border-radius: 5px;
+  cursor: text;
+}
+.booking-step-two .container-form select {
+  margin-bottom: 20px;
+  min-width: fit-content;
+  max-width: 50%;
+  padding: 5px;
+  border-width: 1.5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.booking-step-two div {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.booking-step-two div .submit-booking {
+  padding: 10px;
+  border: none;
+  background-color: #6558f5;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.booking-step-two div .submit-booking:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.book-page-confirm {
+  position: fixed;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  top: 15%;
+  left: 28%;
+  width: 40vw;
+  height: 60vh;
+  background-color: white;
+  box-shadow: #101827 0px 0px 3px 0.3px;
+  border-radius: 10px;
+}
+.book-page-confirm a {
+  color: #6558f5;
 }
 
 /* Phone and PC */

@@ -19,9 +19,6 @@
   </head>
 
   <body class="challenges-body">
-    <!---------------Book room------------>
-
-    <!------------->
     <header>
       <img src="./pictures/logo.png" alt="Hacker Escape Rooms Logo" />
       <h1>Hacker Escape Rooms</h1>
@@ -45,7 +42,7 @@
     <section class="filterSection">
       <div class="containerHead">
         <p><b>Filter challenges</b></p>
-        <button class="btnCloseFilter">x</button>
+        <button id="btnCloseFilter" class="fa-solid fa-xmark fa-2xl"></button>
       </div>
       <div class="filterContainer">
         <div class="containerLeft">
@@ -65,18 +62,18 @@
           <p><b>By rating</b></p>
           <div class="starsContainer">
             <!--TEMP CODE! This section must be generated dynamic in js-->
-            <div>
-              <i class="fa-solid fa-star"></i>
+            <div class="stars-container-left">
+              <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
             <p>To</p>
-            <div>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+            <div class="stars-container-right">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
@@ -100,7 +97,7 @@
             </div>
             <div class="tagsGrupBottom">
               <button class="tagsSome">Some other tags</button>
-              <button class="tagsWebA">A final tag</button>
+              <button class="tagsFinal">A final tag</button>
             </div>
           </div>
         </div>
@@ -108,7 +105,6 @@
     </section>
 
     <section class="api-card-container"></section>
-
     <!----------------------->
     <footer class="footer">
       <div class="footer__info">

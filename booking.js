@@ -1,24 +1,23 @@
 async function fetchBookingTimes(date, id) {
-  try {
-    const response = await fetch(
-      "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=" +
-        date +
-        "&challenge=" +
-        id
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP ERROR! Status: ${response.status}`);
-    }
-    const data = await response.json();
-    data.slots.forEach((slot) => {
-      console.log(slot);
-    });
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+   try {
+      const response = await fetch(
+         "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=" +
+            date +
+            "&challenge=" +
+            id
+      );
+      if (!response.ok) {
+         throw new Error(`HTTP ERROR! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      data.slots.forEach((slot) => {
+         console.log(slot);
+      });
+      return data;
+   } catch (error) {
+      console.error(error);
+   }
 }
-
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
@@ -27,9 +26,9 @@ const currentDate = `${year}-${month}-${day}`;
 
 // Function to generate booking page one
 function openBookingPageOne(ID, minParticipants, maxParticipants) {
-  const section = document.createElement("section");
-  section.className = "book-page-one";
-  section.innerHTML = `
+   const section = document.createElement("section");
+   section.className = "book-page-one";
+   section.innerHTML = `
         <div class="container-top">
             <p><b>Book room "Title of room"(step 1)</b></p>
             <p>What date would you like to come?</p>
@@ -40,35 +39,30 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
             <button id="btn-search-time"> search available time</button>
         </div>
    `;
-  document.body.appendChild(section);
-  console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
+   document.body.appendChild(section);
+   console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
 
-  const searchTimesBtn = document.querySelector("#btn-search-time");
+   const searchTimesBtn = document.querySelector("#btn-search-time");
 
-  searchTimesBtn.addEventListener("click", () => {
-    const chosenDate = document.querySelector(".date-input").value;
-    if (chosenDate === "") {
-      return;
-    } else {
-      console.log(chosenDate);
-      document.querySelector(".book-page-one").remove();
-
-      openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
-    }
-  });
+   searchTimesBtn.addEventListener("click", () => {
+      const chosenDate = document.querySelector(".date-input").value;
+      if (chosenDate === "") {
+         return;
+      } else {
+         console.log(chosenDate);
+         document.querySelector(".book-page-one").remove();
+         openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
+      }
+   });
 }
 
 // Function to generate booking page two
 async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
-  const section = document.createElement("section");
-  section.className = "booking-step-two";
-  section.innerHTML = `
-       <p>Work is ongoing..!!<p>
-       <p>book room title of room step 2</p>
-
-
-       <form>
-
+   const section = document.createElement("section");
+   section.className = "booking-step-two";
+   section.innerHTML = `
+          <form class ="container-form">
+           <p><b>Book room "Title of room"(step 2)</b></p>
            <label for="input-name">Name</label>
            <input id="input-name" name="input-name" type="text" required />
 
@@ -81,79 +75,89 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
            <label for="participants-count">How many participants:</label>
            <select id="participants-count" name="options">
            </select>
-
-           <input type="submit" class="submit-booking" value="Submit booking" />
-       </form>
-
+        </form>
+      <div>
+        <input type="submit" class="submit-booking" value="Submit booking" />
+      </div>
    `;
-  document.body.appendChild(section);
-  const submitBtn = document.querySelector(".submit-booking");
+   document.body.appendChild(section);
+   const submitBtn = document.querySelector(".submit-booking");
+   /* Generate options for participants */
+   for (let i = minParticipants; i <= maxParticipants; i++) {
+      const option = document.createElement("option");
+      option.setAttribute("value", `${i}`);
+      option.innerText = i + " participants";
+      document.querySelector("#participants-count").prepend(option);
+   }
+   const data = await fetchBookingTimes(date, ID);
+   /* Generate options for times */
+   for (let i = 0; i < data.slots.length; i++) {
+      const option = document.createElement("option");
+      option.setAttribute("value", data.slots[i]);
+      option.innerText = data.slots[i];
+      document.querySelector("#what-time").prepend(option);
+   }
 
-  /* Generate options for participants */
-  for (let i = minParticipants; i <= maxParticipants; i++) {
-    const option = document.createElement("option");
-    option.setAttribute("value", `${i}`);
-    option.innerText = i + " participants";
-    document.querySelector("#participants-count").prepend(option);
-  }
+   console.log(data.slots);
 
-  const data = await fetchBookingTimes(date, ID);
+   submitBtn.addEventListener("click", (event) => {
+      event.preventDefault();
 
-  /* Generate options for times */
-  for (let i = 0; i < data.slots.length; i++) {
-    const option = document.createElement("option");
-    option.setAttribute("value", data.slots[i]);
-    option.innerText = data.slots[i];
-    document.querySelector("#what-time").prepend(option);
-  }
+      const form = document.querySelector("form");
 
-  console.log(data.slots);
+      if (!form.checkValidity()) {
+         form.reportValidity();
+         return;
+      }
 
-  submitBtn.addEventListener("click", (event) => {
-    event.preventDefault();
+      const bookedName = document.querySelector("#input-name").value;
+      const bookedEmail = document.querySelector("#input-email").value;
+      const chosenTime = document.querySelector("#what-time").value;
+      const chosenParticipants = parseInt(
+         document.querySelector("#participants-count").value
+      );
 
-    const form = document.querySelector("form");
+      const url =
+         "https://lernia-sjj-assignments.vercel.app/api/booking/reservations";
 
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+      const data = {
+         challenge: ID,
+         name: bookedName,
+         email: bookedEmail,
+         date: date,
+         time: chosenTime,
+         participants: chosenParticipants,
+      };
 
-    const bookedName = document.querySelector("#input-name").value;
-    const bookedEmail = document.querySelector("#input-email").value;
-    const chosenTime = document.querySelector("#what-time").value;
-    const chosenParticipants = parseInt(
-      document.querySelector("#participants-count").value
-    );
-
-    const url =
-      "https://lernia-sjj-assignments.vercel.app/api/booking/reservations";
-
-    const data = {
-      challenge: ID,
-      name: bookedName,
-      email: bookedEmail,
-      date: date,
-      time: chosenTime,
-      participants: chosenParticipants,
-    };
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
+      fetch(url, {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(data),
       })
-      .then((result) => console.log("Success: ", result))
-      .catch((error) => console.error("Error: ", error));
+         .then((response) => {
+            if (!response.ok) {
+               throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+         })
+         .then((result) => console.log("Success: ", result))
+         .catch((error) => console.error("Error: ", error));
 
-    document.querySelector(".booking-step-two").remove();
-  });
+      document.querySelector(".booking-step-two").remove();
+      bookPageConfirm();
+   });
+}
+//----- funtion to book-page three. confirmation page
+function bookPageConfirm() {
+   const section = document.createElement("section");
+   section.className = "book-page-confirm";
+   section.innerHTML = `
+     <div>
+        <h1>Thank you!</h1>
+        <a href="challenges.html">Back to challenges</a>
+     </div>
+  `;
+   document.body.appendChild(section);
 }
