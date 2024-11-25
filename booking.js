@@ -37,7 +37,9 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
             <input type="date" class="date-input" min="${currentDate}">
         </div>
         <div class="container-bottom">
-            <button id="btn-search-time"> search available time</button>
+            <button id="btn-home-page">Home</button>
+            <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
+            <button id="btn-search-time">Search</button>
         </div>
    `;
    document.body.appendChild(section);
@@ -50,15 +52,13 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
    document.body.style.overflow = "hidden";
    document.querySelector("html").style.overflow = "hidden";
 
-
    const searchTimesBtn = document.querySelector("#btn-search-time");
-   
+
    searchTimesBtn.addEventListener("click", () => {
       const chosenDate = document.querySelector(".date-input").value;
       if (chosenDate === "") {
          return;
       } else {
-
          console.log(chosenDate);
          document.querySelector(".book-page-one").remove();
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
@@ -88,7 +88,9 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
            </select>
         </form>
       <div>
-        <input type="submit" class="submit-booking" value="Submit booking" />
+            <button id="btn-back">Previos</button>
+            <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
+            <button class="submit-booking">Submit</button>
       </div>
    `;
    document.body.appendChild(section);
@@ -160,6 +162,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       bookPageConfirm();
    });
 }
+
 //----- funtion to book-page three. confirmation page
 function bookPageConfirm() {
    const section = document.createElement("section");
@@ -173,3 +176,7 @@ function bookPageConfirm() {
   `;
    document.body.appendChild(section);
 }
+
+//temp
+// openBookingPageOne();
+// openBookingPageTwo()
