@@ -27,6 +27,7 @@ const currentDate = `${year}-${month}-${day}`;
 // Function to generate booking page one
 function openBookingPageOne(ID, minParticipants, maxParticipants) {
    const section = document.createElement("section");
+   section.style.zIndex = "100";
    section.className = "book-page-one";
    section.innerHTML = `
         <div class="container-top">
@@ -42,13 +43,22 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
    document.body.appendChild(section);
    console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
 
-   const searchTimesBtn = document.querySelector("#btn-search-time");
+   const overlay = document.createElement("div");
+   overlay.classList.add("full-screen-invicible");
+   document.body.appendChild(overlay);
 
+   document.body.style.overflow = "hidden";
+   document.querySelector("html").style.overflow = "hidden";
+
+
+   const searchTimesBtn = document.querySelector("#btn-search-time");
+   
    searchTimesBtn.addEventListener("click", () => {
       const chosenDate = document.querySelector(".date-input").value;
       if (chosenDate === "") {
          return;
       } else {
+
          console.log(chosenDate);
          document.querySelector(".book-page-one").remove();
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
@@ -59,6 +69,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
 // Function to generate booking page two
 async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
    const section = document.createElement("section");
+   section.style.zIndex = "100";
    section.className = "booking-step-two";
    section.innerHTML = `
           <form class ="container-form">
@@ -152,6 +163,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
 //----- funtion to book-page three. confirmation page
 function bookPageConfirm() {
    const section = document.createElement("section");
+   section.style.zIndex = "100";
    section.className = "book-page-confirm";
    section.innerHTML = `
      <div>
