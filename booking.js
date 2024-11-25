@@ -44,16 +44,21 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
    `;
    document.body.appendChild(section);
    console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
-
    const overlay = document.createElement("div");
    overlay.classList.add("full-screen-invicible");
    document.body.appendChild(overlay);
-
    document.body.style.overflow = "hidden";
    document.querySelector("html").style.overflow = "hidden";
-
    const searchTimesBtn = document.querySelector("#btn-search-time");
-
+   //btn to go home page
+   const btnHomePage = document.querySelector("#btn-home-page");
+   const closePageOneBtn = document.querySelector("#btn-close");
+   closePageOneBtn.addEventListener("click", ()=>{
+      window.location.href="challenges.html";
+   });
+   btnHomePage.addEventListener("click", ()=>{
+      window.location.href = "index.html";
+   });
    searchTimesBtn.addEventListener("click", () => {
       const chosenDate = document.querySelector(".date-input").value;
       if (chosenDate === "") {
@@ -64,6 +69,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
       }
    });
+
 }
 
 // Function to generate booking page two
@@ -72,29 +78,39 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
    section.style.zIndex = "100";
    section.className = "booking-step-two";
    section.innerHTML = `
-          <form class ="container-form">
-           <p><b>Book room "Title of room"(step 2)</b></p>
-           <label for="input-name">Name</label>
-           <input id="input-name" name="input-name" type="text" required />
+      <form class ="container-form">
+         <p><b>Book room "Title of room"(step 2)</b></p>
+         <label for="input-name">Name</label>
+         <input id="input-name" name="input-name" type="text" required />
 
-           <label for="input-email">Email</label>
-           <input id="input-email" name="input-email" type="email" required />
+         <label for="input-email">Email</label>
+         <input id="input-email" name="input-email" type="email" required />
 
-           <label for="what-time">What time?</label>
-           <select id="what-time" name="time" required>
-           </select>
-           <label for="participants-count">How many participants:</label>
-           <select id="participants-count" name="options">
-           </select>
-        </form>
+         <label for="what-time">What time?</label>
+         <select id="what-time" name="time" required>
+         </select>
+         <label for="participants-count">How many participants:</label>
+         <select id="participants-count" name="options">
+         </select>
+      </form>
       <div>
-            <button id="btn-back">Previos</button>
-            <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
-            <button class="submit-booking">Submit</button>
+         <button id="btn-back">Previous</button>
+         <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
+         <button class="submit-booking">Submit</button>
       </div>
    `;
    document.body.appendChild(section);
    const submitBtn = document.querySelector(".submit-booking");
+   const backBtn = document.querySelector("#btn-back");
+   const closeBtn = document.querySelector("#btn-close");
+   //open the booking page one when back previos btn is clicked and removs the sep two page.
+   backBtn.addEventListener("click", () => {
+      document.querySelector(".booking-step-two").remove();
+      openBookingPageOne(ID, minParticipants, maxParticipants);
+   });
+   closeBtn.addEventListener("click", () => {
+      window.location.href = "challenges.html";
+   });
    /* Generate options for participants */
    for (let i = minParticipants; i <= maxParticipants; i++) {
       const option = document.createElement("option");
@@ -103,16 +119,13 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       document.querySelector("#participants-count").prepend(option);
    }
    const data = await fetchBookingTimes(date, ID);
-   /* Generate options for times */
    for (let i = 0; i < data.slots.length; i++) {
       const option = document.createElement("option");
       option.setAttribute("value", data.slots[i]);
       option.innerText = data.slots[i];
       document.querySelector("#what-time").prepend(option);
    }
-
    console.log(data.slots);
-
    submitBtn.addEventListener("click", (event) => {
       event.preventDefault();
 
@@ -122,7 +135,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
          form.reportValidity();
          return;
       }
-
+      
       const bookedName = document.querySelector("#input-name").value;
       const bookedEmail = document.querySelector("#input-email").value;
       const chosenTime = document.querySelector("#what-time").value;
