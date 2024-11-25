@@ -44,6 +44,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
 
    const searchTimesBtn = document.querySelector("#btn-search-time");
 
+   document.querySelector("html").style.overflow = "hidden";
    searchTimesBtn.addEventListener("click", () => {
       const chosenDate = document.querySelector(".date-input").value;
       if (chosenDate === "") {
