@@ -78,6 +78,77 @@ async function sortByText() {
    }
 }
 
+
+let minStars = 0;  // Default minStars
+let maxStars = 5;  // Default maxStars
+
+async function sortByStars() {
+   const response = await fetchData();
+   const challengesArray = response.challenges;
+
+   // Filter challenges based on the min and max star values (including half-stars)
+   const filteredChallenges = challengesArray.filter((challenge) => {
+      // Handle both whole and half-star ranges
+      return challenge.rating >= minStars && challenge.rating <= maxStars;
+   });
+
+   createCardsFromAPI(filteredChallenges);
+}
+
+// Function to handle clicks on stars for min and max rating
+function starsInit() {
+   const minStarsContainer = document.querySelector(".stars-container-left");
+   const maxStarsContainer = document.querySelector(".stars-container-right");
+
+   const minStarsArr = Array.from(minStarsContainer.children);
+   const maxStarsArr = Array.from(maxStarsContainer.children);
+
+   // Min stars click logic
+   minStarsArr.forEach((star, index) => {
+      star.addEventListener("click", () => {
+         // Directly toggle minStars value based on the clicked index
+         if (minStars === index + 1) {
+            minStars = 0;  // Reset if clicking the same star
+         } else if (minStars === (index + 1) - 0.5) {
+            minStars = 0;  // Reset if clicking the same half star
+         } else {
+            minStars = index + 1; // Set to full star
+         }
+
+         console.log(`Min Rating set to: ${minStars}`);
+         sortByStars(); // Reapply the filter
+      });
+   });
+
+   // Max stars click logic
+   maxStarsArr.forEach((star, index) => {
+      star.addEventListener("click", () => {
+         // Directly toggle maxStars value based on the clicked index
+         if (maxStars === index + 1) {
+            maxStars = 0;  // Reset if clicking the same star
+         } else if (maxStars === (index + 1) - 0.5) {
+            maxStars = 0;  // Reset if clicking the same half star
+         } else {
+            maxStars = index + 1; // Set to full star
+         }
+
+         console.log(`Max Rating set to: ${maxStars}`);
+         sortByStars(); // Reapply the filter
+      });
+   });
+
+   // Automatically reset when no stars are selected (i.e., both minStars and maxStars are 0)
+   document.addEventListener("click", () => {
+      if (minStars === 0 && maxStars === 5) {
+         console.log("Showing all challenges (default range).");
+         sortByStars(); // Apply filter to show all challenges
+      }
+   });
+}
+
+starsInit();
+sortByStars();  // Initial rendering of challenges (show all challenges initially)
+
 includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
 filterInput.addEventListener("keydown", sortByText);
