@@ -44,21 +44,30 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
    `;
    document.body.appendChild(section);
    console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
-   const overlay = document.createElement("div");
-   overlay.classList.add("full-screen-invicible");
-   document.body.appendChild(overlay);
-   document.body.style.overflow = "hidden";
-   document.querySelector("html").style.overflow = "hidden";
+
+   // preventing the overlay to be created on top of each other. 
+   const existingOverlay = document.querySelector(".full-screen-invicible");
+   if (!existingOverlay) {
+      const overlay = document.createElement("div");
+      overlay.classList.add("full-screen-invicible");
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.querySelector("html").style.overflow = "hidden";
+   }
+
    const searchTimesBtn = document.querySelector("#btn-search-time");
-   //when the close btn is clicked, remove the booking page and enable scroll.
+   //when the close btn is clicked, remove the booking page and enable scroll overlay.
    const btnHomePage = document.querySelector("#btn-home-page");
    const closePageOneBtn = document.querySelector("#btn-close");
-   closePageOneBtn.addEventListener("click", ()=>{
+   //-------------------------------------------------------------------------------------------------------------------------
+   closePageOneBtn.addEventListener("click", () => {
       document.querySelector(".book-page-one").remove();
-      overlay.remove();
-      document.querySelector("html").style.overflow = "auto";
+      document.querySelector(".full-screen-invicible").remove();
+      document.body.style.overflow = "";
+      document.querySelector("html").style.overflow = "";
    });
-   btnHomePage.addEventListener("click", ()=>{
+
+   btnHomePage.addEventListener("click", () => {
       window.location.href = "index.html";
    });
    searchTimesBtn.addEventListener("click", () => {
@@ -71,7 +80,6 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
       }
    });
-
 }
 
 // Function to generate booking page two
@@ -110,11 +118,12 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       document.querySelector(".booking-step-two").remove();
       openBookingPageOne(ID, minParticipants, maxParticipants);
    });
+   //-------------------------------------------------------------------------------------------------------------------------
    closeBtn.addEventListener("click", () => {
-      // window.location.href = "challenges.html";
-      overlay.remove();
-      document.querySelector("html").style.overflow = "auto";
       document.querySelector(".booking-step-two").remove();
+      document.querySelector(".full-screen-invicible").remove();
+      document.body.style.overflow = "";
+      document.querySelector("html").style.overflow = "";
    });
    /* Generate options for participants */
    for (let i = minParticipants; i <= maxParticipants; i++) {
@@ -140,7 +149,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
          form.reportValidity();
          return;
       }
-      
+
       const bookedName = document.querySelector("#input-name").value;
       const bookedEmail = document.querySelector("#input-email").value;
       const chosenTime = document.querySelector("#what-time").value;
