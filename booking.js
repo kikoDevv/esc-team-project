@@ -50,11 +50,13 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
    document.body.style.overflow = "hidden";
    document.querySelector("html").style.overflow = "hidden";
    const searchTimesBtn = document.querySelector("#btn-search-time");
-   //btn to go home page
+   //when the close btn is clicked, remove the booking page and enable scroll.
    const btnHomePage = document.querySelector("#btn-home-page");
    const closePageOneBtn = document.querySelector("#btn-close");
    closePageOneBtn.addEventListener("click", ()=>{
-      window.location.href="challenges.html";
+      document.querySelector(".book-page-one").remove();
+      overlay.remove();
+      document.querySelector("html").style.overflow = "auto";
    });
    btnHomePage.addEventListener("click", ()=>{
       window.location.href = "index.html";
@@ -103,13 +105,16 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
    const submitBtn = document.querySelector(".submit-booking");
    const backBtn = document.querySelector("#btn-back");
    const closeBtn = document.querySelector("#btn-close");
-   //open the booking page one when back previos btn is clicked and removs the sep two page.
+   //open the booking page one when previos btn is clicked and removs the sep two page and its property.
    backBtn.addEventListener("click", () => {
       document.querySelector(".booking-step-two").remove();
       openBookingPageOne(ID, minParticipants, maxParticipants);
    });
    closeBtn.addEventListener("click", () => {
-      window.location.href = "challenges.html";
+      // window.location.href = "challenges.html";
+      overlay.remove();
+      document.querySelector("html").style.overflow = "auto";
+      document.querySelector(".booking-step-two").remove();
    });
    /* Generate options for participants */
    for (let i = minParticipants; i <= maxParticipants; i++) {
