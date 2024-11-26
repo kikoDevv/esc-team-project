@@ -378,10 +378,11 @@
   box-shadow: black 0px 0px 0px 0.6px;
   border-radius: 5px;
 }
-.filterSection .filterContainer .containerRight .tagsGrupTop {
-  margin-bottom: 5px;
+.filterSection .filterContainer .containerRight {
+  max-width: 20%;
 }
 .filterSection .filterContainer .containerRight button {
+  margin: 0 0.5rem 0.5rem 0;
   padding: 5px 10px;
   border-radius: 30px;
   border: none;

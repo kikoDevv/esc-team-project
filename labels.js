@@ -8,11 +8,15 @@ async function getLabelList(data) {
   });
 
   const labelArray = [...labelTags];
-
-  /*   console.log("Tjenare Johannes", [...labelArray]); */
   generateLabels([...labelArray]);
 }
 
 async function generateLabels(labels) {
-  console.log("From generateLabels function", labels);
+  for (let i = 0; i < labels.length; i++) {
+    const tagsContainer = document.querySelector(".tagsContainer");
+    const tagBtn = document.createElement("button");
+    tagBtn.innerText = labels[i];
+    tagsContainer.append(tagBtn);
+  }
+  console.log("From generateLabels function", labels.length);
 }
