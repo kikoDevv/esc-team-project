@@ -17,6 +17,10 @@ async function generateLabels(labels) {
     const tagBtn = document.createElement("button");
     tagBtn.innerText = labels[i];
     tagsContainer.append(tagBtn);
+
+    tagBtn.addEventListener("click", () => {
+      tagBtn.classList.toggle("filled");
+    });
   }
   console.log("From generateLabels function", labels.length);
 }
