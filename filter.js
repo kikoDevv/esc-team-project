@@ -7,6 +7,15 @@ const filterBtn = document.querySelector("#filter-btn");
 //--root--
 switchFilterMenu();
 
+const filterState = {
+  types: [],
+  text: "",
+  ratings: {
+    from: 0,
+    to: 5,
+  }
+};
+
 async function fetchData() {
   try {
     const response = await fetch(
@@ -31,56 +40,103 @@ async function getChallenges() {
 
 getChallenges();
 
-async function sortByType() {
-  const response = await fetchData();
-  const challengesArray = response.challenges;
+// Function to fetch challenges
+async function fetchData() {
+  try {
+    const response = await fetch(
+      "https://lernia-sjj-assignments.vercel.app/api/challenges"
+    );
 
-  const onlineArray = challengesArray.filter(
-    (challenge) => challenge.type === "online"
-  );
-  const onsiteArray = challengesArray.filter(
-    (challenge) => challenge.type === "onsite"
-  );
-
-  if (
-    (includeOnline.checked && includeOnsite.checked) ||
-    (!includeOnline.checked && !includeOnsite.checked)
-  ) {
-    createCardsFromAPI(challengesArray);
-    console.log(challengesArray);
-  } else {
-    if (includeOnline.checked) {
-      createCardsFromAPI(onlineArray);
-      console.log(onlineArray);
+    if (!response.ok) {
+      throw new Error(`HTTP ERROR! Status: ${response.status}`);
     }
 
-    if (includeOnsite.checked) {
-      createCardsFromAPI(onsiteArray);
-      console.log(onsiteArray);
-    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
   }
 }
 
-async function sortByText() {
+async function applyFilters() {
   const response = await fetchData();
   const challengesArray = response.challenges;
+  let filteredChallenges = challengesArray;
 
-  const input = filterInput.value.toLowerCase();
+  filteredChallenges = filteredChallenges.filter((challenge) => {
+    const rating = challenge.rating;
+    return rating >= filterState.ratings.from && rating <= filterState.ratings.to;
+  });
 
-  const matchedChallenges = challengesArray.filter(
-    (challenge) =>
-      challenge.title.toLowerCase().includes(input) ||
-      challenge.description.toLowerCase().includes(input)
-  );
-
-  if (matchedChallenges.length > 0) {
-    createCardsFromAPI(matchedChallenges);
+  if (filterState.text) {
+    filteredChallenges = filteredChallenges.filter(challenge =>
+      challenge.title.toLowerCase().includes(filterState.text) ||
+      challenge.description.toLowerCase().includes(filterState.text)
+    );
   }
+
+  if (filterState.types.length > 0) {
+    filteredChallenges = filteredChallenges.filter(challenge =>
+      filterState.types.some(type => challenge.types.includes(type))
+    );
+  }
+
+  createCardsFromAPI(filteredChallenges);
+  console.log(filteredChallenges);
+}
+
+function handleStarClick(stars, filterKey) {
+  let lastClickedIndex = -1;
+  let clickCount = 0;
+
+  stars.forEach((star, index) => {
+    star.addEventListener("click", function () {
+      if (lastClickedIndex === index) {
+        clickCount++;
+
+        if (clickCount === 2) {
+          filterState.ratings[filterKey] = (index + 1) - 0.5;
+        }
+        else if (clickCount === 3) {
+          filterState.ratings[filterKey] = index;
+          clickCount = 0;
+          lastClickedIndex = -1;
+        }
+      } else {
+        filterState.ratings[filterKey] = index + 1;
+        lastClickedIndex = index;
+        clickCount = 1;
+      }
+      applyFilters();
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const starsLeft = document.querySelectorAll(".stars-container-left i");
+  const starsRight = document.querySelectorAll(".stars-container-right i");
+
+  handleStarClick(starsLeft, 'from');
+  handleStarClick(starsRight, 'to');
+});
+
+function sortByType() {
+  const types = [];
+  if (includeOnline.checked) types.push("online");
+  if (includeOnsite.checked) types.push("onsite");
+
+  filterState.types = types;
+  applyFilters();
+}
+
+function sortByText() {
+  filterState.text = filterInput.value.toLowerCase();
+  applyFilters();
 }
 
 includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
-filterInput.addEventListener("keydown", sortByText);
+filterInput.addEventListener("input", sortByText);
 
 //----funtion to switch the filter menu on and off--
 function switchFilterMenu() {
