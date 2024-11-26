@@ -145,6 +145,10 @@
   .play-info-container__content-title {
     width: 90%;
   }
+  .play-info-container__content a {
+    text-decoration: none;
+    color: white;
+  }
   .play-info-container__content p {
     width: 90%;
   }
@@ -177,6 +181,10 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .play-info-container a {
+    text-decoration: none;
+    color: white;
   }
   .play-info-container__button {
     margin-left: 15%;
