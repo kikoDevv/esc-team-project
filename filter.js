@@ -5,6 +5,7 @@ const btnCloseFilterMenu = document.querySelector("#btnCloseFilter");
 const filterSection = document.querySelector(".filterSection");
 const filterBtn = document.querySelector("#filter-btn");
 //--root--
+//t
 switchFilterMenu();
 
 const filterState = {
