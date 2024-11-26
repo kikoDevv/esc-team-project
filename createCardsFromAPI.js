@@ -39,11 +39,18 @@ function createCardsFromAPI(challenges) {
     // Set attributes and text
     img.setAttribute("src", challenge.image || "placeholder.jpg");
     titleHeading.innerText = challenge.title;
+
+    if (challenge.type === "onsite"){
+      titleHeading.innerText += " (on-site)";
+    }
     descriptionText.innerText = challenge.description;
     participantsText.innerText = getParticipants(
       challenge.minParticipants,
       challenge.maxParticipants
     );
+    if (challenge.type === "online"){
+      participantsText.innerText +=" (networked)";
+    }
 
     // Set button text
     if (challenge.type === "onsite") {
