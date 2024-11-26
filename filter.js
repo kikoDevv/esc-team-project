@@ -136,17 +136,17 @@ document.addEventListener("DOMContentLoaded", function () {
    const starsx = document.querySelectorAll(".stars-container-right i");
    let lastClickedIndexx = -1;
    let clickCountx = 0;
-   starsx.forEach((star, index) => {
-      star.addEventListener("click", function () {
-         if (lastClickedIndex === index) {
-            clickCount++;
-            if (clickCount === 2) {
-               star.classList.toggle("fa-star-half-stroke");
-            } else if (clickCount === 3) {
-               star.classList.remove("fa-solid", "fa-star-half-stroke");
-               star.classList.add("fa-regular");
-               clickCount = 0; //Reset the click count
-               lastClickedIndex = -1; //Reset the last clicked index
+   starsx.forEach((starx, index) => {
+      starx.addEventListener("click", function () {
+         if (lastClickedIndexx === index) {
+            clickCountx++;
+            if (clickCountx === 2) {
+               starx.classList.toggle("fa-star-half-stroke");
+            } else if (clickCountx === 3) {
+               starx.classList.remove("fa-solid", "fa-star-half-stroke");
+               starx.classList.add("fa-regular");
+               clickCountx = 0; //Reset the click count
+               lastClickedIndexx = -1; //Reset the last clicked index
             }
          } else {
             starsx.forEach((s, i) => {
@@ -157,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   s.classList.remove("fa-solid", "fa-star-half-stroke");
                }
             });
-            lastClickedIndex = index; //Update the last clicked index so we know
-            clickCount = 1; //Reset the click count to 1 for the new star.
+            lastClickedIndexx = index; //Update the last clicked index so we know
+            clickCountx = 1; //Reset the click count to 1 for the new star.
          }
       });
    });

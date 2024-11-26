@@ -31,13 +31,37 @@
       display: flex;
       justify-content: end;
       align-items: end;
-      #btn-search-time {
+      #btn-home-page{
          padding: 10px;
+         // padding: 10px;
          border: none;
          background-color: #6558f5;
          color: white;
          cursor: pointer;
-         border-radius: 4px;
+         border-radius: 10px 0px 0px 10px;
+         &:hover {
+            background-color: yellow;
+            color: black;
+         }
+      }
+      #btn-close{
+         padding: 17.3px 3px 17.3px 3px;
+         border: none;
+         background-color: #6558f5;
+         color: red;
+         cursor: pointer;
+         &:hover {
+            background-color: red;
+            color: white;
+         }
+      }
+      #btn-search-time {
+         padding: 10px 10px 10px 4px;
+         border: none;
+         background-color: #6558f5;
+         color: white;
+         cursor: pointer;
+         border-radius: 0px 10px 10px 0px;
          &:hover {
             background-color: yellow;
             color: black;
@@ -86,13 +110,37 @@
       display: flex;
       justify-content: end;
       align-items: end;
-      .submit-booking{
-         padding: 10px;
+      #btn-back{
+         padding: 10px 5px 10px 10px;
+         // padding: 10px;
          border: none;
          background-color: #6558f5;
          color: white;
          cursor: pointer;
-         border-radius: 4px;
+         border-radius: 10px 0px 0px 10px;
+         &:hover {
+            background-color: yellow;
+            color: black;
+         }
+      }
+      #btn-close{
+         padding: 17.3px 3px 17.3px 3px;
+         border: none;
+         background-color: #6558f5;
+         color: red;
+         cursor: pointer;
+         &:hover {
+            background-color: red;
+            color: white;
+         }
+      }
+      .submit-booking{
+         padding: 10px 15px 10px 10px;
+         border: none;
+         background-color: #6558f5;
+         color: white;
+         cursor: pointer;
+         border-radius: 0px 10px 10px 0px;
          &:hover {
             background-color: yellow;
             color: black;

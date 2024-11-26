@@ -37,28 +37,44 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
             <input type="date" class="date-input" min="${currentDate}">
         </div>
         <div class="container-bottom">
-            <button id="btn-search-time"> search available time</button>
+            <button id="btn-home-page">Home</button>
+            <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
+            <button id="btn-search-time">Search</button>
         </div>
    `;
    document.body.appendChild(section);
    console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
 
-   const overlay = document.createElement("div");
-   overlay.classList.add("full-screen-invicible");
-   document.body.appendChild(overlay);
-
-   document.body.style.overflow = "hidden";
-   document.querySelector("html").style.overflow = "hidden";
-
+   // preventing the overlay to be created on top of each other. 
+   const existingOverlay = document.querySelector(".full-screen-invicible");
+   if (!existingOverlay) {
+      const overlay = document.createElement("div");
+      overlay.classList.add("full-screen-invicible");
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.querySelector("html").style.overflow = "hidden";
+   }
 
    const searchTimesBtn = document.querySelector("#btn-search-time");
-   
+   //when the close btn is clicked, remove the booking page and enable scroll overlay.
+   const btnHomePage = document.querySelector("#btn-home-page");
+   const closePageOneBtn = document.querySelector("#btn-close");
+   //-------------------------------------------------------------------------------------------------------------------------
+   closePageOneBtn.addEventListener("click", () => {
+      document.querySelector(".book-page-one").remove();
+      document.querySelector(".full-screen-invicible").remove();
+      document.body.style.overflow = "";
+      document.querySelector("html").style.overflow = "";
+   });
+
+   btnHomePage.addEventListener("click", () => {
+      window.location.href = "index.html";
+   });
    searchTimesBtn.addEventListener("click", () => {
       const chosenDate = document.querySelector(".date-input").value;
       if (chosenDate === "") {
          return;
       } else {
-
          console.log(chosenDate);
          document.querySelector(".book-page-one").remove();
          openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
@@ -72,27 +88,43 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
    section.style.zIndex = "100";
    section.className = "booking-step-two";
    section.innerHTML = `
-          <form class ="container-form">
-           <p><b>Book room "Title of room"(step 2)</b></p>
-           <label for="input-name">Name</label>
-           <input id="input-name" name="input-name" type="text" required />
+      <form class ="container-form">
+         <p><b>Book room "Title of room"(step 2)</b></p>
+         <label for="input-name">Name</label>
+         <input id="input-name" name="input-name" type="text" required />
 
-           <label for="input-email">Email</label>
-           <input id="input-email" name="input-email" type="email" required />
+         <label for="input-email">Email</label>
+         <input id="input-email" name="input-email" type="email" required />
 
-           <label for="what-time">What time?</label>
-           <select id="what-time" name="time" required>
-           </select>
-           <label for="participants-count">How many participants:</label>
-           <select id="participants-count" name="options">
-           </select>
-        </form>
+         <label for="what-time">What time?</label>
+         <select id="what-time" name="time" required>
+         </select>
+         <label for="participants-count">How many participants:</label>
+         <select id="participants-count" name="options">
+         </select>
+      </form>
       <div>
-        <input type="submit" class="submit-booking" value="Submit booking" />
+         <button id="btn-back">Previous</button>
+         <button id="btn-close" class="fa-solid fa-xmark fa-2xl"></button>
+         <button class="submit-booking">Submit</button>
       </div>
    `;
    document.body.appendChild(section);
    const submitBtn = document.querySelector(".submit-booking");
+   const backBtn = document.querySelector("#btn-back");
+   const closeBtn = document.querySelector("#btn-close");
+   //open the booking page one when previos btn is clicked and removs the sep two page and its property.
+   backBtn.addEventListener("click", () => {
+      document.querySelector(".booking-step-two").remove();
+      openBookingPageOne(ID, minParticipants, maxParticipants);
+   });
+   //-------------------------------------------------------------------------------------------------------------------------
+   closeBtn.addEventListener("click", () => {
+      document.querySelector(".booking-step-two").remove();
+      document.querySelector(".full-screen-invicible").remove();
+      document.body.style.overflow = "";
+      document.querySelector("html").style.overflow = "";
+   });
    /* Generate options for participants */
    for (let i = minParticipants; i <= maxParticipants; i++) {
       const option = document.createElement("option");
@@ -101,16 +133,13 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       document.querySelector("#participants-count").prepend(option);
    }
    const data = await fetchBookingTimes(date, ID);
-   /* Generate options for times */
    for (let i = 0; i < data.slots.length; i++) {
       const option = document.createElement("option");
       option.setAttribute("value", data.slots[i]);
       option.innerText = data.slots[i];
       document.querySelector("#what-time").prepend(option);
    }
-
    console.log(data.slots);
-
    submitBtn.addEventListener("click", (event) => {
       event.preventDefault();
 
@@ -160,6 +189,7 @@ async function openBookingPageTwo(ID, minParticipants, maxParticipants, date) {
       bookPageConfirm();
    });
 }
+
 //----- funtion to book-page three. confirmation page
 function bookPageConfirm() {
    const section = document.createElement("section");
@@ -173,3 +203,7 @@ function bookPageConfirm() {
   `;
    document.body.appendChild(section);
 }
+
+//temp
+// openBookingPageOne();
+// openBookingPageTwo()
