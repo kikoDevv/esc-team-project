@@ -5,7 +5,6 @@ const btnCloseFilterMenu = document.querySelector("#btnCloseFilter");
 const filterSection = document.querySelector(".filterSection");
 const filterBtn = document.querySelector("#filter-btn");
 //--root--
-//t
 switchFilterMenu();
 
 const filterState = {
@@ -41,24 +40,6 @@ async function getChallenges() {
 
 getChallenges();
 
-// Function to fetch challenges
-async function fetchData() {
-  try {
-    const response = await fetch(
-      "https://lernia-sjj-assignments.vercel.app/api/challenges"
-    );
-
-    if (!response.ok) {
-      throw new Error(`HTTP ERROR! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 async function applyFilters() {
   const response = await fetchData();
   const challengesArray = response.challenges;
@@ -78,7 +59,7 @@ async function applyFilters() {
 
   if (filterState.types.length > 0) {
     filteredChallenges = filteredChallenges.filter(challenge =>
-      filterState.types.some(type => challenge.types.includes(type))
+      filterState.types.some(type => challenge.type.includes(type))
     );
   }
 
