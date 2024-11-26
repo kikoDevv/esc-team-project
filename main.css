@@ -145,6 +145,10 @@
   .play-info-container__content-title {
     width: 90%;
   }
+  .play-info-container__content a {
+    text-decoration: none;
+    color: white;
+  }
   .play-info-container__content p {
     width: 90%;
   }
@@ -177,6 +181,10 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .play-info-container a {
+    text-decoration: none;
+    color: white;
   }
   .play-info-container__button {
     margin-left: 15%;
@@ -378,10 +386,11 @@
   box-shadow: black 0px 0px 0px 0.6px;
   border-radius: 5px;
 }
-.filterSection .filterContainer .containerRight .tagsGrupTop {
-  margin-bottom: 5px;
+.filterSection .filterContainer .containerRight {
+  max-width: 20%;
 }
 .filterSection .filterContainer .containerRight button {
+  margin: 0 0.5rem 0.5rem 0;
   padding: 5px 10px;
   border-radius: 30px;
   border: none;

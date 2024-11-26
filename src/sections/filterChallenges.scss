@@ -1,93 +1,92 @@
-.filterSection.active{
-   display: grid;
+.filterSection.active {
+  display: grid;
 }
-.filled{
-   background-color: #788797;
-   color: white;
+.filled {
+  background-color: #788797;
+  color: white;
 }
 .filterSection {
-   display: none;
-   padding: 20px;
-   background-color: white;
-   border-radius: 10px;
-   margin: 50px;
-   box-shadow: #101827 0px 0px 4px 0.08px;
-   user-select: none;
-   #btnCloseFilter{
-      background: 0px;
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 50px;
+  box-shadow: #101827 0px 0px 4px 0.08px;
+  user-select: none;
+  #btnCloseFilter {
+    background: 0px;
+    padding: 0px;
+    border: none;
+    &:hover {
+      color: red;
+    }
+  }
+  .containerHead {
+    display: flex;
+    flex: none;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    p {
+      margin: 0px;
       padding: 0px;
-      border: none;
-      &:hover{
-         color: red;
+    }
+  }
+  .filterContainer {
+    display: flex;
+    justify-content: space-between;
+    .containerLeft {
+      label {
+        cursor: pointer;
       }
-   }
-   .containerHead {
-      display: flex;
-      flex: none;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      p {
-         margin: 0px;
-         padding: 0px;
+      #includeOnline {
+        margin: 0px;
+        cursor: pointer;
       }
-   }
-   .filterContainer {
-      display: flex;
-      justify-content: space-between;
-      .containerLeft {
-         label{
-            cursor: pointer;
-         }
-         #includeOnline {
-            margin: 0px;
-            cursor: pointer;
-         }
-         #includeOnsite {
-            margin: 0px;
-            cursor: pointer;
-         }
+      #includeOnsite {
+        margin: 0px;
+        cursor: pointer;
       }
-      .containerMiddle {
-         display: grid;
-         .starsContainer {
-            display: flex;
-            align-items: center;
-            i {
-               color: red;
-               cursor: pointer;
-            }
-            p {
-               margin: 0;
-               padding: 0px 20px;
-            }
-         }
-         .inputTitle {
-            margin: 100px 0px 5px 0px;
-         }
-         .filterInput {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 5px;
-            border: none;
-            box-shadow: black 0px 0px 0px 0.6px;
-            border-radius: 5px;
-         }
+    }
+    .containerMiddle {
+      display: grid;
+      .starsContainer {
+        display: flex;
+        align-items: center;
+        i {
+          color: red;
+          cursor: pointer;
+        }
+        p {
+          margin: 0;
+          padding: 0px 20px;
+        }
       }
-      .containerRight {
-         .tagsGrupTop {
-            margin-bottom: 5px;
-         }
-         button {
-            padding: 5px 10px;
-            border-radius: 30px;
-            border: none;
-            cursor: pointer;
-            box-shadow: #101827 0px 0px 1px 0.08px;
-            &:hover {
-               background-color: #788797;
-               color: white;
-            }
-         }
+      .inputTitle {
+        margin: 100px 0px 5px 0px;
       }
-   }
+      .filterInput {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        border: none;
+        box-shadow: black 0px 0px 0px 0.6px;
+        border-radius: 5px;
+      }
+    }
+    .containerRight {
+      max-width: 20%;
+      button {
+        margin: 0 0.5rem 0.5rem 0;
+        padding: 5px 10px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        box-shadow: #101827 0px 0px 1px 0.08px;
+        &:hover {
+          background-color: #788797;
+          color: white;
+        }
+      }
+    }
+  }
 }
