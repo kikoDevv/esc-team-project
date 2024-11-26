@@ -11,8 +11,9 @@ async function fetchAPI() {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log("Message from fetchAPI in createCards.js" + data);
     createCardsFromAPI(data.challenges);
+    getLabelList(data);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
