@@ -7,6 +7,15 @@ const filterBtn = document.querySelector("#filter-btn");
 //--root--
 switchFilterMenu();
 
+const filterState = {
+  types: [],
+  text: "",
+  ratings: {
+    from: 0,
+    to: 5,
+  }
+};
+
 async function fetchData() {
   try {
     const response = await fetch(
@@ -24,63 +33,87 @@ async function fetchData() {
   }
 }
 
-async function getChallenges() {
-  const challengesArray = await fetchData();
-  console.log(challengesArray);
-}
-
 getChallenges();
 
-async function sortByType() {
+async function applyFilters() {
   const response = await fetchData();
   const challengesArray = response.challenges;
+  let filteredChallenges = challengesArray;
 
-  const onlineArray = challengesArray.filter(
-    (challenge) => challenge.type === "online"
-  );
-  const onsiteArray = challengesArray.filter(
-    (challenge) => challenge.type === "onsite"
-  );
+  filteredChallenges = filteredChallenges.filter((challenge) => {
+    const rating = challenge.rating;
+    return rating >= filterState.ratings.from && rating <= filterState.ratings.to;
+  });
 
-  if (
-    (includeOnline.checked && includeOnsite.checked) ||
-    (!includeOnline.checked && !includeOnsite.checked)
-  ) {
-    createCardsFromAPI(challengesArray);
-    console.log(challengesArray);
-  } else {
-    if (includeOnline.checked) {
-      createCardsFromAPI(onlineArray);
-      console.log(onlineArray);
-    }
-
-    if (includeOnsite.checked) {
-      createCardsFromAPI(onsiteArray);
-      console.log(onsiteArray);
-    }
+  if (filterState.text) {
+    filteredChallenges = filteredChallenges.filter(challenge =>
+      challenge.title.toLowerCase().includes(filterState.text) ||
+      challenge.description.toLowerCase().includes(filterState.text)
+    );
   }
+
+  if (filterState.types.length > 0) {
+    filteredChallenges = filteredChallenges.filter(challenge =>
+      filterState.types.some(type => challenge.type.includes(type))
+    );
+  }
+
+  createCardsFromAPI(filteredChallenges);
+  console.log(filteredChallenges);
 }
 
-async function sortByText() {
-  const response = await fetchData();
-  const challengesArray = response.challenges;
+function handleStarClick(stars, filterKey) {
+  let lastClickedIndex = -1;
+  let clickCount = 0;
 
-  const input = filterInput.value.toLowerCase();
+  stars.forEach((star, index) => {
+    star.addEventListener("click", function () {
+      if (lastClickedIndex === index) {
+        clickCount++;
 
-  const matchedChallenges = challengesArray.filter(
-    (challenge) =>
-      challenge.title.toLowerCase().includes(input) ||
-      challenge.description.toLowerCase().includes(input)
-  );
+        if (clickCount === 2) {
+          filterState.ratings[filterKey] = (index + 1) - 0.5;
+        }
+        else if (clickCount === 3) {
+          filterState.ratings[filterKey] = index;
+          clickCount = 0;
+          lastClickedIndex = -1;
+        }
+      } else {
+        filterState.ratings[filterKey] = index + 1;
+        lastClickedIndex = index;
+        clickCount = 1;
+      }
+      applyFilters();
+    });
+  });
+}
 
-  if (matchedChallenges.length > 0) {
-    createCardsFromAPI(matchedChallenges);
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  const starsLeft = document.querySelectorAll(".stars-container-left i");
+  const starsRight = document.querySelectorAll(".stars-container-right i");
+
+  handleStarClick(starsLeft, 'from');
+  handleStarClick(starsRight, 'to');
+});
+
+function sortByType() {
+  const types = [];
+  if (includeOnline.checked) types.push("online");
+  if (includeOnsite.checked) types.push("onsite");
+
+  filterState.types = types;
+  applyFilters();
+}
+
+function sortByText() {
+  filterState.text = filterInput.value.toLowerCase();
+  applyFilters();
 }
 
 includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
-filterInput.addEventListener("keydown", sortByText);
+filterInput.addEventListener("input", sortByText);
 
 //----funtion to switch the filter menu on and off--
 function switchFilterMenu() {
