@@ -33,11 +33,6 @@ async function fetchData() {
   }
 }
 
-async function getChallenges() {
-  const challengesArray = await fetchData();
-  console.log(challengesArray);
-}
-
 getChallenges();
 
 async function applyFilters() {
