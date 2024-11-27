@@ -122,9 +122,9 @@ function updateCardsDescription() {
 }
 
 function updateCardsParticipants() {
-  cardParticipantsOne.innerText = `${challengesSorted[0].minParticipants} -  ${challengesSorted[0].maxParticipants}`;
-  cardParticipantsTwo.innerText = `${challengesSorted[1].minParticipants} -  ${challengesSorted[1].maxParticipants}`;
-  cardParticipantsThree.innerText = `${challengesSorted[2].minParticipants} -  ${challengesSorted[2].maxParticipants}`;
+  cardParticipantsOne.innerText = `${challengesSorted[0].minParticipants} -  ${challengesSorted[0].maxParticipants} participants`;
+  cardParticipantsTwo.innerText = `${challengesSorted[1].minParticipants} -  ${challengesSorted[1].maxParticipants} participants`;
+  cardParticipantsThree.innerText = `${challengesSorted[2].minParticipants} -  ${challengesSorted[2].maxParticipants} participants`;
 }
 
 function updateCardsButtonText() {

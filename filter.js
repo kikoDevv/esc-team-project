@@ -14,6 +14,7 @@ const filterState = {
     from: 0,
     to: 5,
   },
+  labels: [],
 };
 
 async function fetchData() {
@@ -56,6 +57,12 @@ async function applyFilters() {
   if (filterState.types.length > 0) {
     filteredChallenges = filteredChallenges.filter((challenge) =>
       filterState.types.some((type) => challenge.type.includes(type))
+    );
+  }
+
+  if (filterState.labels.length > 0) {
+    filteredChallenges = filteredChallenges.filter((challenge) =>
+      filterState.labels.every((label) => challenge.labels.includes(label))
     );
   }
 
