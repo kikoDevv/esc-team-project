@@ -13,7 +13,8 @@ const filterState = {
   ratings: {
     from: 0,
     to: 5,
-  }
+  },
+  labels: [],
 };
 
 async function fetchData() {
@@ -33,8 +34,6 @@ async function fetchData() {
   }
 }
 
-getChallenges();
-
 async function applyFilters() {
   const response = await fetchData();
   const challengesArray = response.challenges;
@@ -42,19 +41,28 @@ async function applyFilters() {
 
   filteredChallenges = filteredChallenges.filter((challenge) => {
     const rating = challenge.rating;
-    return rating >= filterState.ratings.from && rating <= filterState.ratings.to;
+    return (
+      rating >= filterState.ratings.from && rating <= filterState.ratings.to
+    );
   });
 
   if (filterState.text) {
-    filteredChallenges = filteredChallenges.filter(challenge =>
-      challenge.title.toLowerCase().includes(filterState.text) ||
-      challenge.description.toLowerCase().includes(filterState.text)
+    filteredChallenges = filteredChallenges.filter(
+      (challenge) =>
+        challenge.title.toLowerCase().includes(filterState.text) ||
+        challenge.description.toLowerCase().includes(filterState.text)
     );
   }
 
   if (filterState.types.length > 0) {
-    filteredChallenges = filteredChallenges.filter(challenge =>
-      filterState.types.some(type => challenge.type.includes(type))
+    filteredChallenges = filteredChallenges.filter((challenge) =>
+      filterState.types.some((type) => challenge.type.includes(type))
+    );
+  }
+
+  if (filterState.labels.length > 0) {
+    filteredChallenges = filteredChallenges.filter((challenge) =>
+      filterState.labels.every((label) => challenge.labels.includes(label))
     );
   }
 
@@ -72,9 +80,8 @@ function handleStarClick(stars, filterKey) {
         clickCount++;
 
         if (clickCount === 2) {
-          filterState.ratings[filterKey] = (index + 1) - 0.5;
-        }
-        else if (clickCount === 3) {
+          filterState.ratings[filterKey] = index + 1 - 0.5;
+        } else if (clickCount === 3) {
           filterState.ratings[filterKey] = index;
           clickCount = 0;
           lastClickedIndex = -1;
@@ -93,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const starsLeft = document.querySelectorAll(".stars-container-left i");
   const starsRight = document.querySelectorAll(".stars-container-right i");
 
-  handleStarClick(starsLeft, 'from');
-  handleStarClick(starsRight, 'to');
+  handleStarClick(starsLeft, "from");
+  handleStarClick(starsRight, "to");
 });
 
 function sortByType() {

@@ -20,6 +20,17 @@ async function generateLabels(labels) {
 
     tagBtn.addEventListener("click", () => {
       tagBtn.classList.toggle("filled");
+
+      if (tagBtn.classList.contains("filled")) {
+        filterState.labels.push(labels[i]);
+        console.log(filterState.labels);
+      } else {
+        filterState.labels = filterState.labels.filter(
+          (label) => label !== labels[i]
+        );
+        console.log(filterState.labels);
+      }
+      applyFilters();
     });
   }
   console.log("From generateLabels function", labels.length);
