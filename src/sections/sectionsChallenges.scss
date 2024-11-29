@@ -59,8 +59,9 @@
 .title-btn-container {
   display: grid;
   justify-content: center;
+  margin-top: 50px;
   h1 {
-    color: white;
+    color: black;
     user-select: none;
   }
   #filter-btn.active {
