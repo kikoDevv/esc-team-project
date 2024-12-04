@@ -422,6 +422,7 @@
   background-color: white;
   box-shadow: #b6bdb5 0px 5px 15px;
   border-radius: 10px;
+  position: relative;
 }
 .api-card-container__card h3 {
   margin: 5%;
@@ -451,6 +452,24 @@
   height: 2.5rem;
   border-radius: 3px;
   color: white;
+}
+.api-card-container__card .img-container {
+  position: relative;
+}
+.api-card-container__card .img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px 10px 0px 0px;
+}
+.api-card-container__card .img-container .icon {
+  position: absolute;
+  color: #011827;
+  top: 10px;
+  right: 25px;
+  font-size: 2.5rem;
+  padding: 5px;
+  z-index: 100;
 }
 
 .title-btn-container {

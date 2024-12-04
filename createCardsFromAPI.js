@@ -31,7 +31,9 @@ function createCardsFromAPI(challenges) {
 
     // Create elements
     const cardDiv = document.createElement("div");
+    const imgContainer = document.createElement("div")
     const img = document.createElement("img");
+    const icon = document.createElement("i")
     const titleHeading = document.createElement("h3");
     const descriptionText = document.createElement("p");
     const participantsText = document.createElement("small");
@@ -43,6 +45,7 @@ function createCardsFromAPI(challenges) {
 
     if (challenge.type === "onsite"){
       titleHeading.innerText += " (on-site)";
+      icon.classList.add("fa-solid", "fa-house", "icon");
     }
     descriptionText.innerText = challenge.description;
     participantsText.innerText = getParticipants(
@@ -51,6 +54,7 @@ function createCardsFromAPI(challenges) {
     );
     if (challenge.type === "online"){
       participantsText.innerText +=" (networked)";
+      icon.classList.add("fa-solid", "fa-laptop", "icon");
     }
 
     // Set button text
@@ -66,10 +70,16 @@ function createCardsFromAPI(challenges) {
 
     // Apply styles
     cardDiv.classList.add("api-card-container__card");
+    imgContainer.classList.add("img-container");
 
-    // Append elements to the card
-    cardDiv.append(img);
-    cardDiv.append(titleHeading);
+    
+    imgContainer.appendChild(img);
+    if (challenge.type === "onsite" || challenge.type === "online") {
+      imgContainer.appendChild(icon);
+    }
+    cardDiv.appendChild(imgContainer);
+    cardDiv.appendChild(titleHeading);
+
     // Create stars and append them
     const stars = createStars(challenge.rating);
     stars.forEach((star) => cardDiv.appendChild(star));
