@@ -307,8 +307,10 @@
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border: 16px solid purple;
+  border-top: 16px solid #011827;
+  border-left: 16px solid #8acfe5;
+  border-bottom: 16px solid #36769d;
   border-radius: 50%;
   width: 120px;
   height: 120px;

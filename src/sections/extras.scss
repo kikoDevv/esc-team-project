@@ -73,8 +73,10 @@
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border: 16px solid purple;
+  border-top: 16px solid $darkBlue;
+  border-left: 16px solid $lightBlue;
+  border-bottom: 16px solid $blue;
   border-radius: 50%;
   width: 120px;
   height: 120px;
