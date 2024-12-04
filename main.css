@@ -424,6 +424,9 @@
   border-radius: 10px;
   position: relative;
 }
+.api-card-container__card:hover {
+  box-shadow: #011827 0px 5px 30px;
+}
 .api-card-container__card h3 {
   margin: 5%;
 }
