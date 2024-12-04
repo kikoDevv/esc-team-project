@@ -92,7 +92,7 @@ async function fetchAPI() {
     }
 
     const data = await response.json();
-
+    document.querySelector(".loader").remove();
     challengesSorted = data.challenges.sort((a, b) => b.rating - a.rating);
   } catch (error) {
     console.error("Error fetching data:", error);
