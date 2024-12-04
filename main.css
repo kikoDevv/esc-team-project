@@ -678,6 +678,10 @@ body {
   background-color: white;
 }
 
+.indexBody {
+  background-color: #011827;
+}
+
 button {
   font-family: roboto, sans-serif;
 }
