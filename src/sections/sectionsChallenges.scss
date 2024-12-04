@@ -21,6 +21,7 @@
     background-color: white;
     box-shadow: $grey 0px 5px 15px;
     border-radius: 10px;
+    position: relative;
 
     h3 {
       margin: 5%;
@@ -52,6 +53,25 @@
       // justify-self: end;
       border-radius: 3px;
       color: white;
+    }
+    .img-container {
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px 10px 0px 0px;
+      }
+
+      .icon {
+        position: absolute;
+        color: $darkBlue;
+        top: 10px;
+        right: 25px;
+        font-size: 2.5rem;
+        padding:5px;
+        z-index: 100;
+      }
     }
   }
 }
