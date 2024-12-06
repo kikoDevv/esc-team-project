@@ -136,86 +136,97 @@ function switchFilterMenu() {
 }
 //------
 
+// Function to synchronize the number of filled stars
+function synchronizeStars() {
+  const starsFilledCountRight = document.querySelectorAll('.stars-container-right i.fa-solid').length;
+  let starsFilledCountLeft = document.querySelectorAll('.stars-container-left i.fa-solid').length;
+  let starsHalfFiled = document.querySelectorAll('.stars-container-right i.fa-star-half-stroke').length;
+  const leftStars = document.querySelectorAll('.stars-container-left i');
 
+  leftStars.forEach((star, index) => {
+    if (index < starsFilledCountRight) {
+      star.classList.remove('fa-star-half-stroke');
+    } else {
+      star.classList.remove('fa-solid');
+      star.classList.remove('fa-star-half-stroke');
+    }
+  });
 
+  // Apply half-filled class to the last filled star if there are any half-filled stars
+  if (starsFilledCountRight === starsFilledCountLeft && starsHalfFiled >0 ){
+    leftStars[starsFilledCountRight -1].classList.remove('fa-solid');
+    leftStars[starsFilledCountRight -1].classList.add('fa-star-half-stroke');
+    clickCountLeft = 0; // Reset the click count
+    lastClickedIndexLeft = -1; // Reset the last clicked index
+  }
+}
 
+// Event listener for left side stars
+const starsLeft = document.querySelectorAll('.stars-container-left i');
+let lastClickedIndexLeft = -1;
+let clickCountLeft = 0;
 
+starsLeft.forEach((star, index) => {
+  star.addEventListener("click", function () {
+    const starsFilledCountRight = document.querySelectorAll('.stars-container-right i.fa-solid').length;
 
-
-
-
-
-
-
-
-
-
-
-
-//---------------event listener for the stars----------
-document.addEventListener("DOMContentLoaded", function () {
-  //for the stars container in left side.
-  const starsLeft = document.querySelectorAll(".stars-container-left i");
-  let lastClickedIndexLeft = -1;
-  let clickCountLeft = 0;
-  starsLeft.forEach((star, index) => {
-    star.addEventListener("click", function () {
+    if (index < starsFilledCountRight) {
       if (lastClickedIndexLeft === index) {
-        //count the repeted click on one index.
         clickCountLeft++;
         if (clickCountLeft === 2) {
-          //If the same star is clicked twice, switch the class of the stars to half fill.
           star.classList.toggle("fa-star-half-stroke");
         } else if (clickCountLeft === 3) {
-          //same stars clicked for 3 times, remove hafl and solid, putt regular stars.
           star.classList.remove("fa-solid", "fa-star-half-stroke");
           star.classList.add("fa-regular");
-          clickCountLeft = 0; //Reset the click count
-          lastClickedIndexLeft = -1; //Reset the last clicked index
+          clickCountLeft = 0; // Reset the click count
+          lastClickedIndexLeft = -1; // Reset the last clicked index
         }
       } else {
-        //Fill all stars up to and including the clicked star
         starsLeft.forEach((s, i) => {
           if (i <= index) {
             s.classList.add("fa-solid");
             s.classList.remove("fa-star-half-stroke");
           } else {
-            s.classList.remove("fa-solid", "fa-star-half-stroke");
-          }
-        });
-        lastClickedIndexLeft = index; //Update the last clicked index so we know
-        clickCountLeft = 1; //Reset the click count to 1 for the new star.
-      }
-    });
-  });
-  // same procces but for the stars container in right side.
-  const starsRight = document.querySelectorAll(".stars-container-right i");
-  let lastClickedIndexx = -1;
-  let clickCountx = 0;
-  starsRight.forEach((starx, index) => {
-    starx.addEventListener("click", function () {
-      if (lastClickedIndexx === index) {
-        clickCountx++;
-        if (clickCountx === 2) {
-          starx.classList.toggle("fa-star-half-stroke");
-        } else if (clickCountx === 3) {
-          starx.classList.remove("fa-solid", "fa-star-half-stroke");
-          starx.classList.add("fa-regular");
-          clickCountx = 0; //Reset the click count
-          lastClickedIndexx = -1; //Reset the last clicked index
-        }
-      } else {
-        starsRight.forEach((s, i) => {
-          if (i <= index) {
-            s.classList.add("fa-solid");
+            s.classList.remove("fa-solid");
             s.classList.remove("fa-star-half-stroke");
-          } else {
-            s.classList.remove("fa-solid", "fa-star-half-stroke");
           }
         });
-        lastClickedIndexx = index; //Update the last clicked index so we know
-        clickCountx = 1; //Reset the click count to 1 for the new star.
+        lastClickedIndexLeft = index; // Update the last clicked index
+        clickCountLeft = 1; // Reset the click count to 1 for the new star
       }
-    });
+    }
+  });
+});
+//---------------------------------starsRight--------------------------------------------------
+// Event listener for right side stars
+const starsRight = document.querySelectorAll(".stars-container-right i");
+let lastClickedIndexx = -1;
+let clickCountx = 0;
+
+starsRight.forEach((starx, index) => {
+  starx.addEventListener("click", function () {
+    if (lastClickedIndexx === index) {
+      clickCountx++;
+      if (clickCountx === 2) {
+        starx.classList.toggle("fa-star-half-stroke");
+      } else if (clickCountx === 3) {
+        starx.classList.remove("fa-solid", "fa-star-half-stroke");
+        starx.classList.add("fa-regular");
+        clickCountx = 0; // Reset the click count
+        lastClickedIndexx = -1; // Reset the last clicked index
+      }
+    } else {
+      starsRight.forEach((s, i) => {
+        if (i <= index) {
+          s.classList.add("fa-solid");
+          s.classList.remove("fa-star-half-stroke");
+        } else {
+          s.classList.remove("fa-solid", "fa-star-half-stroke");
+        }
+      });
+      lastClickedIndexx = index; // Update the last clicked index
+      clickCountx = 1; // Reset the click count to 1 for the new star
+    }
+    synchronizeStars(); // Synchronize the stars after any click event
   });
 });
