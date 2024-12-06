@@ -71,25 +71,25 @@ async function applyFilters() {
 }
 
 function handleStarClick(stars, filterKey) {
-  let lastClickedIndex = -1;
-  let clickCount = 0;
+  let lastClickedIndexLeft = -1;
+  let clickCountLeft = 0;
 
   stars.forEach((star, index) => {
     star.addEventListener("click", function () {
-      if (lastClickedIndex === index) {
-        clickCount++;
+      if (lastClickedIndexLeft === index) {
+        clickCountLeft++;
 
-        if (clickCount === 2) {
+        if (clickCountLeft === 2) {
           filterState.ratings[filterKey] = index + 1 - 0.5;
-        } else if (clickCount === 3) {
+        } else if (clickCountLeft === 3) {
           filterState.ratings[filterKey] = index;
-          clickCount = 0;
-          lastClickedIndex = -1;
+          clickCountLeft = 0;
+          lastClickedIndexLeft = -1;
         }
       } else {
         filterState.ratings[filterKey] = index + 1;
-        lastClickedIndex = index;
-        clickCount = 1;
+        lastClickedIndexLeft = index;
+        clickCountLeft = 1;
       }
       applyFilters();
     });
@@ -136,30 +136,46 @@ function switchFilterMenu() {
 }
 //------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------event listener for the stars----------
 document.addEventListener("DOMContentLoaded", function () {
   //for the stars container in left side.
-  const stars = document.querySelectorAll(".stars-container-left i");
-  let lastClickedIndex = -1;
-  let clickCount = 0;
-  stars.forEach((star, index) => {
+  const starsLeft = document.querySelectorAll(".stars-container-left i");
+  let lastClickedIndexLeft = -1;
+  let clickCountLeft = 0;
+  starsLeft.forEach((star, index) => {
     star.addEventListener("click", function () {
-      if (lastClickedIndex === index) {
+      if (lastClickedIndexLeft === index) {
         //count the repeted click on one index.
-        clickCount++;
-        if (clickCount === 2) {
+        clickCountLeft++;
+        if (clickCountLeft === 2) {
           //If the same star is clicked twice, switch the class of the stars to half fill.
           star.classList.toggle("fa-star-half-stroke");
-        } else if (clickCount === 3) {
+        } else if (clickCountLeft === 3) {
           //same stars clicked for 3 times, remove hafl and solid, putt regular stars.
           star.classList.remove("fa-solid", "fa-star-half-stroke");
           star.classList.add("fa-regular");
-          clickCount = 0; //Reset the click count
-          lastClickedIndex = -1; //Reset the last clicked index
+          clickCountLeft = 0; //Reset the click count
+          lastClickedIndexLeft = -1; //Reset the last clicked index
         }
       } else {
         //Fill all stars up to and including the clicked star
-        stars.forEach((s, i) => {
+        starsLeft.forEach((s, i) => {
           if (i <= index) {
             s.classList.add("fa-solid");
             s.classList.remove("fa-star-half-stroke");
@@ -167,16 +183,16 @@ document.addEventListener("DOMContentLoaded", function () {
             s.classList.remove("fa-solid", "fa-star-half-stroke");
           }
         });
-        lastClickedIndex = index; //Update the last clicked index so we know
-        clickCount = 1; //Reset the click count to 1 for the new star.
+        lastClickedIndexLeft = index; //Update the last clicked index so we know
+        clickCountLeft = 1; //Reset the click count to 1 for the new star.
       }
     });
   });
   // same procces but for the stars container in right side.
-  const starsx = document.querySelectorAll(".stars-container-right i");
+  const starsRight = document.querySelectorAll(".stars-container-right i");
   let lastClickedIndexx = -1;
   let clickCountx = 0;
-  starsx.forEach((starx, index) => {
+  starsRight.forEach((starx, index) => {
     starx.addEventListener("click", function () {
       if (lastClickedIndexx === index) {
         clickCountx++;
@@ -189,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
           lastClickedIndexx = -1; //Reset the last clicked index
         }
       } else {
-        starsx.forEach((s, i) => {
+        starsRight.forEach((s, i) => {
           if (i <= index) {
             s.classList.add("fa-solid");
             s.classList.remove("fa-star-half-stroke");
