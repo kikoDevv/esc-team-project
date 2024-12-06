@@ -137,14 +137,14 @@ function switchFilterMenu() {
 //------
 
 // Function to synchronize the number of filled stars
-function synchronizeStars() {
+function synchronizeStars(clickCountLeft, lastClickedIndexLeft) {
    const starsFilledCountRight = document.querySelectorAll(
       ".stars-container-right i.fa-solid"
    ).length;
-   let starsFilledCountLeft = document.querySelectorAll(
+   const starsFilledCountLeft = document.querySelectorAll(
       ".stars-container-left i.fa-solid"
    ).length;
-   let starsHalfFiled = document.querySelectorAll(
+   const starsHalfFiled = document.querySelectorAll(
       ".stars-container-right i.fa-star-half-stroke"
    ).length;
    const leftStars = document.querySelectorAll(".stars-container-left i");
@@ -160,7 +160,9 @@ function synchronizeStars() {
 
    // Apply half-filled class to the last filled star if there are any half-filled stars
    if (starsFilledCountRight === starsFilledCountLeft && starsHalfFiled > 0) {
-      leftStars[starsFilledCountRight - 1].classList.remove("fa-solid");
+      if (starsFilledCountRight > 0) {
+         leftStars[starsFilledCountRight - 1].classList.remove("fa-solid");
+      }
       leftStars[starsFilledCountRight - 1].classList.add("fa-star-half-stroke");
       clickCountLeft = 0; // Reset the click count
       lastClickedIndexLeft = -1; // Reset the last clicked index
@@ -193,7 +195,7 @@ starsLeft.forEach((star, index) => {
             starsLeft.forEach((s, i) => {
                if (i <= index) {
                   s.classList.remove("fa-star-half-stroke");
-                s.classList.add("fa-solid");
+                  s.classList.add("fa-solid");
                } else {
                   s.classList.remove("fa-star-half-stroke");
                   s.classList.remove("fa-solid");
@@ -235,6 +237,6 @@ starsRight.forEach((starx, index) => {
          lastClickedIndexx = index; // Update the last clicked index
          clickCountx = 1; // Reset the click count to 1 for the new star
       }
-      synchronizeStars(); // Synchronize the stars after any click event
+      synchronizeStars(clickCountLeft, lastClickedIndexLeft); // Synchronize the stars after any click event
    });
 });
