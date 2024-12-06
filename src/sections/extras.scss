@@ -71,3 +71,26 @@
 .red {
   color: #ff0000;
 }
+
+.loader {
+  border: 16px solid purple;
+  border-top: 16px solid $darkBlue;
+  border-left: 16px solid $lightBlue;
+  border-bottom: 16px solid $blue;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
