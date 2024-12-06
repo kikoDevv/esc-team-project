@@ -191,12 +191,12 @@ starsLeft.forEach((star, index) => {
             }
          } else {
             starsLeft.forEach((s, i) => {
-               if (i <= index -1) {
-                s.classList.add("fa-solid");
-                s.classList.remove("fa-star-half-stroke");
-               } else {
-                  s.classList.remove("fa-solid");
+               if (i <= index) {
                   s.classList.remove("fa-star-half-stroke");
+                s.classList.add("fa-solid");
+               } else {
+                  s.classList.remove("fa-star-half-stroke");
+                  s.classList.remove("fa-solid");
                }
             });
             lastClickedIndexLeft = index; // Update the last clicked index
@@ -216,7 +216,7 @@ starsRight.forEach((starx, index) => {
       if (lastClickedIndexx === index) {
          clickCountx++;
          if (clickCountx === 2) {
-            starx.classList.toggle("fa-star-half-stroke");
+            // starx.classList.toggle("fa-star-half-stroke");
          } else if (clickCountx === 3) {
             starx.classList.remove("fa-solid", "fa-star-half-stroke");
             starx.classList.add("fa-regular");
