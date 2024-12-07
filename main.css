@@ -663,6 +663,118 @@
   color: #6558f5;
 }
 
+body {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mainSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainSection .container-right {
+  background: conic-gradient(at top right, lightcyan, lightblue);
+  height: 70vh;
+  width: 40vw;
+  border-radius: 0px 30px 30px 0px;
+}
+.mainSection .container-right .input-forms {
+  display: grid;
+  padding: 20px 50px 0px 50px;
+  gap: 20px;
+}
+.mainSection .container-right .input-forms .name-form {
+  position: relative;
+}
+.mainSection .container-right .input-forms .name-form .label-input-name {
+  position: absolute;
+  top: 45%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+}
+.mainSection .container-right .input-forms .name-form .input-name {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 2px;
+  border: solid black;
+  outline: none;
+  min-width: 90%;
+}
+.mainSection .container-right .input-forms .name-form .input-name:not(:placeholder-shown) + .label-input-name {
+  top: 0;
+  left: 15px;
+  font-size: 0.8em;
+  color: #000;
+}
+.mainSection .container-right .input-forms .name-form .input-name:focus ~ .label-input-name {
+  top: 0;
+  left: 15px;
+}
+.mainSection .container-right .input-forms .email-form {
+  position: relative;
+}
+.mainSection .container-right .input-forms .email-form .label-email {
+  position: absolute;
+  top: 45%;
+  left: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+}
+.mainSection .container-right .input-forms .email-form .input-email {
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 90%;
+  outline: none;
+  border-width: 2px;
+  border: solid black;
+}
+.mainSection .container-right .input-forms .email-form .input-email:focus ~ .label-email {
+  top: 0;
+  left: 15px;
+}
+.mainSection .container-right .input-forms .email-form .input-email:not(:placeholder-shown) + .label-email {
+  top: 0;
+  left: 15;
+  font-size: 0.8em;
+}
+.mainSection .container-right .input-forms .number-form {
+  position: relative;
+}
+.mainSection .container-right .input-forms .number-form .label-number {
+  position: absolute;
+  top: 45%;
+  left: 15px;
+  pointer-events: none;
+  transform: translateY(-45%);
+  transition: 0.3s;
+}
+.mainSection .container-right .input-forms .number-form .input-number {
+  padding: 10px;
+  min-width: 90%;
+  border-width: 2px;
+  border: solid black;
+  border-radius: 10px;
+}
+.mainSection .container-left {
+  display: flex;
+  justify-content: center;
+  background-color: blueviolet;
+  height: 70vh;
+  width: 25vw;
+  border-radius: 30px 0px 0px 30px;
+}
+.mainSection .container-left .phone-img {
+  border-radius: 0px;
+}
+
 /* Phone and PC */
 html {
   font-family: roboto, sans-serif;
