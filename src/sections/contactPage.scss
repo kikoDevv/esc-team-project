@@ -19,7 +19,7 @@ body {
          display: grid;
          padding: 20px 50px 0px 50px;
          gap: 20px;
-         .name-form{
+         .name-form {
             position: relative;
             .label-input-name {
                position: absolute;
@@ -28,6 +28,7 @@ body {
                transform: translateY(-50%);
                pointer-events: none;
                transition: 0.3s;
+               padding: 0px 5px;
             }
             .input-name {
                padding: 10px;
@@ -40,61 +41,101 @@ body {
                   top: 0;
                   left: 15px;
                   font-size: 0.8em;
-                  color: #000; // Change this to your desired color
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
                }
                &:focus ~ .label-input-name {
                   top: 0;
                   left: 15px;
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
                }
             }
          }
-         .email-form{
+         .email-form {
             position: relative;
-            .label-email{
-                position: absolute;
-                top: 45%;
-                left: 15px;
-                transform: translateY(-50%);
-                pointer-events: none;
-                transition: 0.3s;
+            .label-email {
+               position: absolute;
+               top: 45%;
+               left: 15px;
+               transform: translateY(-50%);
+               pointer-events: none;
+               transition: 0.3s;
+               padding: 0px 5px;
             }
-            .input-email{
-                padding: 10px;
-                border-radius: 10px;
-                min-width: 90%;
-                outline: none;
-                border-width: 2px;
-                border: solid black;
-                &:focus ~ .label-email{
-                    top: 0;
-                    left: 15px;
-                }
-                &:not(:placeholder-shown) + .label-email{
-                    top: 0;
-                    left: 15;
-                    font-size: 0.8em;
-                }
+            .input-email {
+               padding: 10px;
+               border-radius: 10px;
+               min-width: 90%;
+               outline: none;
+               border-width: 2px;
+               border: solid black;
+               &:focus ~ .label-email {
+                  top: 0;
+                  left: 15px;
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
+               }
+               &:not(:placeholder-shown) + .label-email {
+                  top: 0;
+                  left: 15;
+                  font-size: 0.8em;
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
+               }
             }
          }
-         .number-form{
+         .number-form {
             position: relative;
-            .label-number{
-                position: absolute;
-                top: 45%;
-                left: 15px;
-                pointer-events: none;
-                transform: translateY(-45%);
-                transition: 0.3s;
-
+            .label-number {
+               position: absolute;
+               top: 45%;
+               left: 15px;
+               pointer-events: none;
+               transform: translateY(-45%);
+               transition: 0.3s;
+               padding: 0px 5px;
             }
-            .input-number{
-                padding: 10px;
-                min-width: 90%;
-                border-width: 2px;
-                border: solid black;
-                border-radius: 10px;
+            .input-number {
+               padding: 10px;
+               min-width: 90%;
+               border-width: 2px;
+               border: solid black;
+               outline: none;
+               border-radius: 10px;
+               &:focus ~ .label-number {
+                  top: 0;
+                  left: 15px;
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
+               }
+               &:not(:placeholder-shown) + .label-number {
+                  top: 0;
+                  left: 15px;
+                  font-size: 0.8em;
+                  background: linear-gradient(to top, white 50%, #bce3ed 50%);
+               }
             }
          }
+        .message-form{
+            display: grid;
+            padding-right: 15px;
+            .input-message{
+                max-width: 94%;
+                min-height: 100px;
+                border-radius: 5px;
+                border-width: 2px;
+                border: solid black;
+                padding: 10px;
+             }
+        }
+        .submit-btn{
+            max-width: fit-content;
+            place-self: center;
+            padding: 10px 50px;
+            border: none;
+            border-radius: 10px;
+            background-color:azure;
+            box-shadow: #101827 0px 0px 4px 0.08px;
+            &:hover{
+                background-color: blueviolet;
+            }
+        }
       }
    }
    .container-left {
