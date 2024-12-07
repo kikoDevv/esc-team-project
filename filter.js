@@ -71,27 +71,38 @@ async function applyFilters() {
 }
 
 function handleStarClick(stars, filterKey) {
-   let lastClickedIndexLeft = -1;
-   let clickCountLeft = 0;
+   let lastClickedIndex = -1;
+   let clickCount = 0;
 
    stars.forEach((star, index) => {
       star.addEventListener("click", function () {
-         if (lastClickedIndexLeft === index) {
-            clickCountLeft++;
+         if (lastClickedIndex === index) {
+            clickCount++;
 
-            if (clickCountLeft === 2) {
+            if (clickCount === 2) {
                filterState.ratings[filterKey] = index + 1 - 0.5;
-            } else if (clickCountLeft === 3) {
+            } else if (clickCount === 3) {
                filterState.ratings[filterKey] = index;
-               clickCountLeft = 0;
-               lastClickedIndexLeft = -1;
+               clickCount = 0;
+               lastClickedIndex = -1;
             }
          } else {
             filterState.ratings[filterKey] = index + 1;
-            lastClickedIndexLeft = index;
-            clickCountLeft = 1;
+            lastClickedIndex = index;
+            clickCount = 1;
          }
-         applyFilters();
+
+         //---Check if the stars are filled before applying filters
+         const starsFilledCountLeft = document.querySelectorAll(".stars-container-left i.fa-solid").length;
+         const starsFilledCountRight = document.querySelectorAll(".stars-container-right i.fa-solid").length;
+
+         if (starsFilledCountLeft > 0 && starsFilledCountRight > 0) {
+            if (filterKey === "from" && starsFilledCountLeft <= starsFilledCountRight) {
+               applyFilters();
+            } else if (filterKey === "to" && starsFilledCountRight >= starsFilledCountLeft) {
+               applyFilters();
+            }
+         }
       });
    });
 }
@@ -102,7 +113,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
    handleStarClick(starsLeft, "from");
    handleStarClick(starsRight, "to");
+
+   // Parse query string and set initial filter values
+   const urlParams = new URLSearchParams(window.location.search);
+   const minRating = parseInt(urlParams.get("minRating"), 10);
+   const maxRating = parseInt(urlParams.get("maxRating"), 10);
+
+   if (!isNaN(minRating)) {
+      setStars(starsLeft, minRating);
+      filterState.ratings.from = minRating;
+   }
+
+   if (!isNaN(maxRating)) {
+      setStars(starsRight, maxRating);
+      filterState.ratings.to = maxRating;
+   }
+
+   applyFilters();
 });
+
+function setStars(stars, count) {
+   stars.forEach((star, index) => {
+      if (index < count) {
+         star.classList.add("fa-solid");
+         star.classList.remove("fa-star-half-stroke");
+      } else {
+         star.classList.remove("fa-solid", "fa-star-half-stroke");
+      }
+   });
+}
 
 function sortByType() {
    const types = [];
@@ -136,7 +175,7 @@ function switchFilterMenu() {
 }
 //------
 
-// Function to synchronize the number of filled stars
+//---- this Function is to synchronize the number of filled stars
 function synchronizeStars(clickCountLeft, lastClickedIndexLeft) {
    const starsFilledCountRight = document.querySelectorAll(
       ".stars-container-right i.fa-solid"
@@ -158,14 +197,14 @@ function synchronizeStars(clickCountLeft, lastClickedIndexLeft) {
       }
    });
 
-   // Apply half-filled class to the last filled star if there are any half-filled stars
+   //---Apply half-filled class to the last filled star if there are any half-filled stars
    if (starsFilledCountRight === starsFilledCountLeft && starsHalfFiled > 0) {
       if (starsFilledCountRight > 0) {
          leftStars[starsFilledCountRight - 1].classList.remove("fa-solid");
       }
       leftStars[starsFilledCountRight - 1].classList.add("fa-star-half-stroke");
-      clickCountLeft = 0; // Reset the click count
-      lastClickedIndexLeft = -1; // Reset the last clicked index
+      clickCountLeft = 0;
+      lastClickedIndexLeft = -1; 
    }
 }
 
@@ -234,9 +273,9 @@ starsRight.forEach((starx, index) => {
                s.classList.remove("fa-solid", "fa-star-half-stroke");
             }
          });
-         lastClickedIndexx = index; // Update the last clicked index
-         clickCountx = 1; // Reset the click count to 1 for the new star
+         lastClickedIndexx = index; 
+         clickCountx = 1;
       }
-      synchronizeStars(clickCountLeft, lastClickedIndexLeft); // Synchronize the stars after any click event
+      synchronizeStars(clickCountLeft, lastClickedIndexLeft);
    });
 });
