@@ -1,15 +1,18 @@
-body {
+#contact-page-body{
    padding: 0px;
    margin: 0px;
    display: flex;
    justify-content: center;
    align-items: center;
    height: 100vh;
+   background: linear-gradient(to top, white 50%, blue 50%);
 }
 .mainSection {
    display: flex;
    justify-content: center;
    align-items: center;
+   border-radius: 30px;
+   box-shadow: #101827 0px 0px 4px 0.08px;
    .container-right {
       background: conic-gradient(at top right, lightcyan, lightblue);
       height: 70vh;
@@ -134,6 +137,18 @@ body {
             box-shadow: #101827 0px 0px 4px 0.08px;
             &:hover{
                 background-color: blueviolet;
+            }
+        }
+        .lorem{
+            display: flex;
+            justify-content: space-between;
+            div{
+                display: flex;
+                p{
+                    margin: 0px;
+                    padding-left: 5px;
+                    cursor: pointer;
+                }
             }
         }
       }
