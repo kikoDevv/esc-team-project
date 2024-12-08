@@ -114,9 +114,12 @@ function sortByType() {
 }
 
 function sortByText() {
-  filterState.text = filterInput.value.toLowerCase();
-  applyFilters();
+  if (filterInput.value.length >= 3){
+    filterState.text = filterInput.value.toLowerCase();
+    applyFilters();
+  }
 }
+// sortByText();
 
 includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
