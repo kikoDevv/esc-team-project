@@ -807,6 +807,7 @@
 }
 .mainSection .container-right .input-forms .submit-btn:hover {
   background-color: blueviolet;
+  color: white;
 }
 .mainSection .container-right .input-forms .lorem {
   display: flex;
