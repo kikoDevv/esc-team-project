@@ -148,25 +148,19 @@ body {
       overflow: hidden;
       .phone-img {
          border-radius: 0px;
-         animation: hanging 5s infinite;
+         animation: hanging 3s infinite ease-in-out;
          transform-origin: top center;
       }
    }
 }
 @keyframes hanging {
     0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
+        transform: translateY(-100px) rotate(0deg);
     }
     50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(-5deg);
+        transform: translateY(-100px) rotate(10deg);
     }
     100% {
-        transform: rotate(0deg);
+        transform: translateY(-100px) rotate(0deg);
     }
 }
