@@ -113,13 +113,16 @@ function sortByType() {
   applyFilters();
 }
 
-function sortByText() {
-  if (filterInput.value.length >= 3){
+async function sortByText() {
+  if (filterInput.value.length >= 3) {
     filterState.text = filterInput.value.toLowerCase();
     applyFilters();
+  } else {
+    const response = await fetchData();
+    const challengesArray = response.challenges;
+    createCardsFromAPI(challengesArray);
   }
 }
-// sortByText();
 
 includeOnline.addEventListener("change", sortByType);
 includeOnsite.addEventListener("change", sortByType);
