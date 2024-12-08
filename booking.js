@@ -20,6 +20,9 @@ async function fetchBookingTimes(date, id) {
 }
 const date = new Date();
 let day = date.getDate();
+if (day < 10) {
+  day = "0" + day;
+}
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
 const currentDate = `${year}-${month}-${day}`;
@@ -27,6 +30,7 @@ const currentDate = `${year}-${month}-${day}`;
 // Function to generate booking page one
 function openBookingPageOne(ID, minParticipants, maxParticipants) {
   const section = document.createElement("section");
+
   section.style.zIndex = "100";
   section.className = "book-page-one";
   section.innerHTML = `
@@ -34,7 +38,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
             <p><b>Book room "Title of room"(step 1)</b></p>
             <p>What date would you like to come?</p>
             <p>Date</p>
-            <input type="date" class="date-input" min="${currentDate}">
+            <input type="date" class="date-input">
         </div>
         <div class="container-bottom">
             <button id="btn-home-page">Home</button>
@@ -42,6 +46,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
             <button id="btn-search-time">Search</button>
         </div>
    `;
+
   document.body.appendChild(section);
   console.log(`Id: ${ID} Participants: ${minParticipants}-${maxParticipants}`);
 
@@ -80,6 +85,7 @@ function openBookingPageOne(ID, minParticipants, maxParticipants) {
       openBookingPageTwo(ID, minParticipants, maxParticipants, chosenDate);
     }
   });
+  document.querySelector(".date-input").setAttribute("min", currentDate);
 }
 
 // Function to generate booking page two
@@ -206,7 +212,3 @@ function bookPageConfirm() {
   `;
   document.body.appendChild(section);
 }
-
-//temp
-// openBookingPageOne();
-// openBookingPageTwo()

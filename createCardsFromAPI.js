@@ -12,6 +12,7 @@ async function fetchAPI() {
 
     const data = await response.json();
     console.log("Message from fetchAPI in createCards.js" + data);
+    document.querySelector(".loader").remove();
     createCardsFromAPI(data.challenges);
     getLabelList(data);
   } catch (error) {
@@ -31,9 +32,9 @@ function createCardsFromAPI(challenges) {
 
     // Create elements
     const cardDiv = document.createElement("div");
-    const imgContainer = document.createElement("div")
+    const imgContainer = document.createElement("div");
     const img = document.createElement("img");
-    const icon = document.createElement("i")
+    const icon = document.createElement("i");
     const titleHeading = document.createElement("h3");
     const descriptionText = document.createElement("p");
     const participantsText = document.createElement("small");
@@ -43,7 +44,7 @@ function createCardsFromAPI(challenges) {
     img.setAttribute("src", challenge.image || "placeholder.jpg");
     titleHeading.innerText = challenge.title;
 
-    if (challenge.type === "onsite"){
+    if (challenge.type === "onsite") {
       titleHeading.innerText += " (on-site)";
       icon.classList.add("fa-solid", "fa-house", "icon");
     }
@@ -52,8 +53,8 @@ function createCardsFromAPI(challenges) {
       challenge.minParticipants,
       challenge.maxParticipants
     );
-    if (challenge.type === "online"){
-      participantsText.innerText +=" (networked)";
+    if (challenge.type === "online") {
+      participantsText.innerText += " (networked)";
       icon.classList.add("fa-solid", "fa-laptop", "icon");
     }
 
@@ -72,7 +73,6 @@ function createCardsFromAPI(challenges) {
     cardDiv.classList.add("api-card-container__card");
     imgContainer.classList.add("img-container");
 
-    
     imgContainer.appendChild(img);
     if (challenge.type === "onsite" || challenge.type === "online") {
       imgContainer.appendChild(icon);

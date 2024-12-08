@@ -306,6 +306,28 @@
   color: #ff0000;
 }
 
+.loader {
+  border: 16px solid purple;
+  border-top: 16px solid #011827;
+  border-left: 16px solid #8acfe5;
+  border-bottom: 16px solid #36769d;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .filterSection.active {
   display: grid;
 }
@@ -423,6 +445,9 @@
   box-shadow: #b6bdb5 0px 5px 15px;
   border-radius: 10px;
   position: relative;
+}
+.api-card-container__card:hover {
+  box-shadow: #011827 0px 5px 30px;
 }
 .api-card-container__card h3 {
   margin: 5%;
@@ -860,6 +885,10 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   background-color: white;
+}
+
+.indexBody {
+  background-color: #011827;
 }
 
 button {

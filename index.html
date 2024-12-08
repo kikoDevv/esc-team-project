@@ -46,7 +46,7 @@
     <script defer src="booking.js"></script>
   </head>
   <!-- the body section is here-->
-  <body>
+  <body class="indexBody">
     <div class="container">
       <header>
         <img src="./pictures/logo.png" alt="Hacker Escape Rooms Logo" />
@@ -121,6 +121,7 @@
         </div>
 
         <h2 class="main-challenges-title">Popular challenges right now</h2>
+        <div class="loader"></div>
         <div class="card-container">
           <div class="card-container__card">
             <img class="card-container__img card-container__img-one" />
@@ -131,7 +132,6 @@
                 class="card-container__participants-phone card-container__participants-one"
               ></small>
             </div>
-
             <p
               class="card-container__card-text card-container__card-text-one"
             ></p>
@@ -139,7 +139,7 @@
               class="card-container__button card-container__button-one"
             ></button>
           </div>
-          <div class="card-container__card">
+          <div class="card-container__card loaderCard">
             <img class="card-container__img card-container__img-two" />
             <h3 class="card-container__card-two"></h3>
 
