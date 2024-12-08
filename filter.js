@@ -113,9 +113,15 @@ function sortByType() {
   applyFilters();
 }
 
-function sortByText() {
-  filterState.text = filterInput.value.toLowerCase();
-  applyFilters();
+async function sortByText() {
+  if (filterInput.value.length >= 3) {
+    filterState.text = filterInput.value.toLowerCase();
+    applyFilters();
+  } else {
+    const response = await fetchData();
+    const challengesArray = response.challenges;
+    createCardsFromAPI(challengesArray);
+  }
 }
 
 includeOnline.addEventListener("change", sortByType);
