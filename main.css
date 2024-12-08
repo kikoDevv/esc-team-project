@@ -536,6 +536,7 @@
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
   border-radius: 10px;
+  animation: slideIn 0.3s ease-out;
 }
 .book-page-one .container-top {
   display: grid;
@@ -607,6 +608,7 @@
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
   border-radius: 10px;
+  animation: slideRight 0.3s ease-in;
 }
 .booking-step-two .container-form {
   display: grid;
@@ -683,11 +685,48 @@
   background-color: white;
   box-shadow: #101827 0px 0px 3px 0.3px;
   border-radius: 10px;
+  animation: fadeIn 0.3s ease-in;
 }
 .book-page-confirm a {
   color: #6558f5;
 }
 
+@keyframes slideIn {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  80% {
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    scale: 1;
+  }
+  80% {
+    scale: 1.1;
+    background-color: chartreuse;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    scale: 1;
+  }
+  80% {
+    scale: 1.1;
+    background-color: chartreuse;
+  }
+  100% {
+    scale: 1;
+  }
+}
 #contact-page-body {
   padding: 0px;
   margin: 0px;

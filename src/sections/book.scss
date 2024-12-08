@@ -1,77 +1,77 @@
+
 .book-page-one {
-   position: fixed;
-   display: grid;
-   padding: 20px;
-   top: 15%;
-   left: 28%;
-   width: 40vw;
-   height: 60vh;
-   background-color: white;
-   box-shadow: #101827 0px 0px 3px 0.3px;
-   border-radius: 10px;
-   .container-top {
-      display: grid;
-      p {
-         margin: 0px;
+  position: fixed;
+  display: grid;
+  padding: 20px;
+  top: 15%;
+  left: 28%;
+  width: 40vw;
+  height: 60vh;
+  background-color: white;
+  box-shadow: #101827 0px 0px 3px 0.3px;
+  border-radius: 10px;
+  animation: slideIn 0.3s ease-out;
+
+  .container-top {
+    display: grid;
+    p {
+      margin: 0px;
+    }
+    p:last-of-type {
+      align-content: end;
+      padding-left: 2px;
+    }
+    input {
+      max-width: fit-content;
+      max-height: fit-content;
+      padding: 5px 10px;
+      border-width: 1.5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .container-bottom {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    #btn-home-page {
+      padding: 10px;
+      border: none;
+      background-color: #6558f5;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px 0px 0px 10px;
+      &:hover {
+        background-color: yellow;
+        color: black;
       }
-      p:last-of-type {
-         align-content: end;
-         padding-left: 2px;
-      }
-      input {
-         max-width: fit-content;
-         max-height: fit-content;
-         padding: 5px 10px;
-         border-width: 1.5px;
-         border-radius: 5px;
-         cursor: pointer;
-      }
-   }
-   .container-bottom {
-      display: flex;
-      justify-content: end;
-      align-items: end;
-      #btn-home-page{
-         padding: 10px;
-         // padding: 10px;
-         border: none;
-         background-color: #6558f5;
-         color: white;
-         cursor: pointer;
-         border-radius: 10px 0px 0px 10px;
-         &:hover {
-            background-color: yellow;
-            color: black;
-         }
-      }
-      #btn-close{
-         padding: 17.3px 3px 17.3px 3px;
-         border: none;
-         background-color: #6558f5;
-         color: red;
-         cursor: pointer;
-         &:hover {
-            background-color: red;
-            color: white;
-         }
-      }
-      #btn-search-time {
-         padding: 10px 10px 10px 4px;
-         border: none;
-         background-color: #6558f5;
-         color: white;
-         cursor: pointer;
-         border-radius: 0px 10px 10px 0px;
-         &:hover {
-            background-color: yellow;
-            color: black;
-         }
-      }
-   }
+    }
+    #btn-close{
+       padding: 17.3px 3px 17.3px 3px;
+       border: none;
+       background-color: #6558f5;
+       color: red;
+       cursor: pointer;
+       &:hover {
+          background-color: red;
+          color: white;
+       }
+    }
+    #btn-search-time {
+       padding: 10px 10px 10px 4px;
+       border: none;
+       background-color: #6558f5;
+       color: white;
+       cursor: pointer;
+       border-radius: 0px 10px 10px 0px;
+       &:hover {
+          background-color: yellow;
+          color: black;
+       }
+    }
+  }
 }
-
-
-
 
 //----page 2---
 .booking-step-two {
@@ -85,6 +85,7 @@
    background-color: white;
    box-shadow: #101827 0px 0px 3px 0.3px;
    border-radius: 10px;
+   animation: slideRight 0.3s ease-in;
    .container-form{
       display: grid;
       min-width: fit-content;
@@ -162,7 +163,45 @@
    background-color: white;
    box-shadow: #101827 0px 0px 3px 0.3px;
    border-radius: 10px;
+   animation: fadeIn 0.3s ease-in;
    a{
       color: #6558f5;
    }
 }
+
+@keyframes slideIn {
+   0% {
+     scale: 0;
+     opacity: 0;
+   }
+   80%{
+      scale: 1.1;
+   }
+   100% {
+     opacity: 1;
+   }
+ }
+ @keyframes slideRight{
+   0% {
+      scale: 1;
+    }
+    80%{
+       scale: 1.1;
+       background-color:chartreuse;
+    }
+    100% {
+      scale: 1;
+    }
+ }
+ @keyframes fadeIn{
+   0%{
+      scale: 1;
+   }
+   80%{
+      scale: 1.1;
+      background-color: chartreuse;
+   }
+   100%{
+      scale: 1;
+   }
+ }
