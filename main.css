@@ -1165,5 +1165,22 @@ button:hover {
     margin: 5%;
   }
 }
+.api-card-container__card {
+  animation: fadeInCards 0.3s ease-in;
+}
+
+@keyframes fadeInCards {
+  0% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  60% {
+    scale: 1.01;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
