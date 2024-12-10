@@ -1143,6 +1143,10 @@ button:hover {
     flex: 0 0 300px;
     border-radius: 1rem;
     margin: 0 1rem 5% 1rem;
+    position: relative;
+  }
+  .card-container__card:hover {
+    box-shadow: #021928 0px 5px 30px;
   }
   .card-container__button {
     background-color: #e3170a;
