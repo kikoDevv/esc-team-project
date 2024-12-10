@@ -1,7 +1,7 @@
 /* Phone */
 @media screen and (max-width: 1280px) {
   header {
-    background-color: #011827;
+    background-color: #021928;
   }
   header img {
     margin: 5% 2% 5% 5%;
@@ -34,7 +34,7 @@
 @media screen and (min-width: 1280px) {
   header {
     color: white;
-    background-color: #011827;
+    background-color: #021928;
   }
   header button {
     display: none;
@@ -94,7 +94,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #011827;
+  background-color: #021928;
   font-size: 22px;
   height: 30rem;
 }
@@ -103,7 +103,7 @@
   height: 4.125rem;
   font-size: 18px;
   margin-top: 2rem;
-  background-color: #011827;
+  background-color: #021928;
   border: solid 1px #8acfe5;
   color: #8acfe5;
 }
@@ -196,7 +196,7 @@
 /* Footer Styling */
 .footer {
   color: white;
-  background-color: #011827;
+  background-color: #021928;
   height: 26rem;
   padding-top: 1rem;
   /* PC Styles */
@@ -246,7 +246,7 @@
   color: white;
   position: fixed;
   z-index: 100;
-  background-color: #011827;
+  background-color: #021928;
   animation: opacityGrow 0.5s;
   animation-fill-mode: forwards;
 }
@@ -308,7 +308,7 @@
 
 .loader {
   border: 16px solid purple;
-  border-top: 16px solid #011827;
+  border-top: 16px solid #021928;
   border-left: 16px solid #8acfe5;
   border-bottom: 16px solid #36769d;
   border-radius: 50%;
@@ -435,6 +435,11 @@
   gap: 15px;
   justify-items: center;
 }
+@media screen and (min-width: 1600px) {
+  .api-card-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 .api-card-container img {
   width: 100%;
   height: auto;
@@ -447,7 +452,7 @@
   position: relative;
 }
 .api-card-container__card:hover {
-  box-shadow: #011827 0px 5px 30px;
+  box-shadow: #021928 0px 5px 30px;
 }
 .api-card-container__card h3 {
   margin: 5%;
@@ -489,7 +494,7 @@
 }
 .api-card-container__card .img-container .icon {
   position: absolute;
-  color: #011827;
+  color: #021928;
   top: 10px;
   right: 25px;
   font-size: 2.5rem;
@@ -927,7 +932,7 @@ body {
 }
 
 .indexBody {
-  background-color: #011827;
+  background-color: #021928;
 }
 
 button {
@@ -983,7 +988,7 @@ button:hover {
 /* Button Wrapper PC */
 @media screen and (min-width: 1280px) {
   html {
-    background-color: #011827;
+    background-color: #021928;
   }
   .button-wrapper {
     display: flex;
