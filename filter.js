@@ -46,7 +46,7 @@ async function applyFilters() {
     );
   });
 
-  if (filterState.text) {
+  if (filterState.text && filterState.text.length >= 3) {
     filteredChallenges = filteredChallenges.filter(
       (challenge) =>
         challenge.title.toLowerCase().includes(filterState.text) ||
