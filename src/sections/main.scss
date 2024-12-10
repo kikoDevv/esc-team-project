@@ -253,6 +253,11 @@ button:hover {
       flex: 0 0 300px;
       border-radius: 1rem;
       margin: 0 1rem 5% 1rem;
+      position: relative;
+
+      &:hover {
+        box-shadow: $darkBlue 0px 5px 30px;
+      }
     }
 
     &__button {
