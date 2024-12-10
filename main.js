@@ -107,6 +107,7 @@ async function getTopRanked() {
   updateCardsButtonText();
   updateCardsImage();
   updateCardsRating();
+  updateOnsiteOnlineText();
 }
 
 function updateCardsTitle() {
@@ -125,6 +126,27 @@ function updateCardsParticipants() {
   cardParticipantsOne.innerText = `${challengesSorted[0].minParticipants} -  ${challengesSorted[0].maxParticipants} participants`;
   cardParticipantsTwo.innerText = `${challengesSorted[1].minParticipants} -  ${challengesSorted[1].maxParticipants} participants`;
   cardParticipantsThree.innerText = `${challengesSorted[2].minParticipants} -  ${challengesSorted[2].maxParticipants} participants`;
+}
+
+function updateOnsiteOnlineText() {
+  if (challengesSorted[0].type === "online") {
+    cardParticipantsOne.innerText += " (networked)";
+  }
+  if (challengesSorted[0].type === "onsite") {
+    cardOneTitle.innerText += " (on-site)";
+  }
+  if (challengesSorted[1].type === "online") {
+    cardParticipantsTwo.innerText += " (networked)";
+  }
+  if (challengesSorted[1].type === "onsite") {
+    cardTwoTitle.innerText += " (on-site)";
+  }
+  if (challengesSorted[2].type === "online") {
+    cardParticipantsThree.innerText += " (networked)";
+  }
+  if (challengesSorted[2].type === "onsite") {
+    cardThreeTitle.innerText += " (on-site)";
+  }
 }
 
 function updateCardsButtonText() {
